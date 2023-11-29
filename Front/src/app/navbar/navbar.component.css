@@ -1,0 +1,19 @@
+/* Add this style to your existing CSS */
+.button-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center; /* Optional: Align items vertically in the center */
+}
+
+.user-info p {
+  margin-right: 10px; /* Optional: Add some spacing between the text and the button */
+}
+
+.user-info button {
+  margin-left: auto; /* Push the button to the right, taking up all available space */
+}

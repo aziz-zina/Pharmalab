@@ -1,0 +1,65 @@
+/* Add these styles to your existing CSS */
+
+.login {
+  border: 3px solid green;
+  margin-top: 100px;
+  width: 400px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker box shadow */
+  position: relative;
+}
+
+
+
+.Legend {
+  color: green;
+  font-size: 1.5em; /* Increase font size for the Legend */
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginInput, .passwordInput {
+  width: 100%; /* Make input fields take full width */
+  margin-bottom: 15px; /* Adjust margin between input fields */
+}*/
+
+button {
+  margin-top: 15px; /* Adjust margin for the login button */
+}
+
+.goBackHome {
+  position: absolute;
+  bottom: 20px; /* Adjust the distance from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  color: green;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.goBackHome:hover {
+  text-decoration: underline;
+}
+
+.custom-blue-button {
+  background-color: #2196F3; /* Your desired blue color */
+  color: #fff; /* Your desired text color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Your desired box shadow */
+}
+
+/* .info .se {
+  margin-top: -5px;
+} */

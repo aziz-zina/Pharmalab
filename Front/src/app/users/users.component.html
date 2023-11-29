@@ -1,0 +1,57 @@
+<p-tabView>
+  <p-tabPanel header="Pharmacies">
+    <p-table [value]="pharmacies" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="email" style="width:20%">Email<p-sortIcon field="email"></p-sortIcon></th>
+          <th pSortableColumn="name" style="width:20%">Name<p-sortIcon field="name"></p-sortIcon></th>
+          <th pSortableColumn="address" style="width:20%">Address<p-sortIcon field="address"></p-sortIcon></th>
+          <th pSortableColumn="state" style="width:20%">State<p-sortIcon field="state"></p-sortIcon></th>
+          <th colspan="2" class="actions">Actions</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-pha>
+        <tr>
+          <td>{{ pha.email }}</td>
+          <td>{{ pha.name }}</td>
+          <td>{{ pha.address }}</td>
+          <td>{{ pha.state }}</td>
+          <td><button pButton type="button" icon="pi pi-check" class="p-button-success">
+            </button></td>
+          <td><button pButton type="button" icon="pi pi-times" class="p-button-danger">
+            </button></td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="4" style="text-align: center;">Nothing to display yet.</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-tabPanel>
+  <p-tabPanel header="Laboratories">
+    <p-table [value]="laboratories" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="email" style="width:20%">Email<p-sortIcon field="email"></p-sortIcon></th>
+          <th pSortableColumn="name" style="width:20%">Name<p-sortIcon field="name"></p-sortIcon></th>
+          <th pSortableColumn="address" style="width:20%">Address<p-sortIcon field="address"></p-sortIcon></th>
+          <th pSortableColumn="state" style="width:20%">State<p-sortIcon field="state"></p-sortIcon></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-lab>
+        <tr>
+          <td>{{ lab.email }}</td>
+          <td>{{ lab.name }}</td>
+          <td>{{ lab.address }}</td>
+          <td>{{ lab.state }}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="4" style="text-align: center;">Nothing to display yet.</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-tabPanel>
+</p-tabView>

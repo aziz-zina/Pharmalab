@@ -1,0 +1,44 @@
+<!-- register.component.html -->
+<p-toast position="top-right" key="msg"></p-toast>
+<div class="grid p-fluid login">
+  <br><br>
+  <div class="info">
+    <div class="col-12 md:col-4">
+      <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+        <div class="loginInput">
+          <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+          <input type="text" pInputText placeholder="Name" name="name" ngModel required>
+        </div>
+        <div class="loginInput">
+          <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+          <input type="email" pInputText placeholder="Email Address" name="email" ngModel required>
+        </div>
+        <div class="passwordInput">
+          <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+          <p-password placeholder="Password" name="password" ngModel required [toggleMask]="true"></p-password>
+        </div>
+        <div class="addressInput">
+          <span class="p-inputgroup-addon"><i class="pi pi-map-marker"></i></span>
+          <input type="text" pInputText placeholder="Address" name="address" ngModel required>
+        </div>
+        <div class="radio" (change)="onRoleChange()">
+          <div class="flex items-center flex-nowrap">
+            <p-radioButton name="role" [(ngModel)]="selectedRole" value="pharmacy" inputId="selectedRole" checked></p-radioButton>
+            <label for="selectedRole" class="ml-2 mr-4">Pharmacy</label> <!-- Adjust the margin value as needed -->
+          </div>
+          <div class="flex items-center flex-nowrap">
+            <p-radioButton name="role" [(ngModel)]="selectedRole" value="laboratory" inputId="selectedRole2" checked></p-radioButton>
+            <label for="selectedRole2" class="ml-2 mr-4">Laboratory</label> <!-- Adjust the margin value as needed -->
+          </div>
+        </div>
+        <br><br>
+        <button pButton pRipple type="submit" label="Register" class="p-button-raised p-button-success"></button>
+      </form>
+    </div>
+  </div>
+  <button pButton pRipple type="button" label="Login" class="p-button-raised custom-blue-button"
+    routerLink="../Login"></button>
+  <br>
+  <a routerLink="../" class="p-button-raised p-button-success goBackHome">Go Back Home </a>
+</div>
+<router-outlet></router-outlet>

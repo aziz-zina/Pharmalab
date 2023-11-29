@@ -1,0 +1,38 @@
+<p-toast position="bottom-right" key="msg2"></p-toast>
+<p-toast position="top-right" key="msg3"></p-toast>
+<p-toast position="top-right" key="msg4"></p-toast>
+<div class="card" *ngIf="showNavbar">
+  <p-menubar [model]="items">
+    <div class="info">
+      <div class="user-info" *ngIf="authenticated">
+        <!-- Display user name and logout icon when userName is not empty -->
+        <button #btn type="button" pButton icon="pi pi-bars" label="{{userName}}" (click)="menu.toggle($event)" styleClass="menucus"></button>
+        <p-tieredMenu #menu [model]="userItems" [popup]="true"></p-tieredMenu>
+        <!-- <button pButton pRipple type="button" class="p-button-rounded p-button-danger p-button-text" (click)="logout()">
+          <div class="button-content">
+            <i class="pi pi-power-off"></i>
+            <span>Logout</span>
+          </div>
+        </button> -->
+      </div>
+      <div class="logout" *ngIf="!authenticated">
+        <!-- Login button with icon and description below -->
+        <button pButton pRipple type="button" class="p-button-rounded p-button-success p-button-text" routerLink="/Login">
+          <div class="button-content">
+            <i class="pi pi-key"></i>
+            <span>Login</span>
+          </div>
+        </button>
+
+        <!-- Register button with icon and description below -->
+        <button pButton pRipple type="button" class="p-button-rounded p-button-info p-button-text" routerLink="/Register">
+          <div class="button-content">
+            <i class="pi pi-user-plus"></i>
+            <span>Register</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </p-menubar>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,28 @@
+/* user.component.css */
+
+div {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #A5AF4B;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+strong {
+  margin-right: 5px;
+  font-weight: bold;
+  color: #0288D1;
+}
