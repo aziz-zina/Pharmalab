@@ -125,3 +125,21 @@ export const deleteUser = async (request, response) => {
         response.status(500).json({ message: 'Internal Server Error' });
     }
 }
+
+export const updateUser = async (request, response) => {
+    console.log(request.body);
+    try{
+        //const userEmail = await User.findOne({ email: request.body.email });
+        const result = await User.findOneAndUpdate({ email: request.body.email }, { $set: request.body } , { new: true });
+        console.log(result);
+        if (result) {
+            response.status(200).json({ message: 'User updated successfully' });
+        } else {
+            // User with the specified email not found
+            response.status(404).json({ message: 'User not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        response.status(500).json({ message: 'Internal Server Error' });
+    }
+}

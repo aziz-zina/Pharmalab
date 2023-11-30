@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     if (name == "" || psw == "" || email == "" || address == "") {
       this.showWarn("You have to fill the form first");
     } else {
-      this.userService.register(new User(email, psw, address, name, role)).subscribe(
+      this.userService.register(new User(email, address, name, role, psw)).subscribe(
         (data) => {
           console.log(data);
           this.router.navigate(['./Login']);

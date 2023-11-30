@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.showWarn("You have to fill the form first.");
     } else {
       if (this.isValidEmail(email)) {
-        let user = new User(email, psw, "", "", "");
+        let user = new User(email, "", "", "", psw);
         this.userService.Login(user).subscribe(
           (data) => {
             //console.log(data);

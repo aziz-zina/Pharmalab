@@ -10,7 +10,7 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-pha>
-        <tr (click)="showDialog()">
+        <tr (click)="showDialog(pha)">
           <td>{{ pha.email }}</td>
           <td>{{ pha.name }}</td>
           <td>{{ pha.address }}</td>
@@ -50,6 +50,6 @@
     </p-table>
   </p-tabPanel>
 </p-tabView>
-<p-dialog header="Actions" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
-  <app-users-profil></app-users-profil>
+<p-dialog header="About" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+  <app-users-profil [selectedData]="selectedData"></app-users-profil>
 </p-dialog>

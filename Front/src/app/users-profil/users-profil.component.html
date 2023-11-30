@@ -1,3 +1,31 @@
-<button pButton type="button" class="p-button-success">Validate <i class="pi pi-check"></i></button>
-<button pButton type="button" class="p-button-danger">Delete <i class="pi pi-times"></i></button>
-<button pButton type="button" class="p-button">Edit <i class="pi pi-pencil"></i></button>
+<!-- app-users-profil.component.html -->
+<div class="user-profile">
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input id="email" [(ngModel)]="selectedData.email" disabled>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input id="name" [(ngModel)]="selectedData.name" [disabled]="!editMode">
+  </div>
+
+  <div class="form-group">
+    <label for="address">Address:</label>
+    <input id="address" [(ngModel)]="selectedData.address" [disabled]="!editMode">
+  </div>
+
+  <div class="form-group">
+    <label for="state">Role:</label>
+    <input id="state" [(ngModel)]="selectedData.role" [disabled]="!editMode">
+  </div>
+
+  <!-- Add other properties as needed -->
+</div>
+
+<button *ngIf="!editMode" pButton type="button" class="p-button-success">Validate <i class="pi pi-check"></i></button>
+<button *ngIf="!editMode" pButton type="button" class="p-button-danger">Delete <i class="pi pi-times"></i></button>
+<button *ngIf="!editMode" pButton type="button" class="p-button" (click)="onEditClick()">Edit <i class="pi pi-pencil"></i></button>
+<button *ngIf="editMode" pButton type="button" class="p-button-success" (click)="onEditClick()">Save <i class="pi pi-check"></i></button>
+<button *ngIf="editMode" pButton type="button" class="p-button-danger" (click)="onCloseClick()">Cancel <i class="pi pi-times"></i></button>
+

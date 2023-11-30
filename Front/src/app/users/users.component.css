@@ -5,3 +5,11 @@ body{
 .actions p{
   margin-left: 10px;
 }
+
+tr{
+  cursor: pointer;
+}
+
+tr:hover{
+  background-color: #f2f2f2;
+}

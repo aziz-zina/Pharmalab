@@ -10,6 +10,7 @@ import {getUser} from '../controller/userController.js';
 import {logout} from '../controller/userController.js';
 import {laboratories} from '../controller/userController.js';
 import {deleteUser} from '../controller/userController.js';
+import {updateUser} from '../controller/userController.js';
 
 //Create an instance of express
 const router = express.Router();
@@ -29,6 +30,8 @@ router.get("/pharmacies", pharmacies);
 router.get("/laboratories", laboratories);
 
 router.delete("/deleteUser", deleteUser);
+
+router.patch("/updateUser", updateUser);
 
 
 //Exporting the router

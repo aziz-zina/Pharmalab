@@ -13,6 +13,8 @@ import { MessageService, SortEvent } from 'primeng/api';
 })
 export class UsersComponent {
 
+  selectedData: User;
+
   constructor(private userService: UserServiceService, private router: Router, private navbarService: NavbarService, public messageService: MessageService) { }
 
   showError(msg: string) {
@@ -53,7 +55,8 @@ export class UsersComponent {
   userName: string = "";
   visible: boolean = false;
 
-  showDialog() {
+  showDialog(data: any) {
+    this.selectedData = data;
     this.visible = true;
   }
 
