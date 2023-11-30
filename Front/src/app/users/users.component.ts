@@ -5,6 +5,8 @@ import { NavbarService } from '../services/navbar.service';
 import { Emitters } from '../emitters/emitters';
 import { User } from '../model/user';
 import { MessageService, SortEvent } from 'primeng/api';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { UserProfilComponent } from '../user-profil/user-profil.component';
 
 @Component({
   selector: 'app-users',
@@ -15,7 +17,7 @@ export class UsersComponent {
 
   selectedData: User;
 
-  constructor(private userService: UserServiceService, private router: Router, private navbarService: NavbarService, public messageService: MessageService) { }
+  constructor(private userService: UserServiceService, private router: Router, private navbarService: NavbarService, public messageService: MessageService, private dialogService: DialogService) { }
 
   showError(msg: string) {
     this.messageService.add({ key: 'msg3', severity: 'error', summary: 'Error', detail: msg });
@@ -58,6 +60,28 @@ export class UsersComponent {
   showDialog(data: any) {
     this.selectedData = data;
     this.visible = true;
+  }
+
+  ref: DynamicDialogRef | undefined;
+
+  show() {
+    this.ref = this.dialogService.open(UserProfilComponent, {
+      header: this.selectedData.name + "'s profil",
+      width: '70%',
+      contentStyle: { overflow: 'auto' },
+      baseZIndex: 10000,
+      maximizable: true
+    });
+
+    // this.ref.onClose.subscribe((product: Product) => {
+    //   if (product) {
+    //     this.messageService.add({ severity: 'info', summary: 'Product Selected', detail: product.name });
+    //   }
+    // });
+
+    // this.ref.onMaximize.subscribe((value) => {
+    //   this.messageService.add({ severity: 'info', summary: 'Maximized', detail: `maximized: ${value.maximized}` });
+    // });
   }
 
   ngOnInit(): void {

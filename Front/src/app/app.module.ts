@@ -17,6 +17,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
+import { DynamicDialogRef } from 'primeng/dynamicdialog';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -58,7 +59,7 @@ import { UsersProfilComponent } from './users-profil/users-profil.component';
     InputTextModule,
     DialogModule
   ],
-  providers: [MessageService],
+  providers: [MessageService, DynamicDialogRef],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
