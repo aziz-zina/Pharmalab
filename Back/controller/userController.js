@@ -109,3 +109,19 @@ export const laboratories = async (request, response) => {
         response.status(500).json({ message: "Internal Server Error." });
     }
 }
+
+export const deleteUser = async (request, response) => {
+    try {
+        const deletedUser = await User.deleteOne({ email: request.body.email });
+
+        if (deletedUser.deletedCount === 1) {
+            response.status(200).json({ message: 'User deleted successfully' });
+        } else {
+            // User with the specified email not found
+            response.status(404).json({ message: 'User not found' });
+        }
+    } catch (error) {
+        console.error(error);
+        response.status(500).json({ message: 'Internal Server Error' });
+    }
+}

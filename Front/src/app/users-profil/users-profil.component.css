@@ -1,0 +1,31 @@
+/* Button Styles */
+.p-button {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px; /* Adjust the margin between buttons */
+}
+
+/* Icon Styles */
+.p-button i {
+  margin-left: 0.5em; /* Adjust the margin between icon and label */
+}
+
+/* Success Button Styles */
+.p-button-success {
+  background-color: #28a745; /* Green */
+  color: #fff; /* White */
+}
+
+.p-button-success:hover {
+  background-color: #218838; /* Darker Green on Hover */
+}
+
+/* Danger Button Styles */
+.p-button-danger {
+  background-color: #dc3545; /* Red */
+  color: #fff; /* White */
+}
+
+.p-button-danger:hover {
+  background-color: #c82333; /* Darker Red on Hover */
+}

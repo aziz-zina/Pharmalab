@@ -9,6 +9,7 @@ import {pharmacies} from '../controller/userController.js';
 import {getUser} from '../controller/userController.js';
 import {logout} from '../controller/userController.js';
 import {laboratories} from '../controller/userController.js';
+import {deleteUser} from '../controller/userController.js';
 
 //Create an instance of express
 const router = express.Router();
@@ -26,6 +27,8 @@ router.post("/logout", logout)
 router.get("/pharmacies", pharmacies);
 
 router.get("/laboratories", laboratories);
+
+router.delete("/deleteUser", deleteUser);
 
 
 //Exporting the router

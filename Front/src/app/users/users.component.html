@@ -7,19 +7,14 @@
           <th pSortableColumn="name" style="width:20%">Name<p-sortIcon field="name"></p-sortIcon></th>
           <th pSortableColumn="address" style="width:20%">Address<p-sortIcon field="address"></p-sortIcon></th>
           <th pSortableColumn="state" style="width:20%">State<p-sortIcon field="state"></p-sortIcon></th>
-          <th colspan="2" class="actions">Actions</th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-pha>
-        <tr>
+        <tr (click)="showDialog()">
           <td>{{ pha.email }}</td>
           <td>{{ pha.name }}</td>
           <td>{{ pha.address }}</td>
           <td>{{ pha.state }}</td>
-          <td><button pButton type="button" icon="pi pi-check" class="p-button-success">
-            </button></td>
-          <td><button pButton type="button" icon="pi pi-times" class="p-button-danger">
-            </button></td>
         </tr>
       </ng-template>
       <ng-template pTemplate="emptymessage">
@@ -55,3 +50,6 @@
     </p-table>
   </p-tabPanel>
 </p-tabView>
+<p-dialog header="Actions" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+  <app-users-profil></app-users-profil>
+</p-dialog>

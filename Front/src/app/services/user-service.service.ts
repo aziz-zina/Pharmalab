@@ -37,4 +37,8 @@ export class UserServiceService {
   public getAllLaboratories(): Observable<User[]>{
     return this.httpClient.get<User[]>(this.apiUrl + "/laboratories", {withCredentials: true});
   }
+
+  public deleteUser(user: User): Observable<any>{
+    return this.httpClient.delete(this.apiUrl + "/deleteUser", {withCredentials: true});
+  }
 }

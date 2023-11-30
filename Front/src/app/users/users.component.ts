@@ -51,6 +51,11 @@ export class UsersComponent {
   showNavbar: boolean = true;
   authenticated: boolean = false;
   userName: string = "";
+  visible: boolean = false;
+
+  showDialog() {
+    this.visible = true;
+  }
 
   ngOnInit(): void {
     this.userService.getUser().subscribe(

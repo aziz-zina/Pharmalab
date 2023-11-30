@@ -26,6 +26,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UsersComponent } from './users/users.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
+import { UsersProfilComponent } from './users-profil/users-profil.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { UserProfilComponent } from './user-profil/user-profil.component';
     NavbarComponent,
     RegisterComponent,
     UsersComponent,
-    UserProfilComponent
+    UserProfilComponent,
+    UsersProfilComponent
   ],
   imports: [
     TieredMenuModule,
