@@ -76,5 +76,18 @@ export class UsersProfilComponent {
     }
   }
 
+  validateUser() {
+    console.log(this.selectedData.state);
+    this.selectedData = new User(this.originalData.email, this.originalData.address, this.originalData.name, this.originalData.role);
+    this.selectedData.setState("Valid");
+    this.userService.updateUser(this.selectedData).subscribe(
+      (data) => {
+        this.showDeleteSuccess(this.selectedData.name + " is now Valid.");
+        this.checkIntention = true;
+        this.ref.close(data);
+      }
+    )
+  }
+
 }
 

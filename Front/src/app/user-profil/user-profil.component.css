@@ -1,28 +1,122 @@
 /* user.component.css */
 
-div {
-  margin: 20px;
+h2 {
+  text-align: center;
+  color: #74B72E;
+}
+
+.user-profile {
+  max-width: 70%;
+  margin: auto;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-  color: #A5AF4B;
+.form-group {
+  margin-bottom: 20px;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-strong {
-  margin-right: 5px;
+label {
+  display: block;
   font-weight: bold;
+  margin-bottom: 5px;
   color: #0288D1;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Optional: Add styles for the disabled state */
+input:disabled {
+  background-color: #f4f4f4;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.p-button {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  /* Adjust the margin between buttons */
+}
+
+
+.p-button i {
+  margin-left: 0.5em;
+  /* Adjust the margin between icon and label */
+}
+
+/* Success Button Styles */
+.p-button-success {
+  background-color: #28a745;
+  /* Green */
+  color: #fff;
+  /* White */
+}
+
+.p-button-success:hover {
+  background-color: #218838;
+  /* Darker Green on Hover */
+}
+
+/* Danger Button Styles */
+.p-button-danger {
+  background-color: #dc3545;
+  /* Red */
+  color: #fff;
+  /* White */
+}
+
+.p-button-danger:hover {
+  background-color: #c82333;
+  /* Darker Red on Hover */
+}
+
+/* user.component.css */
+
+/* ... (your existing styles) */
+
+/* Button Container Styles */
+.button-container {
+  text-align: center;
+  margin-top: 20px; /* Adjust the margin as needed */
+}
+
+.p-button {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px; /* Adjust the margin between buttons */
+}
+
+.p-button i {
+  margin-left: 0.5em; /* Adjust the margin between icon and label */
+}
+
+/* Success Button Styles */
+.p-button-success {
+  background-color: #28a745; /* Green */
+  color: #fff; /* White */
+}
+
+.p-button-success:hover {
+  background-color: #218838; /* Darker Green on Hover */
+}
+
+/* Danger Button Styles */
+.p-button-danger {
+  background-color: #dc3545; /* Red */
+  color: #fff; /* White */
+}
+
+.p-button-danger:hover {
+  background-color: #c82333; /* Darker Red on Hover */
 }

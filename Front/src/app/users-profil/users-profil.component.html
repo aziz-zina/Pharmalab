@@ -25,7 +25,7 @@
   <!-- Add other properties as needed -->
 </div>
 
-<button *ngIf="!editMode" pButton type="button" class="p-button-success">Validate <i class="pi pi-check"></i></button>
+<button *ngIf="!editMode" pButton type="button" class="p-button-success" (click)="validateUser()">Validate <i class="pi pi-check"></i></button>
 <button *ngIf="!editMode" pButton type="button" class="p-button-danger" (click)="deleteUser()">Delete <i class="pi pi-trash"></i></button>
 <button *ngIf="!editMode" pButton type="button" class="p-button" (click)="onEditClick()">Edit <i class="pi pi-pencil"></i></button>
 <button *ngIf="editMode" pButton type="button" class="p-button-success" (click)="updateUser()">Save <i class="pi pi-check"></i></button>

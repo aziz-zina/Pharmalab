@@ -13,4 +13,9 @@ export class User {
     this.name = name;
     this.role = role;
   }
+
+  setState(state: string) {
+    this.state = state;
+  }
+
 }

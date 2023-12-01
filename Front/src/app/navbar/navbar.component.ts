@@ -80,7 +80,7 @@ export class NavbarComponent implements OnDestroy{
                 this.userItems = [
                   { label: 'Profile', icon: 'pi pi-fw pi-user', routerLink: './Profil' },
                   {
-                    label: 'Users', icon: 'pi pi-fw pi-users', routerLink: './'
+                    label: 'Medicines', icon: 'pi pi-fw pi-shield', routerLink: './'
                   },
                   { label: 'Logout', icon: 'pi pi-fw pi-power-off', command: () => { this.logout(); }}
                 ];
