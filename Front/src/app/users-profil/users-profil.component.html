@@ -1,4 +1,5 @@
 <!-- app-users-profil.component.html -->
+<p-toast position="top-center" key="msg-selected-role"></p-toast>
 <div class="user-profile">
   <div class="form-group">
     <label for="email">Email:</label>
@@ -17,8 +18,8 @@
 
   <div class="form-group">
     <label for="state">Role:</label>
-    <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" [showClear]="true" placeholder="Select a City"></p-dropdown>
-    <input id="state" [(ngModel)]="selectedData.role" [disabled]="!editMode">
+    <p-dropdown *ngIf="editMode" [options]="Roles" [(ngModel)]="selectedRole" [showClear]="false" placeholder="Select a Role" [ngModelOptions]="{standalone: true}"></p-dropdown>
+    <input *ngIf="!editMode" id="state" [(ngModel)]="selectedData.role" [disabled]="!editMode">
   </div>
 
   <!-- Add other properties as needed -->

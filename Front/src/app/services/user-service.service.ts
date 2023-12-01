@@ -47,6 +47,6 @@ export class UserServiceService {
   }
 
   public updateUser(user: User): Observable<any> {
-      return this.httpClient.patch(this.apiUrl + "/updateUser", user, { withCredentials: true });
+    return this.httpClient.patch(this.apiUrl + "/updateUser", user, { withCredentials: true });
   }
 }

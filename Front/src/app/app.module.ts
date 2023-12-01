@@ -18,6 +18,7 @@ import { TieredMenuModule } from 'primeng/tieredmenu';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { DropdownModule } from 'primeng/dropdown';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -58,7 +59,8 @@ import { UsersProfilComponent } from './users-profil/users-profil.component';
     PasswordModule,
     InputTextModule,
     DialogModule,
-    DynamicDialogModule
+    DynamicDialogModule,
+    DropdownModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

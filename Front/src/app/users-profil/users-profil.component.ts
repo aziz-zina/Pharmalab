@@ -18,10 +18,18 @@ export class UsersProfilComponent {
   originalData: User;
   checkIntention: boolean;
 
-  constructor(private userService: UserServiceService, private route: Router, private config: DynamicDialogConfig, private ref: DynamicDialogRef, private messageService: MessageService) {}
+  Roles: string[] = ["pharmacy", "laboratory"]
+
+  selectedRole: string;
+
+  constructor(private userService: UserServiceService, private route: Router, private config: DynamicDialogConfig, private ref: DynamicDialogRef, private messageService: MessageService) { }
 
   showDeleteSuccess(msg: string) {
     this.messageService.add({ key: 'msg5', severity: 'success', summary: 'Success', detail: msg });
+  }
+
+  showRoleWarn(msg: string) {
+    this.messageService.add({ key: 'msg-selected-role', severity: 'warn', summary: 'Warning', detail: msg });
   }
 
   ngOnInit() {
@@ -41,11 +49,11 @@ export class UsersProfilComponent {
     this.selectedData = new User(this.originalData.email, this.originalData.address, this.originalData.name, this.originalData.role);
   }
 
-  deleteUser(){
+  deleteUser() {
     // console.log(this.selectedData);
     // this.ref.close(this.selectedData);
     this.userService.deleteUser(this.selectedData).subscribe(
-      (data) =>{
+      (data) => {
         this.showDeleteSuccess("User deleted successfully.");
         this.checkIntention = true;
         this.ref.close(data);
@@ -53,14 +61,19 @@ export class UsersProfilComponent {
     )
   }
 
-  updateUser(){
-    this.userService.updateUser(this.selectedData).subscribe(
-      (data) => {
-        this.showDeleteSuccess("User Updated successfully.");
-        this.checkIntention = true;
-        this.ref.close(data);
-      }
-    )
+  updateUser() {
+    if (this.selectedRole == undefined) {
+      this.showRoleWarn("Please select a role first.");
+    } else {
+      this.selectedData = new User(this.selectedData.email, this.selectedData.address, this.selectedData.name, this.selectedRole);
+      this.userService.updateUser(this.selectedData).subscribe(
+        (data) => {
+          this.showDeleteSuccess("User Updated successfully.");
+          this.checkIntention = true;
+          this.ref.close(data);
+        }
+      )
+    }
   }
 
 }
