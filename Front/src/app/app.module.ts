@@ -17,7 +17,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
-import { DynamicDialogRef } from 'primeng/dynamicdialog';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -57,9 +57,10 @@ import { UsersProfilComponent } from './users-profil/users-profil.component';
     DockModule,
     PasswordModule,
     InputTextModule,
-    DialogModule
+    DialogModule,
+    DynamicDialogModule
   ],
-  providers: [MessageService, DynamicDialogRef],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

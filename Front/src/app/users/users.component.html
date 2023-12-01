@@ -1,3 +1,4 @@
+<p-toast position="top-right" key="msg5"></p-toast>
 <p-tabView>
   <p-tabPanel header="Pharmacies">
     <p-table [value]="pharmacies" [tableStyle]="{ 'min-width': '50rem' }">
@@ -10,7 +11,7 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-pha>
-        <tr (click)="showDialog(pha)">
+        <tr (click)="show(pha)">
           <td>{{ pha.email }}</td>
           <td>{{ pha.name }}</td>
           <td>{{ pha.address }}</td>
@@ -35,7 +36,7 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-lab>
-        <tr>
+        <tr (click)="show(lab)">
           <td>{{ lab.email }}</td>
           <td>{{ lab.name }}</td>
           <td>{{ lab.address }}</td>
@@ -50,6 +51,3 @@
     </p-table>
   </p-tabPanel>
 </p-tabView>
-<p-dialog header="About" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
-  <app-users-profil [selectedData]="selectedData"></app-users-profil>
-</p-dialog>

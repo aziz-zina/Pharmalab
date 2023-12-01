@@ -17,6 +17,7 @@
 
   <div class="form-group">
     <label for="state">Role:</label>
+    <p-dropdown [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" [showClear]="true" placeholder="Select a City"></p-dropdown>
     <input id="state" [(ngModel)]="selectedData.role" [disabled]="!editMode">
   </div>
 
@@ -24,8 +25,8 @@
 </div>
 
 <button *ngIf="!editMode" pButton type="button" class="p-button-success">Validate <i class="pi pi-check"></i></button>
-<button *ngIf="!editMode" pButton type="button" class="p-button-danger" (click)="deleteUser()">Delete <i class="pi pi-times"></i></button>
+<button *ngIf="!editMode" pButton type="button" class="p-button-danger" (click)="deleteUser()">Delete <i class="pi pi-trash"></i></button>
 <button *ngIf="!editMode" pButton type="button" class="p-button" (click)="onEditClick()">Edit <i class="pi pi-pencil"></i></button>
-<button *ngIf="editMode" pButton type="button" class="p-button-success" (click)="onEditClick()">Save <i class="pi pi-check"></i></button>
-<button *ngIf="editMode" pButton type="button" class="p-button-danger" (click)="onCloseClick()">Cancel <i class="pi pi-times"></i></button>
+<button *ngIf="editMode" pButton type="button" class="p-button-success" (click)="updateUser()">Save <i class="pi pi-check"></i></button>
+<button *ngIf="editMode" pButton type="button" class="p-button-danger" (click)="onCancelClick()">Cancel <i class="pi pi-times"></i></button>
 
