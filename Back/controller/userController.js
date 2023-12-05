@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
+import validor from 'validator';
 
 export const createUser = async (request, response) => {
     
@@ -17,10 +18,20 @@ export const createUser = async (request, response) => {
         state: "Non valid",
     });
 
+    if(!validor.isEmail(request.body.email, {domain_specific_validation: true})){
+        console.log("Email not valid");
+        return response.status(404).json({ message: "Email not valid" });
+    }
+
     const userEmail = await User.findOne({ email: request.body.email });
 
     if (userEmail) {
-        return response.status(404).send('Email already exists');
+        return response.status(404).json({ message: "Email already used" });
+    }
+
+    if(!validor.isStrongPassword(request.body.password, {minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1})){
+        console.log("Weak ahhh password");
+        return response.status(404).json({ message: "Weak password" });
     }
 
     try {
@@ -38,14 +49,19 @@ export const createUser = async (request, response) => {
 
 export const login = async (request, response) => {
 
+    if(!validor.isEmail(request.body.email, {domain_specific_validation: true})){
+        console.log("Email not valid");
+        return response.status(404).json({ message: "Email not valid" });
+    }
+
     const user = await User.findOne({ email: request.body.email });
 
     if (!user) {
-        return response.status(404).send('User not found');
+        return response.status(404).json({message: 'User not found'});
     }
 
     if (!await bcrypt.compare(request.body.password, user.password)) {
-        return response.status(400).send('Invalid Password');
+        return response.status(400).json({message: 'Incorrect password'});
     }
 
     const token = jwt.sign({ _id: user._id }, "secret");

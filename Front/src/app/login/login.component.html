@@ -7,9 +7,8 @@
       <div class="col-12 md:col-4">
         <div class=" loginInput">
           <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-          <input class="" type="text" pInputText placeholder="E-mail" name="email" ngModel required (change)="validateEmail()" [(ngModel)]="EMAIL">
+          <input class="" type="text" pInputText placeholder="E-mail" name="email" ngModel required>
         </div>
-        <small id="username-help" class="p-error se" *ngIf="isSmallVisible">Please enter a valid email address.</small>
         <div class="passwordInput">
           <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
           <p-password placeholder="Password" name="password" ngModel required [toggleMask]="true" [feedback]="false"></p-password>

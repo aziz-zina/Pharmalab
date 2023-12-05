@@ -17,8 +17,6 @@
   position: relative;
 }
 
-
-
 .Legend {
   color: green;
   font-size: 1.5em; /* Increase font size for the Legend */
@@ -32,8 +30,9 @@
 }
 
 .loginInput, .passwordInput {
-  width: 100%; /* Make input fields take full width */
+  width: 120%; /* Make input fields take full width */
   margin-bottom: 15px; /* Adjust margin between input fields */
+  margin-left: -10%; /* Adjust margin between input fields */
 }*/
 
 button {

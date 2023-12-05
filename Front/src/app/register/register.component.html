@@ -11,11 +11,24 @@
         </div>
         <div class="loginInput">
           <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
-          <input type="email" pInputText placeholder="Email Address" name="email" ngModel required>
+          <input class="" type="text" pInputText placeholder="E-mail" name="email" ngModel required>
         </div>
         <div class="passwordInput">
           <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
-          <p-password placeholder="Password" name="password" ngModel required [toggleMask]="true"></p-password>
+          <p-password placeholder="Password" name="password" ngModel required [toggleMask]="true">
+            <ng-template pTemplate="footer">
+              <p class="mt-2">Suggestions</p>
+              <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                <li>At least one lowercase</li>
+                <li>At least one uppercase</li>
+                <li>At least one numeric</li>
+                <li>At least one special caracter</li>
+                <li>Minimum 8 characters</li>
+              </ul>
+            </ng-template>
+          </p-password>
+          <!-- <p-password placeholder="Password" name="password" ngModel required [toggleMask]="true"
+            [feedback]="true"></p-password> -->
         </div>
         <div class="addressInput">
           <span class="p-inputgroup-addon"><i class="pi pi-map-marker"></i></span>
@@ -23,11 +36,13 @@
         </div>
         <div class="radio" (change)="onRoleChange()">
           <div class="flex items-center flex-nowrap">
-            <p-radioButton name="role" [(ngModel)]="selectedRole" value="pharmacy" inputId="selectedRole" checked></p-radioButton>
+            <p-radioButton name="role" [(ngModel)]="selectedRole" value="pharmacy" inputId="selectedRole"
+              checked></p-radioButton>
             <label for="selectedRole" class="ml-2 mr-4">Pharmacy</label> <!-- Adjust the margin value as needed -->
           </div>
           <div class="flex items-center flex-nowrap">
-            <p-radioButton name="role" [(ngModel)]="selectedRole" value="laboratory" inputId="selectedRole2" checked></p-radioButton>
+            <p-radioButton name="role" [(ngModel)]="selectedRole" value="laboratory" inputId="selectedRole2"
+              checked></p-radioButton>
             <label for="selectedRole2" class="ml-2 mr-4">Laboratory</label> <!-- Adjust the margin value as needed -->
           </div>
         </div>

@@ -19,6 +19,7 @@ import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DropdownModule } from 'primeng/dropdown';
+import { DividerModule } from 'primeng/divider';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -60,7 +61,8 @@ import { UsersProfilComponent } from './users-profil/users-profil.component';
     InputTextModule,
     DialogModule,
     DynamicDialogModule,
-    DropdownModule
+    DropdownModule,
+    DividerModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

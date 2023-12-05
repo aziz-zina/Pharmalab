@@ -18,7 +18,7 @@ export class UserServiceService {
   }
 
   public register(user: User): Observable<User> {
-    //console.log(user);
+    console.log(this.httpClient);
     return this.httpClient.post<User>(this.apiUrl + "/register", user, { withCredentials: true });
   }
 
