@@ -52,6 +52,7 @@ mongoose.connect(process.env.DATABASE_URL, { dbName: process.env.DBNAME })
 })
 //?IF REJECTED(CONNECTION FAILED), CATCH THE ERROR AND DO WHAT'S INSIDE THE {}
 .catch((err) => {
+    console.log('Error connecting to database: ' + process.env.DBNAME);
     console.log(err);
 });
 

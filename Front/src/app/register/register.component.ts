@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
       this.userService.register(new User(email, address, name, role, psw)).subscribe(
         (data) => {
           console.log(data);
-          //this.router.navigate(['./Login']);
+          this.router.navigate(['./Login']);
         }, (error) => {
           console.log(error.error);
           this.showError(error.error.message);

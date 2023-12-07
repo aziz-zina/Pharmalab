@@ -1,0 +1,55 @@
+<!-- Medicine Form -->
+<form class="medicine-form">
+
+  <H2>Add a medicine</H2>
+
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" pInputText  />
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea rows="5" cols="50" pInputTextarea></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Chemical composition:</label>
+    <input type="chemical_composition" pInputText />
+  </div>
+
+  <div class="form-group">
+    <label for="description">Side Effects:</label>
+    <textarea rows="5" cols="50" pInputTextarea></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Dosage :</label>
+    <p-dropdown [(ngModel)]="selectedDosageForm" [options]="dosageFormOptions" placeholder="Select Dosage Form"></p-dropdown>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Manufacture date:</label>
+    <p-calendar [maxDate]="minDate" [readonlyInput]="true" [showIcon]="true" [style]="{'width':'70%'}" [inputStyle]="{'width':'70%'}"></p-calendar>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Expiration date:</label>
+    <p-calendar [minDate]="minDate" [readonlyInput]="true" [showIcon]="true" [style]="{'width':'70%'}" [inputStyle]="{'width':'70%'}"></p-calendar>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Price:</label>
+    <p-inputNumber inputId="currency-tunisia" mode="currency" currency="TND" locale="ar-TN" currencyDisplay="code" [style]="{'width':'70%'}" [inputStyle]="{'width':'70%'}"> </p-inputNumber>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Quantity:</label>
+    <p-inputNumber inputId="integeronly" [style]="{'width':'70%'}" [inputStyle]="{'width':'70%'}"> </p-inputNumber>
+  </div>
+
+  <!-- Add other fields similarly -->
+  <div class="button-div">
+    <p-button label="Sign up" routerLink="../Register" ></p-button>
+  </div>
+</form>

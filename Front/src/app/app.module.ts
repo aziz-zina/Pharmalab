@@ -20,6 +20,9 @@ import { DialogModule } from 'primeng/dialog';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { DividerModule } from 'primeng/divider';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { CalendarModule } from 'primeng/calendar';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -30,6 +33,7 @@ import { RegisterComponent } from './register/register.component';
 import { UsersComponent } from './users/users.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
 import { UsersProfilComponent } from './users-profil/users-profil.component';
+import { AddMedicineComponent } from './add-medicine/add-medicine.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,8 @@ import { UsersProfilComponent } from './users-profil/users-profil.component';
     RegisterComponent,
     UsersComponent,
     UserProfilComponent,
-    UsersProfilComponent
+    UsersProfilComponent,
+    AddMedicineComponent
   ],
   imports: [
     TieredMenuModule,
@@ -62,6 +67,9 @@ import { UsersProfilComponent } from './users-profil/users-profil.component';
     DialogModule,
     DynamicDialogModule,
     DropdownModule,
+    InputNumberModule,
+    CalendarModule,
+    InputTextareaModule,
     DividerModule
   ],
   providers: [MessageService],

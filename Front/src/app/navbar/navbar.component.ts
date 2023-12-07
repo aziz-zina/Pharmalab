@@ -82,6 +82,9 @@ export class NavbarComponent implements OnDestroy{
                   {
                     label: 'Medicines', icon: 'pi pi-fw pi-shield', routerLink: './'
                   },
+                  {
+                    label: 'Add Medicines', icon: 'pi pi-fw pi-plus', routerLink: './AddMedicine'
+                  },
                   { label: 'Logout', icon: 'pi pi-fw pi-power-off', command: () => { this.logout(); }}
                 ];
               }
