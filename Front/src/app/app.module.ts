@@ -34,6 +34,8 @@ import { UsersComponent } from './users/users.component';
 import { UserProfilComponent } from './user-profil/user-profil.component';
 import { UsersProfilComponent } from './users-profil/users-profil.component';
 import { AddMedicineComponent } from './add-medicine/add-medicine.component';
+import { ListMedicinesComponent } from './list-medicines/list-medicines.component';
+import { MedicineDetailsComponent } from './medicine-details/medicine-details.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { AddMedicineComponent } from './add-medicine/add-medicine.component';
     UsersComponent,
     UserProfilComponent,
     UsersProfilComponent,
-    AddMedicineComponent
+    AddMedicineComponent,
+    ListMedicinesComponent,
+    MedicineDetailsComponent
   ],
   imports: [
     TieredMenuModule,

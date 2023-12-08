@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UsersComponent } from './users/users.component';
 import { AddMedicineComponent } from './add-medicine/add-medicine.component';
+import { ListMedicinesComponent } from './list-medicines/list-medicines.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -14,10 +15,11 @@ const routes: Routes = [
   { path: 'Users', component: UsersComponent },
   { path: 'Profil', component: UserProfilComponent },
   { path: 'AddMedicine', component: AddMedicineComponent },
+  { path: 'Medicines', component: ListMedicinesComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

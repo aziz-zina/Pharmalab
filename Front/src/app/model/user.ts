@@ -1,4 +1,5 @@
 export class User {
+  public _id: string;
   public name: string;
   public email: string;
   public password?: string;
@@ -6,7 +7,13 @@ export class User {
   public role: string;
   public state: string;
 
-  constructor(email: string, address: string, name: string, role: string, password?: string) {
+  constructor(
+    email: string,
+    address: string,
+    name: string,
+    role: string,
+    password?: string
+  ) {
     this.email = email;
     this.password = password;
     this.address = address;
@@ -18,4 +25,7 @@ export class User {
     this.state = state;
   }
 
+  getId() {
+    return this._id;
+  }
 }

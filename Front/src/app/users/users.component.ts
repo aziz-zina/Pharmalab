@@ -6,30 +6,51 @@ import { User } from '../model/user';
 import { MessageService, SortEvent } from 'primeng/api';
 import { DialogService } from 'primeng/dynamicdialog';
 import { UsersProfilComponent } from '../users-profil/users-profil.component';
+import { Emitters } from '../emitters/emitters';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css'],
-  providers: [DialogService]
+  providers: [DialogService],
 })
 export class UsersComponent {
-
   //selectedData: User;
   editMode: boolean = false;
 
-  constructor(private userService: UserServiceService, private router: Router, private navbarService: NavbarService, public messageService: MessageService, public dialogService: DialogService) { }
+  constructor(
+    private userService: UserServiceService,
+    private router: Router,
+    private navbarService: NavbarService,
+    public messageService: MessageService,
+    public dialogService: DialogService
+  ) {}
 
   showError(msg: string) {
-    this.messageService.add({ key: 'msg3', severity: 'error', summary: 'Error', detail: msg });
+    this.messageService.add({
+      key: 'msg3',
+      severity: 'error',
+      summary: 'Error',
+      detail: msg,
+    });
   }
 
   showErrorLogin(msg: string) {
-    this.messageService.add({ key: 'msg4', severity: 'error', summary: 'Error', detail: msg });
+    this.messageService.add({
+      key: 'msg4',
+      severity: 'error',
+      summary: 'Error',
+      detail: msg,
+    });
   }
 
   showDeleteSuccess(msg: string) {
-    this.messageService.add({ key: 'msg5', severity: 'success', summary: 'Success', detail: msg });
+    this.messageService.add({
+      key: 'msg5',
+      severity: 'success',
+      summary: 'Success',
+      detail: msg,
+    });
   }
 
   pharmacies: User[] = [];
@@ -43,7 +64,7 @@ export class UsersComponent {
       (error) => {
         console.log(error);
       }
-    )
+    );
   }
 
   getAllLaboratories() {
@@ -54,12 +75,12 @@ export class UsersComponent {
       (error) => {
         console.log(error);
       }
-    )
+    );
   }
 
   showNavbar: boolean = true;
   authenticated: boolean = false;
-  userName: string = "";
+  userName: string = '';
   visible: boolean = false;
 
   // showDialog(data: any) {
@@ -71,11 +92,16 @@ export class UsersComponent {
   checkIntention: boolean = false;
 
   show(selectedData: User) {
-    this.originalData = new User(selectedData.email, selectedData.address, selectedData.name, selectedData.role);
+    this.originalData = new User(
+      selectedData.email,
+      selectedData.address,
+      selectedData.name,
+      selectedData.role
+    );
     const ref = this.dialogService.open(UsersProfilComponent, {
       header: selectedData.name,
       width: '50%',
-      contentStyle: { "max-height": "550px", "overflow": "auto" },
+      contentStyle: { 'max-height': '550px', overflow: 'auto' },
       baseZIndex: 10000,
       data: {
         selectedData: selectedData,
@@ -86,34 +112,36 @@ export class UsersComponent {
     });
 
     ref.onClose.subscribe((user: User) => {
-      if(!this.checkIntention){
+      if (!this.checkIntention) {
         this.getAllPharmacies();
         this.getAllLaboratories();
-        if(user){
+        if (user) {
           //console.log(this.deletedUser);
-
         }
       }
-    })
+    });
   }
 
   ngOnInit(): void {
     this.userService.getUser().subscribe(
       (data) => {
-        this.userName = (data.name).toString();
-        if (data.role == "pharmacy" || data.role == "laboratory") {
+        this.userName = data.name.toString();
+        if (data.role == 'pharmacy' || data.role == 'laboratory') {
           this.router.navigate(['./']);
           this.showError("You don't have the permission to access this page.");
         } else {
           this.navbarService.display();
           this.getAllPharmacies();
           this.getAllLaboratories();
+          Emitters.authEmitter.emit(true);
         }
-      }
-      , (error) => {
+      },
+      (error) => {
         console.log(error);
+        Emitters.authEmitter.emit(false);
         this.router.navigate(['./Login']);
-        this.showErrorLogin("You need to login first.");
-      })
+        this.showErrorLogin('You need to login first.');
+      }
+    );
   }
 }

@@ -1,0 +1,180 @@
+<!-- app-users-profil.component.html -->
+<p-toast position="top-center" key="msg-selected-role"></p-toast>
+<div class="user-profile">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input
+      id="name"
+      [(ngModel)]="selectedData.name"
+      [disabled]="!editMode || disabled_state"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="address">Description:</label>
+    <textarea
+      rows="5"
+      cols="77"
+      pInputTextarea
+      name="desc"
+      ngModel
+      required
+      [(ngModel)]="selectedData.description"
+      [disabled]="!editMode || disabled_state"
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="address">Chemical Composition:</label>
+    <input
+      id="address"
+      [(ngModel)]="selectedData.chemical_composition"
+      [disabled]="!editMode || disabled_state"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="address">Side Effects:</label>
+    <textarea
+      rows="5"
+      cols="77"
+      pInputTextarea
+      name="desc"
+      ngModel
+      required
+      [(ngModel)]="selectedData.side_effects"
+      [disabled]="!editMode || disabled_state"
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="state">Dosage Form:</label>
+    <p-dropdown
+      *ngIf="editMode"
+      [options]="Roles"
+      [(ngModel)]="selectedRole"
+      [showClear]="false"
+      placeholder="Select a Role"
+      [ngModelOptions]="{ standalone: true }"
+      [disabled]="disabled_state"
+    ></p-dropdown>
+    <input
+      *ngIf="!editMode"
+      id="state"
+      [(ngModel)]="selectedData.dosage_form"
+      [disabled]="!editMode || disabled_state"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="name">Manufacture Date:</label>
+    <input
+      id="name"
+      *ngIf="!editMode"
+      [(ngModel)]="selectedData.manufacture_date"
+      [disabled]="!editMode || disabled_state"
+    />
+    <p-calendar
+      *ngIf="editMode"
+      [maxDate]="minDate"
+      [readonlyInput]="true"
+      [showIcon]="true"
+      [style]="{ width: '70%' }"
+      [inputStyle]="{ width: '70%' }"
+      appendTo="body"
+      name="manDate"
+      ngModel
+      [disabled]="disabled_state"
+    ></p-calendar>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Expiry Date:</label>
+    <input
+      id="name"
+      *ngIf="!editMode"
+      [(ngModel)]="selectedData.expiry_date"
+      [disabled]="!editMode || disabled_state"
+    />
+    <p-calendar
+      *ngIf="editMode"
+      [minDate]="minDate"
+      [readonlyInput]="true"
+      [showIcon]="true"
+      [style]="{ width: '70%' }"
+      [inputStyle]="{ width: '70%' }"
+      appendTo="body"
+      name="manDate"
+      ngModel
+      [disabled]="disabled_state"
+    ></p-calendar>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Price:</label>
+    <input
+      id="name"
+      [(ngModel)]="selectedData.price"
+      [disabled]="!editMode || disabled_state"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="name">Quantity:</label>
+    <input
+      id="name"
+      [(ngModel)]="selectedData.quantity"
+      [disabled]="!editMode || disabled_state"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="name">State:</label>
+    <input
+      id="name"
+      [(ngModel)]="selectedData.state"
+      [disabled]="!editMode || disabled_state"
+    />
+  </div>
+</div>
+
+<button
+  *ngIf="!editMode"
+  pButton
+  type="button"
+  class="p-button"
+  [disabled]="disabled_state"
+  (click)="onEditClick()"
+>
+  Edit <i class="pi pi-pencil"></i>
+</button>
+
+<button
+  *ngIf="!editMode"
+  pButton
+  type="button"
+  class="p-button-danger"
+  [disabled]="disabled_state"
+>
+  Delete <i class="pi pi-trash"></i>
+</button>
+
+<button
+  *ngIf="editMode"
+  pButton
+  type="button"
+  class="p-button-success"
+  [disabled]="disabled_state"
+>
+  Save <i class="pi pi-check"></i>
+</button>
+<button
+  *ngIf="editMode"
+  pButton
+  type="button"
+  class="p-button-danger"
+  [disabled]="disabled_state"
+  (click)="onCancelClick()"
+>
+  Cancel <i class="pi pi-times"></i>
+</button>

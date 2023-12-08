@@ -1,27 +1,57 @@
 <p-toast position="top-right" key="msg"></p-toast>
 <p-toast position="top-right" key="msg4"></p-toast>
 <div class="grid p-fluid login">
-  <br><br>
+  <br /><br />
   <form #f="ngForm" (ngSubmit)="login(f)">
     <div class="info">
       <div class="col-12 md:col-4">
-        <div class=" loginInput">
+        <div class="loginInput">
           <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-          <input class="" type="text" pInputText placeholder="E-mail" name="email" ngModel required>
+          <input
+            class=""
+            type="text"
+            pInputText
+            placeholder="E-mail"
+            name="email"
+            ngModel
+            required
+            [disabled]="disable"
+          />
         </div>
         <div class="passwordInput">
           <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
-          <p-password placeholder="Password" name="password" ngModel required [toggleMask]="true" [feedback]="false"></p-password>
+          <p-password
+            placeholder="Password"
+            name="password"
+            ngModel
+            required
+            [toggleMask]="true"
+            [feedback]="false"
+            [disabled]="disable"
+          ></p-password>
         </div>
-        <br>
-        <button pButton pRipple type="submit" label="Log in" class="p-button-raised p-button-success"></button>
-        <br><br>
-        <p-button label="Sign up" routerLink="../Register" class="p-button-raised custom-blue-button"></p-button>
-        <br><br><br>
-        <a routerLink="../" class="p-button-raised p-button-success goBackHome">Go Back Home </a>
+        <br />
+        <button
+          pButton
+          pRipple
+          type="submit"
+          label="Log in"
+          class="p-button-raised p-button-success"
+          [disabled]="disable"
+        ></button>
+        <br /><br />
+        <p-button
+          label="Sign up"
+          routerLink="../Register"
+          class="p-button-raised custom-blue-button"
+          [disabled]="disable"
+        ></p-button>
+        <br /><br /><br />
+        <a routerLink="../" class="p-button-raised p-button-success goBackHome"
+          >Go Back Home
+        </a>
       </div>
     </div>
-
   </form>
 </div>
 <router-outlet></router-outlet>

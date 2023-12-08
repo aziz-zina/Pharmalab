@@ -1,19 +1,17 @@
 /* Add these styles to your existing CSS */
 
 .login {
-  border: 3px solid green;
-  margin-top: 100px;
   width: 400px;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  margin-top: 115px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker box shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 
@@ -33,10 +31,10 @@
   width: 120%; /* Make input fields take full width */
   margin-bottom: 15px; /* Adjust margin between input fields */
   margin-left: -10%; /* Adjust margin between input fields */
-}*/
+}
 
 button {
-  margin-top: 15px; /* Adjust margin for the login button */
+  /* margin-top: 15px; Adjust margin for the login button */
 }
 
 .goBackHome {

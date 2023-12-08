@@ -1,0 +1,61 @@
+
+
+/* Button Styles */
+.p-button {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px; /* Adjust the margin between buttons */
+}
+
+/* Icon Styles */
+.p-button i {
+  margin-left: 0.5em; /* Adjust the margin between icon and label */
+}
+
+/* Success Button Styles */
+.p-button-success {
+  background-color: #28a745; /* Green */
+  color: #fff; /* White */
+}
+
+.p-button-success:hover {
+  background-color: #218838; /* Darker Green on Hover */
+}
+
+/* Danger Button Styles */
+.p-button-danger {
+  background-color: #dc3545; /* Red */
+  color: #fff; /* White */
+}
+
+.p-button-danger:hover {
+  background-color: #c82333; /* Darker Red on Hover */
+}
+
+/* app-users-profil.component.css */
+.user-profile {
+  max-width: 300px;
+  margin: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 200%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+/* Add more styles as needed */

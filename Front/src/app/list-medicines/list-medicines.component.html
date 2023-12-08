@@ -1,0 +1,39 @@
+<div class="list-med">
+  <h2>List of medicines: {{ currentUser.name }}</h2>
+  <hr />
+  <p-table [value]="medicines" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="name" style="width: 15%">
+          Name<p-sortIcon field="name"></p-sortIcon>
+        </th>
+        <th pSortableColumn="price" style="width: 20%">
+          Price<p-sortIcon field="price"></p-sortIcon>
+        </th>
+        <th pSortableColumn="quantity" style="width: 15%">
+          Quantity<p-sortIcon field="quantity"></p-sortIcon>
+        </th>
+        <th pSortableColumn="expDate" style="width: 15%">
+          Expiry Date<p-sortIcon field="expDate"></p-sortIcon>
+        </th>
+        <th pSortableColumn="state" style="width: 10%">
+          State<p-sortIcon field="state"></p-sortIcon>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-med>
+      <tr (click)="show(med)">
+        <td>{{ med.name }}</td>
+        <td>{{ med.price | number : "0.3-3" }} TND</td>
+        <td>{{ med.quantity }}</td>
+        <td>{{ med.expiry_date | date : "shortDate" }}</td>
+        <td>{{ med.state }}</td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="5" style="text-align: center">Nothing to display yet.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

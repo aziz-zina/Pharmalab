@@ -3,31 +3,96 @@
 <div class="user-profile">
   <div class="form-group">
     <label for="email">Email:</label>
-    <input id="email" [(ngModel)]="selectedData.email" disabled>
+    <input id="email" [(ngModel)]="selectedData.email" disabled />
   </div>
 
   <div class="form-group">
     <label for="name">Name:</label>
-    <input id="name" [(ngModel)]="selectedData.name" [disabled]="!editMode">
+    <input
+      id="name"
+      [(ngModel)]="selectedData.name"
+      [disabled]="!editMode || disabled_state"
+    />
   </div>
 
   <div class="form-group">
     <label for="address">Address:</label>
-    <input id="address" [(ngModel)]="selectedData.address" [disabled]="!editMode">
+    <input
+      id="address"
+      [(ngModel)]="selectedData.address"
+      [disabled]="!editMode || disabled_state"
+    />
   </div>
 
   <div class="form-group">
     <label for="state">Role:</label>
-    <p-dropdown *ngIf="editMode" [options]="Roles" [(ngModel)]="selectedRole" [showClear]="false" placeholder="Select a Role" [ngModelOptions]="{standalone: true}"></p-dropdown>
-    <input *ngIf="!editMode" id="state" [(ngModel)]="selectedData.role" [disabled]="!editMode">
+    <p-dropdown
+      *ngIf="editMode"
+      [options]="Roles"
+      [(ngModel)]="selectedRole"
+      [showClear]="false"
+      placeholder="Select a Role"
+      [ngModelOptions]="{ standalone: true }"
+      [disabled]="disabled_state"
+    ></p-dropdown>
+    <input
+      *ngIf="!editMode"
+      id="state"
+      [(ngModel)]="selectedData.role"
+      [disabled]="!editMode || disabled_state"
+    />
   </div>
 
   <!-- Add other properties as needed -->
 </div>
 
-<button *ngIf="!editMode" pButton type="button" class="p-button-success" (click)="validateUser()">Validate <i class="pi pi-check"></i></button>
-<button *ngIf="!editMode" pButton type="button" class="p-button-danger" (click)="deleteUser()">Delete <i class="pi pi-trash"></i></button>
-<button *ngIf="!editMode" pButton type="button" class="p-button" (click)="onEditClick()">Edit <i class="pi pi-pencil"></i></button>
-<button *ngIf="editMode" pButton type="button" class="p-button-success" (click)="updateUser()">Save <i class="pi pi-check"></i></button>
-<button *ngIf="editMode" pButton type="button" class="p-button-danger" (click)="onCancelClick()">Cancel <i class="pi pi-times"></i></button>
-
+<button
+  *ngIf="!editMode"
+  pButton
+  type="button"
+  class="p-button-success"
+  (click)="validateUser()"
+  [disabled]="disabled_state"
+>
+  Validate <i class="pi pi-check"></i>
+</button>
+<button
+  *ngIf="!editMode"
+  pButton
+  type="button"
+  class="p-button-danger"
+  (click)="deleteUser()"
+  [disabled]="disabled_state"
+>
+  Delete <i class="pi pi-trash"></i>
+</button>
+<button
+  *ngIf="!editMode"
+  pButton
+  type="button"
+  class="p-button"
+  (click)="onEditClick()"
+  [disabled]="disabled_state"
+>
+  Edit <i class="pi pi-pencil"></i>
+</button>
+<button
+  *ngIf="editMode"
+  pButton
+  type="button"
+  class="p-button-success"
+  (click)="updateUser()"
+  [disabled]="disabled_state"
+>
+  Save <i class="pi pi-check"></i>
+</button>
+<button
+  *ngIf="editMode"
+  pButton
+  type="button"
+  class="p-button-danger"
+  (click)="onCancelClick()"
+  [disabled]="disabled_state"
+>
+  Cancel <i class="pi pi-times"></i>
+</button>

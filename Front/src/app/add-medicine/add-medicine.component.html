@@ -1,55 +1,136 @@
 <!-- Medicine Form -->
-<form class="medicine-form">
-
+<p-toast position="top-right" key="msg"></p-toast>
+<form class="medicine-form" #f="ngForm" (ngSubmit)="addMedicine(f)">
   <H2>Add a medicine</H2>
 
   <div class="form-group">
     <label for="name">Name:</label>
-    <input type="text" pInputText  />
+    <input
+      type="text"
+      pInputText
+      name="name"
+      ngModel
+      required
+      [disabled]="disable"
+    />
   </div>
 
   <div class="form-group">
     <label for="description">Description:</label>
-    <textarea rows="5" cols="50" pInputTextarea></textarea>
+    <textarea
+      rows="5"
+      cols="50"
+      pInputTextarea
+      name="desc"
+      ngModel
+      required
+      [disabled]="disable"
+    ></textarea>
   </div>
 
   <div class="form-group">
     <label for="name">Chemical composition:</label>
-    <input type="chemical_composition" pInputText />
+    <input
+      type="chemical_composition"
+      pInputText
+      name="chem"
+      ngModel
+      required
+      [disabled]="disable"
+    />
   </div>
 
   <div class="form-group">
     <label for="description">Side Effects:</label>
-    <textarea rows="5" cols="50" pInputTextarea></textarea>
+    <textarea
+      rows="5"
+      cols="50"
+      pInputTextarea
+      name="side"
+      ngModel
+      required
+      [disabled]="disable"
+    ></textarea>
   </div>
 
   <div class="form-group">
     <label for="name">Dosage :</label>
-    <p-dropdown [(ngModel)]="selectedDosageForm" [options]="dosageFormOptions" placeholder="Select Dosage Form"></p-dropdown>
+    <p-dropdown
+      [(ngModel)]="selectedDosageForm"
+      [options]="dosageFormOptions"
+      placeholder="Select Dosage Form"
+      [ngModelOptions]="{ standalone: true }"
+      [disabled]="disable"
+      (onChange)="check()"
+    ></p-dropdown>
   </div>
 
   <div class="form-group">
     <label for="name">Manufacture date:</label>
-    <p-calendar [maxDate]="minDate" [readonlyInput]="true" [showIcon]="true" [style]="{'width':'70%'}" [inputStyle]="{'width':'70%'}"></p-calendar>
+    <p-calendar
+      [maxDate]="minDate"
+      [readonlyInput]="true"
+      [showIcon]="true"
+      [style]="{ width: '70%' }"
+      [inputStyle]="{ width: '70%' }"
+      appendTo="body"
+      name="manDate"
+      ngModel
+      [disabled]="disable"
+    ></p-calendar>
   </div>
 
   <div class="form-group">
     <label for="name">Expiration date:</label>
-    <p-calendar [minDate]="minDate" [readonlyInput]="true" [showIcon]="true" [style]="{'width':'70%'}" [inputStyle]="{'width':'70%'}"></p-calendar>
+    <p-calendar
+      [minDate]="minDate"
+      [readonlyInput]="true"
+      [showIcon]="true"
+      [style]="{ width: '70%' }"
+      [inputStyle]="{ width: '70%' }"
+      appendTo="body"
+      name="expDate"
+      ngModel
+      [disabled]="disable"
+    ></p-calendar>
   </div>
 
   <div class="form-group">
     <label for="name">Price:</label>
-    <p-inputNumber inputId="currency-tunisia" mode="currency" currency="TND" locale="ar-TN" currencyDisplay="code" [style]="{'width':'70%'}" [inputStyle]="{'width':'70%'}"> </p-inputNumber>
+    <p-inputNumber
+      inputId="currency-tunisia"
+      mode="currency"
+      currency="TND"
+      locale="ar-TN"
+      currencyDisplay="code"
+      [style]="{ width: '70%' }"
+      [inputStyle]="{ width: '70%' }"
+      name="price"
+      ngModel
+      [disabled]="disable"
+    >
+    </p-inputNumber>
   </div>
 
   <div class="form-group">
     <label for="name">Quantity:</label>
-    <p-inputNumber inputId="integeronly" [style]="{'width':'70%'}" [inputStyle]="{'width':'70%'}"> </p-inputNumber>
+    <p-inputNumber
+      inputId="integeronly"
+      [style]="{ width: '70%' }"
+      [inputStyle]="{ width: '70%' }"
+      name="quantity"
+      ngModel
+      [disabled]="disable"
+    >
+    </p-inputNumber>
   </div>
 
   <!-- Add other fields similarly -->
   <div class="button-div">
-    <p-button label="Sign up" routerLink="../Register" ></p-button>
+    <p-button
+      type="submit"
+      label="Add medicine"
+      [disabled]="disable"
+    ></p-button>
   </div>
 </form>

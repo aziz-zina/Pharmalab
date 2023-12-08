@@ -4,8 +4,8 @@
   padding: 20px; /* Add padding for better spacing */
   margin: 10px auto; /* Add margin to create space around the form */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5%;
-  background-color: #F4F7F5;
+  border-radius: 5px;
+  background-color: #FFFFFF;
 }
 
 .medicine-form h2 {

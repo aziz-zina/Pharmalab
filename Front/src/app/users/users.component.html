@@ -1,53 +1,79 @@
 <p-toast position="top-right" key="msg5"></p-toast>
-<p-tabView>
-  <p-tabPanel header="Pharmacies">
-    <p-table [value]="pharmacies" [tableStyle]="{ 'min-width': '50rem' }">
-      <ng-template pTemplate="header">
-        <tr>
-          <th pSortableColumn="email" style="width:20%">Email<p-sortIcon field="email"></p-sortIcon></th>
-          <th pSortableColumn="name" style="width:20%">Name<p-sortIcon field="name"></p-sortIcon></th>
-          <th pSortableColumn="address" style="width:20%">Address<p-sortIcon field="address"></p-sortIcon></th>
-          <th pSortableColumn="state" style="width:20%">State<p-sortIcon field="state"></p-sortIcon></th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-pha>
-        <tr (click)="show(pha)">
-          <td>{{ pha.email }}</td>
-          <td>{{ pha.name }}</td>
-          <td>{{ pha.address }}</td>
-          <td>{{ pha.state }}</td>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="emptymessage">
-        <tr>
-          <td colspan="4" style="text-align: center;">Nothing to display yet.</td>
-        </tr>
-      </ng-template>
-    </p-table>
-  </p-tabPanel>
-  <p-tabPanel header="Laboratories">
-    <p-table [value]="laboratories" [tableStyle]="{ 'min-width': '50rem' }">
-      <ng-template pTemplate="header">
-        <tr>
-          <th pSortableColumn="email" style="width:20%">Email<p-sortIcon field="email"></p-sortIcon></th>
-          <th pSortableColumn="name" style="width:20%">Name<p-sortIcon field="name"></p-sortIcon></th>
-          <th pSortableColumn="address" style="width:20%">Address<p-sortIcon field="address"></p-sortIcon></th>
-          <th pSortableColumn="state" style="width:20%">State<p-sortIcon field="state"></p-sortIcon></th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-lab>
-        <tr (click)="show(lab)">
-          <td>{{ lab.email }}</td>
-          <td>{{ lab.name }}</td>
-          <td>{{ lab.address }}</td>
-          <td>{{ lab.state }}</td>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="emptymessage">
-        <tr>
-          <td colspan="4" style="text-align: center;">Nothing to display yet.</td>
-        </tr>
-      </ng-template>
-    </p-table>
-  </p-tabPanel>
-</p-tabView>
+<div class="list-users">
+  <p-tabView>
+    <p-tabPanel header="Pharmacies">
+      <h2>List of pharmacies</h2>
+      <hr />
+      <p-table [value]="pharmacies" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th pSortableColumn="email" style="width: 20%">
+              Email<p-sortIcon field="email"></p-sortIcon>
+            </th>
+            <th pSortableColumn="name" style="width: 20%">
+              Name<p-sortIcon field="name"></p-sortIcon>
+            </th>
+            <th pSortableColumn="address" style="width: 20%">
+              Address<p-sortIcon field="address"></p-sortIcon>
+            </th>
+            <th pSortableColumn="state" style="width: 20%">
+              State<p-sortIcon field="state"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-pha>
+          <tr (click)="show(pha)">
+            <td>{{ pha.email }}</td>
+            <td>{{ pha.name }}</td>
+            <td>{{ pha.address }}</td>
+            <td>{{ pha.state }}</td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="4" style="text-align: center">
+              Nothing to display yet.
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-tabPanel>
+    <p-tabPanel header="Laboratories">
+      <h2>List of laboratories</h2>
+      <hr />
+      <p-table [value]="laboratories" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th pSortableColumn="email" style="width: 30%">
+              Email<p-sortIcon field="email"></p-sortIcon>
+            </th>
+            <th pSortableColumn="name" style="width: 10%">
+              Name<p-sortIcon field="name"></p-sortIcon>
+            </th>
+            <th pSortableColumn="address" style="width: 30%">
+              Address<p-sortIcon field="address"></p-sortIcon>
+            </th>
+            <th pSortableColumn="state" style="width: 10%">
+              State<p-sortIcon field="state"></p-sortIcon>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-lab>
+          <tr (click)="show(lab)">
+            <td>{{ lab.email }}</td>
+            <td>{{ lab.name }}</td>
+            <td>{{ lab.address }}</td>
+            <td>{{ lab.state }}</td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="4" style="text-align: center">
+              Nothing to display yet.
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-tabPanel>
+  </p-tabView>
+</div>

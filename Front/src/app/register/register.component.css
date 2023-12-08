@@ -1,14 +1,14 @@
 /* Add these styles to your existing CSS or create a new CSS file for the register component */
 
 .login {
-  border: 3px solid green;
+  /* border: 3px solid green; */
   margin-top: 30px;
   width: 450px; /* Adjust the width to your desired value */
   height: auto;
   margin-left: auto;
   margin-right: auto;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
