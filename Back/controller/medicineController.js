@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { Medicine } from "../models/medicine.js";
+import { getUser } from "../controller/userController.js";
+import { User } from "../models/user.js";
 
 export const createMedicine = async (request, response) => {
   const medicine = new Medicine({

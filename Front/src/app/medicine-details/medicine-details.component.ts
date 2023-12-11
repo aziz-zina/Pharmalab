@@ -92,7 +92,7 @@ export class MedicineDetailsComponent {
 
   deleteMedicine() {
     this.disabled_state = true;
-    this.medicineService.deleteUser(this.selectedData).subscribe((data) => {
+    this.medicineService.deleteMedicine(this.selectedData).subscribe((data) => {
       this.showDeleteSuccess('User deleted successfully.');
       this.checkIntention = true;
       this.ref.close(data);

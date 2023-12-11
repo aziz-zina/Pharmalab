@@ -31,12 +31,11 @@ export class ListMedicinesComponent {
   originalData: Medicine;
   editMode: boolean = false;
   checkIntention: boolean = false;
+  lab_name: string;
 
   listPersonalMedicines(user: User) {
-    console.log(user._id);
     this.medicineService.getMedicines(user).subscribe((data) => {
       this.medicines = data;
-      console.log(data);
     });
   }
 
@@ -52,7 +51,7 @@ export class ListMedicinesComponent {
   show(selectedData: Medicine) {
     const ref = this.dialogService.open(MedicineDetailsComponent, {
       header: selectedData.name,
-      width: '50%',
+      width: '60%',
       contentStyle: { 'max-height': '550px', overflow: 'auto' },
       baseZIndex: 10000,
       data: {
@@ -63,15 +62,11 @@ export class ListMedicinesComponent {
       },
     });
 
-    // ref.onClose.subscribe((user: User) => {
-    //   // if (!this.checkIntention) {
-    //   //   this.getAllPharmacies();
-    //   //   this.getAllLaboratories();
-    //   //   if (user) {
-    //   //     //console.log(this.deletedUser);
-    //   //   }
-    //   // }
-    // });
+    ref.onClose.subscribe((user: User) => {
+      if (!this.checkIntention) {
+        this.listPersonalMedicines(this.currentUser);
+      }
+    });
   }
 
   ngOnInit(): void {
@@ -79,7 +74,13 @@ export class ListMedicinesComponent {
     this.userService.getUser().subscribe(
       (data) => {
         Emitters.authEmitter.emit(true);
-        this.currentUser = data;
+        this.currentUser = new User(
+          data.email,
+          data.address,
+          data.name,
+          data.role
+        );
+        this.lab_name = data.name;
         this.listPersonalMedicines(data);
       },
       (error) => {

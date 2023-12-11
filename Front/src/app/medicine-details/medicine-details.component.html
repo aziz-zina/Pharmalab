@@ -14,7 +14,7 @@
     <label for="address">Description:</label>
     <textarea
       rows="5"
-      cols="77"
+      cols="100"
       pInputTextarea
       name="desc"
       ngModel
@@ -37,7 +37,7 @@
     <label for="address">Side Effects:</label>
     <textarea
       rows="5"
-      cols="77"
+      cols="100"
       pInputTextarea
       name="desc"
       ngModel
@@ -137,6 +137,50 @@
   <div class="form-group">
     <label for="name">State:</label>
     <input id="name" [(ngModel)]="selectedData.state" disabled />
+  </div>
+
+  <div class="table-container">
+    <label for="buyers">Side Effects:</label>
+    <p-table
+      styleClass="p-datatable-gridlines"
+      [resizableColumns]="true"
+      [paginator]="true"
+      [rows]="4"
+      [showCurrentPageReport]="true"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      [resizableColumns]="true"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="name" style="width: 15%">
+            Email<p-sortIcon field="name"></p-sortIcon>
+          </th>
+          <th pSortableColumn="price" style="width: 20%">
+            Name<p-sortIcon field="price"></p-sortIcon>
+          </th>
+          <th pSortableColumn="quantity" style="width: 15%">
+            Address<p-sortIcon field="quantity"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-med>
+        <!-- <tr (click)="show(med)">
+          <td>{{ med.name }}</td>
+          <td>{{ med.price | number : "0.3-3" }} TND</td>
+          <td>{{ med.quantity }}</td>
+          <td>{{ med.expiry_date | date : "shortDate" }}</td>
+          <td>{{ med.state }}</td>
+        </tr> -->
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="3" style="text-align: center">
+            Nothing to display yet.
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
   </div>
 </div>
 

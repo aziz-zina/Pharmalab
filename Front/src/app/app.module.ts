@@ -23,6 +23,7 @@ import { DividerModule } from 'primeng/divider';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { CalendarModule } from 'primeng/calendar';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { CardModule } from 'primeng/card';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -49,7 +50,7 @@ import { MedicineDetailsComponent } from './medicine-details/medicine-details.co
     UsersProfilComponent,
     AddMedicineComponent,
     ListMedicinesComponent,
-    MedicineDetailsComponent
+    MedicineDetailsComponent,
   ],
   imports: [
     TieredMenuModule,
@@ -74,9 +75,10 @@ import { MedicineDetailsComponent } from './medicine-details/medicine-details.co
     InputNumberModule,
     CalendarModule,
     InputTextareaModule,
-    DividerModule
+    DividerModule,
+    CardModule,
   ],
   providers: [MessageService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
