@@ -1,5 +1,5 @@
 <!-- app-users-profil.component.html -->
-<p-toast position="top-center" key="msg-selected-role"></p-toast>
+<p-toast position="top-center" key="msg-data"></p-toast>
 <div class="user-profile">
   <div class="form-group">
     <label for="name">Name:</label>
@@ -112,7 +112,12 @@
 
   <div class="form-group">
     <label for="name">Price:</label>
-    <input
+    <p-inputNumber
+      inputId="currency-tunisia"
+      mode="currency"
+      currency="TND"
+      locale="ar-TN"
+      currencyDisplay="code"
       id="name"
       [(ngModel)]="selectedData.price"
       [disabled]="!editMode || disabled_state"
@@ -121,8 +126,9 @@
 
   <div class="form-group">
     <label for="name">Quantity:</label>
-    <input
+    <p-inputNumber
       id="name"
+      inputId="integeronly"
       [(ngModel)]="selectedData.quantity"
       [disabled]="!editMode || disabled_state"
     />
@@ -130,11 +136,7 @@
 
   <div class="form-group">
     <label for="name">State:</label>
-    <input
-      id="name"
-      [(ngModel)]="selectedData.state"
-      [disabled]="!editMode || disabled_state"
-    />
+    <input id="name" [(ngModel)]="selectedData.state" disabled />
   </div>
 </div>
 
@@ -155,6 +157,7 @@
   type="button"
   class="p-button-danger"
   [disabled]="disabled_state"
+  (click)="deleteMedicine()"
 >
   Delete <i class="pi pi-trash"></i>
 </button>
@@ -165,6 +168,7 @@
   type="button"
   class="p-button-success"
   [disabled]="disabled_state"
+  (click)="updateMedicine()"
 >
   Save <i class="pi pi-check"></i>
 </button>

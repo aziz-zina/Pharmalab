@@ -25,4 +25,18 @@ export class MedicineServiceService {
       withCredentials: true,
     });
   }
+
+  public updateMedicine(medicine: Medicine): Observable<any> {
+    return this.httpClient.patch(this.apiUrl + '/updateMedicine', medicine, {
+      withCredentials: true,
+    });
+  }
+
+  public deleteMedicine(medicine: Medicine): Observable<any> {
+    const options = {
+      body: medicine,
+      withCredentials: true,
+    };
+    return this.httpClient.delete(this.apiUrl + '/deleteMedicine', options);
+  }
 }

@@ -8,6 +8,7 @@ import { Medicine } from '../model/medicine';
 import { User } from '../model/user';
 import { DialogService } from 'primeng/dynamicdialog';
 import { MedicineDetailsComponent } from '../medicine-details/medicine-details.component';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-list-medicines',
@@ -21,7 +22,8 @@ export class ListMedicinesComponent {
     private router: Router,
     private navbarService: NavbarService,
     private medicineService: MedicineServiceService,
-    public dialogService: DialogService
+    public dialogService: DialogService,
+    private messageService: MessageService
   ) {}
 
   medicines: Medicine[] = [];
@@ -35,6 +37,15 @@ export class ListMedicinesComponent {
     this.medicineService.getMedicines(user).subscribe((data) => {
       this.medicines = data;
       console.log(data);
+    });
+  }
+
+  showDeleteSuccess(msg: string) {
+    this.messageService.add({
+      key: 'msg5',
+      severity: 'success',
+      summary: 'Success',
+      detail: msg,
     });
   }
 

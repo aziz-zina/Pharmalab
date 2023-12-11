@@ -3,8 +3,6 @@ import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { Medicine } from "../models/medicine.js";
-import { getUser } from "../controller/userController.js";
-import { User } from "../models/user.js";
 
 export const createMedicine = async (request, response) => {
   const medicine = new Medicine({
@@ -54,37 +52,42 @@ export const getMedicine = async (request, response) => {
 
 export const deleteMedicine = async (request, response) => {
   try {
-    const deletedMedicine = await User.deleteOne({ _id: request.body._id });
+    const deletedMedicine = await Medicine.deleteOne({ _id: request.body._id });
 
-    if (deletedUser.deletedCount === 1) {
-      response.status(200).json({ message: "Medicine deleted successfully" });
+    if (deletedMedicine.deletedCount === 1) {
+      return response
+        .status(200)
+        .json({ message: "Medicine deleted successfully" });
     } else {
-      response.status(404).json({ message: "Medicine not found" });
+      return response.status(404).json({ message: "Medicine not found" });
     }
   } catch (error) {
     console.error(error);
-    response.status(500).json({ message: "Internal Server Error" });
+    return response.status(500).json({ message: "Internal Server Error" });
   }
 };
 
-export const updateUser = async (request, response) => {
-  console.log(request.body);
+export const updateMedicine = async (request, response) => {
+  //console.log(request.body);
+  console.log(request.body._id);
   try {
     //const userEmail = await User.findOne({ email: request.body.email });
-    const result = await User.findOneAndUpdate(
-      { email: request.body.email },
+    const result = await Medicine.findOneAndUpdate(
+      { _id: request.body._id },
       { $set: request.body },
       { new: true }
     );
     console.log(result);
     if (result) {
-      response.status(200).json({ message: "User updated successfully" });
+      return response
+        .status(200)
+        .json({ message: "Medicine updated successfully" });
     } else {
       // User with the specified email not found
-      response.status(404).json({ message: "User not found" });
+      return response.status(404).json({ message: "Medicine not found" });
     }
   } catch (error) {
     console.error(error);
-    response.status(500).json({ message: "Internal Server Error" });
+    return response.status(500).json({ message: "Internal Server Error" });
   }
 };

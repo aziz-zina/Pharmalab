@@ -1,6 +1,7 @@
 import { User } from './user';
 
 export class Medicine {
+  public _id: string;
   public name: string;
   public description: string;
   public chemical_composition: string;
@@ -40,5 +41,9 @@ export class Medicine {
     this.producer = producer;
     this.buyers = buyers;
     this.state = state;
+  }
+
+  setId(id: string) {
+    this._id = id;
   }
 }

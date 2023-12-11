@@ -1,19 +1,21 @@
 //! When you do "export default", you call that varibale without {}
 //! When you do "export const", you call that varibale with {}
 //Importing express library
-import express from 'express';
+import express from "express";
 
-import {createUser} from '../controller/userController.js';
-import {login} from '../controller/userController.js';
-import {pharmacies} from '../controller/userController.js';
-import {getUser} from '../controller/userController.js';
-import {logout} from '../controller/userController.js';
-import {laboratories} from '../controller/userController.js';
-import {deleteUser} from '../controller/userController.js';
-import {updateUser} from '../controller/userController.js';
+import { createUser } from "../controller/userController.js";
+import { login } from "../controller/userController.js";
+import { pharmacies } from "../controller/userController.js";
+import { getUser } from "../controller/userController.js";
+import { logout } from "../controller/userController.js";
+import { laboratories } from "../controller/userController.js";
+import { deleteUser } from "../controller/userController.js";
+import { updateUser } from "../controller/userController.js";
 
-import {createMedicine} from '../controller/medicineController.js';
-import {getMedicine} from '../controller/medicineController.js';
+import { createMedicine } from "../controller/medicineController.js";
+import { getMedicine } from "../controller/medicineController.js";
+import { deleteMedicine } from "../controller/medicineController.js";
+import { updateMedicine } from "../controller/medicineController.js";
 
 //Create an instance of express
 const router = express.Router();
@@ -21,13 +23,13 @@ const router = express.Router();
 // define the home page route
 //* ASYNC = this function will take a while to execute
 //! THE USER APIs
-router.post('/login', login)
+router.post("/login", login);
 
-router.post('/register', createUser)
+router.post("/register", createUser);
 
-router.get("/user", getUser)
+router.get("/user", getUser);
 
-router.post("/logout", logout)
+router.post("/logout", logout);
 
 router.get("/pharmacies", pharmacies);
 
@@ -37,11 +39,14 @@ router.delete("/deleteUser", deleteUser);
 
 router.patch("/updateUser", updateUser);
 
-
 //! THE MEDICINE APIs
-router.post('/addMedicine', createMedicine)
+router.post("/addMedicine", createMedicine);
 
-router.get('/getMedicine', getMedicine)
+router.get("/getMedicine", getMedicine);
+
+router.patch("/updateMedicine", updateMedicine);
+
+router.delete("/deleteMedicine", deleteMedicine);
 
 //Exporting the router
 export default router;
