@@ -39,4 +39,16 @@ export class MedicineServiceService {
     };
     return this.httpClient.delete(this.apiUrl + '/deleteMedicine', options);
   }
+
+  public getAllValidMedicines(): Observable<Medicine[]> {
+    return this.httpClient.get<Medicine[]>(this.apiUrl + '/medicines', {
+      withCredentials: true,
+    });
+  }
+
+  public getAllValidLaboratories(): Observable<User[]> {
+    return this.httpClient.get<User[]>(this.apiUrl + '/labs', {
+      withCredentials: true,
+    });
+  }
 }

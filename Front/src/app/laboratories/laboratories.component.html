@@ -1,0 +1,49 @@
+<p-toast position="top-center" key="msg5"></p-toast>
+<div class="list-med">
+  <h2>Medicines</h2>
+  <hr />
+  <p-table
+    #dt1
+    [value]="laboratories"
+    dataKey="id"
+    [rows]="10"
+    [showCurrentPageReport]="true"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [paginator]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+  >
+    <ng-template pTemplate="caption">
+      <div class="flex">
+        <span class="p-input-icon-left ml-auto">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" placeholder="Search keyword" />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="name" style="width: 15%">
+          Email<p-sortIcon field="name"></p-sortIcon>
+        </th>
+        <th pSortableColumn="price" style="width: 20%">
+          Name<p-sortIcon field="price"></p-sortIcon>
+        </th>
+        <th pSortableColumn="quantity" style="width: 15%">
+          Address<p-sortIcon field="quantity"></p-sortIcon>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-lab>
+      <tr>
+        <td>{{ lab.email }}</td>
+        <td>{{ lab.name }}</td>
+        <td>{{ lab.address }}</td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="5" style="text-align: center">Nothing to display yet.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

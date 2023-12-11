@@ -4,7 +4,11 @@
     <p-tabPanel header="Pharmacies">
       <h2>List of pharmacies</h2>
       <hr />
-      <p-table [value]="pharmacies" [tableStyle]="{ 'min-width': '50rem' }">
+      <p-table
+        [value]="pharmacies"
+        [tableStyle]="{ 'min-width': '50rem' }"
+        styleClass="p-datatable-gridlines"
+      >
         <ng-template pTemplate="header">
           <tr>
             <th pSortableColumn="email" style="width: 20%">
@@ -41,7 +45,11 @@
     <p-tabPanel header="Laboratories">
       <h2>List of laboratories</h2>
       <hr />
-      <p-table [value]="laboratories" [tableStyle]="{ 'min-width': '50rem' }">
+      <p-table
+        [value]="laboratories"
+        [tableStyle]="{ 'min-width': '50rem' }"
+        styleClass="p-datatable-gridlines"
+      >
         <ng-template pTemplate="header">
           <tr>
             <th pSortableColumn="email" style="width: 30%">

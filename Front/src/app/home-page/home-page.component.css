@@ -1,0 +1,25 @@
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.custom-card {
+  width: 70%; /* Adjust the width as needed */
+}
+
+.card-content {
+  display: flex;
+  align-items: center; /* Center items vertically within card-content */
+}
+
+.card-image {
+  width: 300px; /* Adjust the width of the image as needed */
+  height: auto;
+}
+
+.card-description {
+  margin-left: 20px; /* Adjust the margin between image and description as needed */
+  text-align: justify; /* Adjust the text alignment as needed */
+}

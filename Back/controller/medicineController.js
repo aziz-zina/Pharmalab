@@ -93,3 +93,29 @@ export const updateMedicine = async (request, response) => {
     return response.status(500).json({ message: "Internal Server Error" });
   }
 };
+
+export const medicines = async (request, response) => {
+  try {
+    // Fetch all users with role 'pharmacy' from the database
+    const medicines = await Medicine.find({ state: "Valid" });
+
+    response.send(medicines);
+  } catch (error) {
+    console.error(error);
+    response.status(500).json({ message: "Internal Server Error." });
+  }
+};
+
+export const labs = async (request, response) => {
+  try {
+    // Fetch all users with role 'laboratory' from the database
+    const lab = await User.find(
+      { role: "laboratory", state: "Valid" },
+      { password: 0 }
+    );
+    response.send(lab);
+  } catch (error) {
+    console.error(error);
+    response.status(500).json({ message: "Internal Server Error." });
+  }
+};

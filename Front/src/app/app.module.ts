@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { MessageService } from 'primeng/api';
 import { MenuModule } from 'primeng/menu';
 import { MenubarModule } from 'primeng/menubar';
@@ -23,6 +24,7 @@ import { DividerModule } from 'primeng/divider';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { CalendarModule } from 'primeng/calendar';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { TreeTableModule } from 'primeng/treetable';
 import { CardModule } from 'primeng/card';
 
 import { HomePageComponent } from './home-page/home-page.component';
@@ -37,6 +39,8 @@ import { UsersProfilComponent } from './users-profil/users-profil.component';
 import { AddMedicineComponent } from './add-medicine/add-medicine.component';
 import { ListMedicinesComponent } from './list-medicines/list-medicines.component';
 import { MedicineDetailsComponent } from './medicine-details/medicine-details.component';
+import { MedicinesComponent } from './medicines/medicines.component';
+import { LaboratoriesComponent } from './laboratories/laboratories.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +55,8 @@ import { MedicineDetailsComponent } from './medicine-details/medicine-details.co
     AddMedicineComponent,
     ListMedicinesComponent,
     MedicineDetailsComponent,
+    MedicinesComponent,
+    LaboratoriesComponent,
   ],
   imports: [
     TieredMenuModule,
@@ -58,10 +64,12 @@ import { MedicineDetailsComponent } from './medicine-details/medicine-details.co
     HttpClientModule,
     TabViewModule,
     BrowserAnimationsModule,
+    TreeTableModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     ButtonModule,
+    ConfirmDialogModule,
     ToastModule,
     TableModule,
     MenuModule,

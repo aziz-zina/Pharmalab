@@ -117,7 +117,7 @@ export class NavbarComponent implements OnDestroy {
                   {
                     label: 'Medicines',
                     icon: 'pi pi-fw pi-shield',
-                    routerLink: './Medicines',
+                    routerLink: './MedicinesList',
                   },
                   {
                     label: 'Add Medicines',
@@ -146,16 +146,21 @@ export class NavbarComponent implements OnDestroy {
     );
 
     this.items = [
-      { label: 'Home Page', icon: 'pi pi-fw pi-home', routerLink: './' },
       {
-        label: 'Frais',
-        icon: 'pi pi-fw pi-folder',
-        items: [
-          { label: 'Consulter Frais', routerLink: './consulterFrais' },
-          { label: 'Les Fais en attente', routerLink: './listFrais' },
-        ],
+        label: 'Home Page',
+        icon: 'pi pi-fw pi-home',
+        routerLink: './',
       },
-      { label: '', icon: '', routerLink: './', disabled: true },
+      {
+        label: 'Laboratories',
+        icon: '',
+        routerLink: './Laboratories',
+      },
+      {
+        label: 'Medicines',
+        icon: '',
+        routerLink: './Medicines',
+      },
     ];
 
     this.activeItem = this.items[3];

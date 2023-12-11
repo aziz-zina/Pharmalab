@@ -3,13 +3,18 @@ import { Medicine } from '../model/medicine';
 import { MedicineServiceService } from '../services/medicine-service.service';
 import { Router } from '@angular/router';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { MessageService } from 'primeng/api';
+import {
+  ConfirmEventType,
+  ConfirmationService,
+  MessageService,
+} from 'primeng/api';
 import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-medicine-details',
   templateUrl: './medicine-details.component.html',
   styleUrls: ['./medicine-details.component.css'],
+  providers: [ConfirmationService, MessageService],
 })
 export class MedicineDetailsComponent {
   selectedData: Medicine;
@@ -33,6 +38,7 @@ export class MedicineDetailsComponent {
   selectedRole: string;
 
   constructor(
+    private confirmationService: ConfirmationService,
     private medicineService: MedicineServiceService,
     private route: Router,
     private config: DynamicDialogConfig,

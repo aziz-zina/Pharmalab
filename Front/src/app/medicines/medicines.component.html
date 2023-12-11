@@ -1,6 +1,6 @@
 <p-toast position="top-center" key="msg5"></p-toast>
 <div class="list-med">
-  <h2>List of medicines: {{ lab_name }}</h2>
+  <h2>Medicines</h2>
   <hr />
   <p-table
     [value]="medicines"
@@ -32,7 +32,7 @@
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-med>
-      <tr (click)="show(med)">
+      <tr>
         <td>{{ med.name }}</td>
         <td>{{ med.price | number : "0.3-3" }} TND</td>
         <td>{{ med.quantity }}</td>
