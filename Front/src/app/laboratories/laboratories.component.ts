@@ -23,7 +23,7 @@ export class LaboratoriesComponent {
     private medicineService: MedicineServiceService
   ) {}
 
-  listMedicines() {
+  listLaboratories() {
     this.medicineService.getAllValidLaboratories().subscribe((data) => {
       this.laboratories = data;
     });
@@ -31,10 +31,10 @@ export class LaboratoriesComponent {
 
   ngOnInit(): void {
     this.navbarService.display();
+    this.listLaboratories();
     this.userService.getUser().subscribe(
       (data) => {
         Emitters.authEmitter.emit(true);
-        this.listMedicines();
       },
       (error) => {
         Emitters.authEmitter.emit(false);

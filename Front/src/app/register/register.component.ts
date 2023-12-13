@@ -10,28 +10,43 @@ import { Validators, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit, OnDestroy {
-
-  constructor(private userService: UserServiceService, private messageService: MessageService, private router: Router, private navbarService: NavbarService, private elementRef: ElementRef) { }
+  constructor(
+    private userService: UserServiceService,
+    private messageService: MessageService,
+    private router: Router,
+    private navbarService: NavbarService,
+    private elementRef: ElementRef
+  ) {}
 
   selectedRole: string = 'pharmacy';
 
   showError(msg: string) {
-    this.messageService.add({ key: 'msg', severity: 'error', summary: 'Error', detail: msg });
+    this.messageService.add({
+      key: 'msg',
+      severity: 'error',
+      summary: 'Error',
+      detail: msg,
+    });
   }
 
   showWarn(msg: string) {
-    this.messageService.add({ key: 'msg', severity: 'warn', summary: 'Warning', detail: msg });
+    this.messageService.add({
+      key: 'msg',
+      severity: 'warn',
+      summary: 'Warning',
+      detail: msg,
+    });
   }
 
   register(f: NgForm) {
-    let name = f.value["name"];
-    let psw = f.value["password"];
-    let email = f.value["email"];
+    let name = f.value['name'];
+    let psw = f.value['password'];
+    let email = f.value['email'];
     email = email.toLowerCase();
-    let address = f.value["address"];
+    let address = f.value['address'];
     let role = this.selectedRole;
 
     // console.log(this.isValidPassword(psw));
@@ -41,18 +56,21 @@ export class RegisterComponent implements OnInit, OnDestroy {
     //   this.showWarn("Jawek bnin");
     // }
 
-    if (name == "" || psw == "" || email == "" || address == "") {
-      this.showWarn("You have to fill the form first");
+    if (name == '' || psw == '' || email == '' || address == '') {
+      this.showWarn('You have to fill the form first');
     } else {
-      this.userService.register(new User(email, address, name, role, psw)).subscribe(
-        (data) => {
-          console.log(data);
-          this.router.navigate(['./Login']);
-        }, (error) => {
-          console.log(error.error);
-          this.showError(error.error.message);
-        }
-      )
+      this.userService
+        .register(new User(email, address, name, role, psw))
+        .subscribe(
+          (data) => {
+            console.log(data);
+            this.router.navigate(['./Login']);
+          },
+          (error) => {
+            console.log(error.error);
+            this.showError(error.error.message);
+          }
+        );
     }
   }
 
@@ -67,5 +85,4 @@ export class RegisterComponent implements OnInit, OnDestroy {
   onRoleChange() {
     console.log('Selected role changed:', this.selectedRole);
   }
-
 }

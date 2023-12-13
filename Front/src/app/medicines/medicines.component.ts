@@ -31,10 +31,10 @@ export class MedicinesComponent {
 
   ngOnInit(): void {
     this.navbarService.display();
+    this.listMedicines();
     this.userService.getUser().subscribe(
       (data) => {
         Emitters.authEmitter.emit(true);
-        this.listMedicines();
       },
       (error) => {
         Emitters.authEmitter.emit(false);

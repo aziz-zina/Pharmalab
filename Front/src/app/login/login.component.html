@@ -1,4 +1,4 @@
-<p-toast position="top-right" key="msg"></p-toast>
+<p-toast position="top-right" key="msg" data-toastId="toast"></p-toast>
 <p-toast position="top-right" key="msg4"></p-toast>
 <div class="grid p-fluid login">
   <br /><br />
@@ -8,7 +8,6 @@
         <div class="loginInput">
           <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
           <input
-            class=""
             type="text"
             pInputText
             placeholder="E-mail"
@@ -28,6 +27,7 @@
             [toggleMask]="true"
             [feedback]="false"
             [disabled]="disable"
+            data-testId="password"
           ></p-password>
         </div>
         <br />
@@ -54,4 +54,3 @@
     </div>
   </form>
 </div>
-<router-outlet></router-outlet>
