@@ -65,7 +65,6 @@ export class NavbarComponent implements OnDestroy {
           this.userService.getUser().subscribe(
             (data) => {
               this.userName = data.name.toString();
-
               if (data.role == 'pharmacy') {
                 this.userItems = [
                   {
@@ -96,6 +95,16 @@ export class NavbarComponent implements OnDestroy {
                     label: 'Users',
                     icon: 'pi pi-fw pi-users',
                     routerLink: './Users',
+                  },
+                  {
+                    label: 'Medicines',
+                    icon: 'pi pi-fw pi-shield',
+                    routerLink: './MedicinesList',
+                  },
+                  {
+                    label: 'Add Medicines',
+                    icon: 'pi pi-fw pi-plus',
+                    routerLink: './AddMedicine',
                   },
                   {
                     label: 'Logout',
