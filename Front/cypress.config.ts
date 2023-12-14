@@ -9,3 +9,4 @@ export default defineConfig({
     },
   },
 });
+import { slowCypressDown } from 'cypress-slow-down';

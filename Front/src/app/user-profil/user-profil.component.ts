@@ -26,7 +26,7 @@ export class UserProfilComponent {
     public messageService: MessageService
   ) {}
 
-  showError(msg: string) {
+  showErrorAccess(msg: string) {
     this.messageService.add({
       key: 'msg3',
       severity: 'error',
@@ -50,6 +50,9 @@ export class UserProfilComponent {
       (data) => {
         Emitters.authEmitter.emit(true);
         console.log(data);
+        if (data.state == 'Non valid') {
+          this.router.navigate(['/']);
+        }
         this.user = data;
         this.originalData = new User(
           this.user.email,
@@ -59,7 +62,9 @@ export class UserProfilComponent {
         );
       },
       (error) => {
+        this.showErrorAccess('You need to login first!');
         Emitters.authEmitter.emit(false);
+        this.router.navigate(['/']);
         console.log(error);
       }
     );

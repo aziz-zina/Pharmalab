@@ -115,7 +115,7 @@ export class AddMedicineComponent {
       this.medicineService.addMedicine(m).subscribe(
         (data) => {
           this.showSuccess('Medicine added successfully');
-          this.router.navigate(['./Medicines']);
+          this.router.navigate(['./MedicinesList']);
         },
         (error) => {
           this.disable = false;

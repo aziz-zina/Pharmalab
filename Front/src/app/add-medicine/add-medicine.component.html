@@ -62,12 +62,14 @@
       [ngModelOptions]="{ standalone: true }"
       [disabled]="disable"
       (onChange)="check()"
+      data-idDrop="idd"
     ></p-dropdown>
   </div>
 
   <div class="form-group">
     <label for="name">Manufacture date:</label>
     <p-calendar
+      [showButtonBar]="true"
       [maxDate]="minDate"
       [readonlyInput]="true"
       [showIcon]="true"
@@ -83,6 +85,7 @@
   <div class="form-group">
     <label for="name">Expiration date:</label>
     <p-calendar
+      [showButtonBar]="true"
       [minDate]="minDate"
       [readonlyInput]="true"
       [showIcon]="true"

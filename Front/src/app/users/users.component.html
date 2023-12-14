@@ -1,4 +1,4 @@
-<p-toast position="top-right" key="msg5"></p-toast>
+<p-toast position="top-right" key="msg5" data-msg="msg"></p-toast>
 <div class="list-users">
   <p-tabView>
     <p-tabPanel header="Pharmacies">
@@ -26,11 +26,11 @@
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-pha>
-          <tr (click)="show(pha)">
-            <td>{{ pha.email }}</td>
-            <td>{{ pha.name }}</td>
-            <td>{{ pha.address }}</td>
-            <td>{{ pha.state }}</td>
+          <tr (click)="show(pha)" data-testid="pharmacy-row">
+            <td data-pha1="pha1">{{ pha.email }}</td>
+            <td data-pha2="pha2">{{ pha.name }}</td>
+            <td data-pha3="pha3">{{ pha.address }}</td>
+            <td data-pha4="pha4">{{ pha.state }}</td>
           </tr>
         </ng-template>
         <ng-template pTemplate="emptymessage">
@@ -42,7 +42,7 @@
         </ng-template>
       </p-table>
     </p-tabPanel>
-    <p-tabPanel header="Laboratories">
+    <p-tabPanel header="Laboratories" data-lab="lab">
       <h2>List of laboratories</h2>
       <hr />
       <p-table
@@ -67,11 +67,11 @@
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-lab>
-          <tr (click)="show(lab)">
-            <td>{{ lab.email }}</td>
-            <td>{{ lab.name }}</td>
-            <td>{{ lab.address }}</td>
-            <td>{{ lab.state }}</td>
+          <tr (click)="show(lab)" data-testid2="lab-row">
+            <td data-lab1="lab1">{{ lab.email }}</td>
+            <td data-lab2="lab2">{{ lab.name }}</td>
+            <td data-lab3="lab3">{{ lab.address }}</td>
+            <td data-lab4="lab4">{{ lab.state }}</td>
           </tr>
         </ng-template>
         <ng-template pTemplate="emptymessage">

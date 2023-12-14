@@ -65,9 +65,7 @@ export class NavbarComponent implements OnDestroy {
           this.userService.getUser().subscribe(
             (data) => {
               this.userName = data.name.toString();
-              if (data.state == 'Non valid') {
-                this.showMessage('Your account is not validated yet.');
-              }
+
               if (data.role == 'pharmacy') {
                 this.userItems = [
                   {

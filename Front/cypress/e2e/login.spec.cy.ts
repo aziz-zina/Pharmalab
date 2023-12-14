@@ -1,3 +1,6 @@
+import { slowCypressDown } from 'cypress-slow-down';
+slowCypressDown(500);
+
 describe('login', () => {
   it('should not log in if the form is empty', () => {
     cy.visit('/Login');
@@ -49,7 +52,7 @@ describe('login', () => {
     cy.get('[data-toastId="toast"]').should('contain', 'Incorrect password');
   });
 
-  it('should log in with valid credentials', () => {
+  it('should log in with valid credentials (Valid account)', () => {
     cy.visit('/Login');
 
     const email = 'labosoukra@gmail.com';
@@ -61,4 +64,23 @@ describe('login', () => {
 
     cy.url().should('eq', 'http://localhost:4200/');
   });
+
+  it('should log in with valid credentials (Non valid account)', () => {
+    cy.visit('/Login');
+
+    const email = 'testpharmacy@gmail.com';
+    const password = 'Password123!';
+
+    cy.get('input[name="email"]').type(email);
+    cy.get('[data-testId="password"]').type(password);
+    cy.get('button[type="submit"]').click();
+
+    cy.url().should('eq', 'http://localhost:4200/');
+
+    cy.get('[data-toastNonValid="tnv"]').should(
+      'contain',
+      'Your account is not validated yet.'
+    );
+  });
 });
+//test

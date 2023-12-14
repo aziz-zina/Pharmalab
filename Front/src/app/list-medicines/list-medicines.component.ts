@@ -26,6 +26,15 @@ export class ListMedicinesComponent {
     private messageService: MessageService
   ) {}
 
+  showWarn(msg: string, key: string) {
+    this.messageService.add({
+      key: key,
+      severity: 'warn',
+      summary: 'Warning',
+      detail: msg,
+    });
+  }
+
   medicines: Medicine[] = [];
   currentUser: User;
   originalData: Medicine;
@@ -74,6 +83,10 @@ export class ListMedicinesComponent {
     this.userService.getUser().subscribe(
       (data) => {
         Emitters.authEmitter.emit(true);
+        if (data.role == 'pharmacy' || data.state == 'Non valid') {
+          this.router.navigate(['./']);
+          this.showWarn("You don't have access to this page", 'msg3');
+        }
         this.currentUser = new User(
           data.email,
           data.address,
@@ -86,6 +99,7 @@ export class ListMedicinesComponent {
       (error) => {
         Emitters.authEmitter.emit(false);
         this.router.navigate(['./']);
+        this.showWarn("You don't have access to this page", 'msg3');
       }
     );
   }

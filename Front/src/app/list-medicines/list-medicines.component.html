@@ -32,12 +32,12 @@
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-med>
-      <tr (click)="show(med)">
-        <td>{{ med.name }}</td>
-        <td>{{ med.price | number : "0.3-3" }} TND</td>
-        <td>{{ med.quantity }}</td>
+      <tr (click)="show(med)" data-testid="pharmacy-row">
+        <td data-pha1="pha1">{{ med.name }}</td>
+        <td data-pha2="pha2">{{ med.price | number : "0.3-3" }} TND</td>
+        <td data-pha3="pha3">{{ med.quantity }}</td>
         <td>{{ med.expiry_date | date : "shortDate" }}</td>
-        <td>{{ med.state }}</td>
+        <td data-pha4="pha4">{{ med.state }}</td>
       </tr>
     </ng-template>
     <ng-template pTemplate="emptymessage">

@@ -1,6 +1,4 @@
-// cypress/integration/register.spec.js
-
-describe('Registration functionality', () => {
+describe('registration', () => {
   it('should not log in if the form is empty', () => {
     cy.visit('/Login');
 
@@ -13,14 +11,14 @@ describe('Registration functionality', () => {
   });
 
   it('should register a new pharmacy with an already used email', () => {
-    cy.visit('/Register'); // Move cy.visit inside the it block
+    cy.visit('/Register');
 
     const userData = {
       name: 'Test Pharmacy',
       email: 'labosoukra@gmail.com',
-      password: 'Password123!', // Make sure it meets your password criteria
+      password: 'Password123!',
       address: '123 test Street',
-      role: 'pharmacy', // or 'laboratory' based on your default role
+      role: 'pharmacy',
     };
 
     cy.get('input[name="name"]').type(userData.name);
@@ -34,14 +32,14 @@ describe('Registration functionality', () => {
   });
 
   it('should not log in with a non valid email', () => {
-    cy.visit('/Register'); // Move cy.visit inside the it block
+    cy.visit('/Register');
 
     const userData = {
       name: 'Test Pharmacy',
       email: 'test.com',
-      password: 'Password123!', // Make sure it meets your password criteria
+      password: 'Password123!',
       address: '123 test Street',
-      role: 'pharmacy', // or 'laboratory' based on your default role
+      role: 'pharmacy',
     };
 
     cy.get('input[name="name"]').type(userData.name);
@@ -55,14 +53,14 @@ describe('Registration functionality', () => {
   });
 
   it('should not log in with a password not strong enough', () => {
-    cy.visit('/Register'); // Move cy.visit inside the it block
+    cy.visit('/Register');
 
     const userData = {
       name: 'Test Pharmacy',
       email: 'test@hotmail.com',
-      password: 'password', // Make sure it meets your password criteria
+      password: 'password',
       address: '123 test Street',
-      role: 'pharmacy', // or 'laboratory' based on your default role
+      role: 'pharmacy',
     };
 
     cy.get('input[name="name"]').type(userData.name);
@@ -76,14 +74,14 @@ describe('Registration functionality', () => {
   });
 
   it('should register a new pharmacy with valid details', () => {
-    cy.visit('/Register'); // Move cy.visit inside the it block
+    cy.visit('/Register');
 
     const userData = {
       name: 'Test Pharmacy',
       email: 'testpharmacy@gmail.com',
-      password: 'Password123!', // Make sure it meets your password criteria
+      password: 'Password123!',
       address: '123 test Street',
-      role: 'pharmacy', // or 'laboratory' based on your default role
+      role: 'pharmacy',
     };
 
     cy.get('input[name="name"]').type(userData.name);
@@ -98,14 +96,14 @@ describe('Registration functionality', () => {
   });
 
   it('should register a new laboratory with valid details', () => {
-    cy.visit('/Register'); // Move cy.visit inside the it block
+    cy.visit('/Register');
 
     const userData = {
       name: 'Test Laboratory',
       email: 'testlaboratory@gmail.com',
-      password: 'Password123!', // Make sure it meets your password criteria
+      password: 'Password123!',
       address: '123 test Street',
-      role: 'laboratory', // or 'laboratory' based on your default role
+      role: 'laboratory',
     };
 
     cy.get('input[name="name"]').type(userData.name);

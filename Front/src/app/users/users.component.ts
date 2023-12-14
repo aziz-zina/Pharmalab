@@ -139,7 +139,7 @@ export class UsersComponent {
       (error) => {
         console.log(error);
         Emitters.authEmitter.emit(false);
-        this.router.navigate(['./Login']);
+        this.router.navigate(['./']);
         this.showErrorLogin('You need to login first.');
       }
     );
