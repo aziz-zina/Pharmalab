@@ -41,13 +41,19 @@ export class MedicineServiceService {
   }
 
   public getAllValidMedicines(): Observable<Medicine[]> {
-    return this.httpClient.get<Medicine[]>(this.apiUrl + '/medicines', {
+    return this.httpClient.get<Medicine[]>(this.apiUrl + '/validMedicines', {
       withCredentials: true,
     });
   }
 
   public getAllValidLaboratories(): Observable<User[]> {
     return this.httpClient.get<User[]>(this.apiUrl + '/labs', {
+      withCredentials: true,
+    });
+  }
+
+  public getAllMedicines(): Observable<Medicine[]> {
+    return this.httpClient.get<Medicine[]>(this.apiUrl + '/medicines', {
       withCredentials: true,
     });
   }

@@ -18,6 +18,7 @@ import { deleteMedicine } from "../controller/medicineController.js";
 import { updateMedicine } from "../controller/medicineController.js";
 import { medicines } from "../controller/medicineController.js";
 import { labs } from "../controller/medicineController.js";
+import { meds } from "../controller/medicineController.js";
 
 //Create an instance of express
 const router = express.Router();
@@ -44,7 +45,7 @@ router.patch("/updateUser", updateUser);
 //! THE MEDICINE APIs
 router.post("/addMedicine", createMedicine);
 
-router.get("/medicines", medicines);
+router.get("/validMedicines", medicines);
 
 router.get("/labs", labs);
 
@@ -53,6 +54,8 @@ router.get("/getMedicine", getMedicine);
 router.patch("/updateMedicine", updateMedicine);
 
 router.delete("/deleteMedicine", deleteMedicine);
+
+router.get("/medicines", meds);
 
 //Exporting the router
 export default router;

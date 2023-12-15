@@ -119,3 +119,13 @@ export const labs = async (request, response) => {
     response.status(500).json({ message: "Internal Server Error." });
   }
 };
+
+export const meds = async (request, response) => {
+  try {
+    const medicines = await Medicine.find();
+    response.send(medicines);
+  } catch (error) {
+    console.error(error);
+    response.status(500).json({ message: "Internal Server Error." });
+  }
+};

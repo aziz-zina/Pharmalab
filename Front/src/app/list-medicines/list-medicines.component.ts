@@ -48,6 +48,12 @@ export class ListMedicinesComponent {
     });
   }
 
+  listAllMedicines() {
+    this.medicineService.getAllMedicines().subscribe((data) => {
+      this.medicines = data;
+    });
+  }
+
   showDeleteSuccess(msg: string) {
     this.messageService.add({
       key: 'msg5',
@@ -86,15 +92,18 @@ export class ListMedicinesComponent {
         if (data.role == 'pharmacy' || data.state == 'Non valid') {
           this.router.navigate(['./']);
           this.showWarn("You don't have access to this page", 'msg3');
+        } else if (data.role == 'admin') {
+          this.listAllMedicines();
+        } else if (data.role == 'laboratory') {
+          this.currentUser = new User(
+            data.email,
+            data.address,
+            data.name,
+            data.role
+          );
+          this.lab_name = data.name;
+          this.listPersonalMedicines(data);
         }
-        this.currentUser = new User(
-          data.email,
-          data.address,
-          data.name,
-          data.role
-        );
-        this.lab_name = data.name;
-        this.listPersonalMedicines(data);
       },
       (error) => {
         Emitters.authEmitter.emit(false);

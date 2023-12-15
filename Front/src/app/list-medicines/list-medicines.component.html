@@ -1,6 +1,8 @@
 <p-toast position="top-center" key="msg5"></p-toast>
 <div class="list-med">
-  <h2>List of medicines: {{ lab_name }}</h2>
+  <h2>
+    List of medicines: <span *ngIf="lab_name">{{ lab_name }}</span>
+  </h2>
   <hr />
   <p-table
     [value]="medicines"
@@ -32,7 +34,7 @@
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-med>
-      <tr (click)="show(med)" data-testid="pharmacy-row">
+      <tr (click)="show(med)" data-testid="med-row">
         <td data-pha1="pha1">{{ med.name }}</td>
         <td data-pha2="pha2">{{ med.price | number : "0.3-3" }} TND</td>
         <td data-pha3="pha3">{{ med.quantity }}</td>
