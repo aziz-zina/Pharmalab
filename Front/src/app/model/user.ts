@@ -28,4 +28,8 @@ export class User {
   getId() {
     return this._id;
   }
+
+  setId(id: string) {
+    this._id = id;
+  }
 }

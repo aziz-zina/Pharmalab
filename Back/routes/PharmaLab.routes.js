@@ -19,6 +19,7 @@ import { updateMedicine } from "../controller/medicineController.js";
 import { medicines } from "../controller/medicineController.js";
 import { labs } from "../controller/medicineController.js";
 import { meds } from "../controller/medicineController.js";
+import { getUserById } from "../controller/userController.js";
 
 //Create an instance of express
 const router = express.Router();
@@ -41,6 +42,8 @@ router.get("/laboratories", laboratories);
 router.delete("/deleteUser", deleteUser);
 
 router.patch("/updateUser", updateUser);
+
+router.get("/userById", getUserById);
 
 //! THE MEDICINE APIs
 router.post("/addMedicine", createMedicine);

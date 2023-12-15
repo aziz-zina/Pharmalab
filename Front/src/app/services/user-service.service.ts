@@ -1,7 +1,8 @@
+import { Medicine } from './../model/medicine';
+import { User } from './../model/user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
-import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root',
@@ -63,5 +64,14 @@ export class UserServiceService {
     return this.httpClient.patch(this.apiUrl + '/updateUser', user, {
       withCredentials: true,
     });
+  }
+
+  getUserById(producerId: string): Observable<any> {
+    const options = {
+      params: { producerId }, // Pass the producerId as a query parameter
+      withCredentials: true,
+    };
+
+    return this.httpClient.get<any>(this.apiUrl + '/userById', options);
   }
 }

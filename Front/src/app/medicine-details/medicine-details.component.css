@@ -62,3 +62,8 @@ input {
   margin: 0 auto;
   width: fit-content;
 }
+
+h3{
+  color: #473bf0;
+  font-weight: bold;
+}

@@ -99,7 +99,7 @@ export class NavbarComponent implements OnDestroy {
                   {
                     label: 'Medicines',
                     icon: 'pi pi-fw pi-shield',
-                    routerLink: './MedicinesList',
+                    routerLink: './AllMedicines',
                   },
                   {
                     label: 'Add Medicines',

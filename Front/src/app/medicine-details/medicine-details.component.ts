@@ -9,6 +9,9 @@ import {
   MessageService,
 } from 'primeng/api';
 import { DatePipe } from '@angular/common';
+import { UserServiceService } from '../services/user-service.service';
+import { data } from 'cypress/types/jquery';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-medicine-details',
@@ -25,6 +28,9 @@ export class MedicineDetailsComponent {
   minDate = new Date();
   original_id: string;
   date: String;
+  admin: boolean = false;
+  producer: User;
+  edit: boolean;
 
   Roles: string[] = [
     'Tablet',
@@ -43,7 +49,8 @@ export class MedicineDetailsComponent {
     private route: Router,
     private config: DynamicDialogConfig,
     private ref: DynamicDialogRef,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private userService: UserServiceService
   ) {}
 
   showRoleWarn(msg: string) {
@@ -65,13 +72,32 @@ export class MedicineDetailsComponent {
   }
 
   ngOnInit(): void {
+    this.userService.getUser().subscribe((data) => {
+      if (data.role == 'admin') {
+        this.admin = true;
+      }
+    });
     this.selectedData = this.config.data['selectedData'];
     this.original_id = this.selectedData._id;
+    this.edit = this.config.data['edit'];
+    console.log(this.edit);
     //console.log(this.original_id);
     this.editMode = this.config.data['editMode'];
     this.originalData = this.config.data['originalData'];
     //console.log(this.originalData);
     this.checkIntention = this.config.data['checkIntention'];
+    this.userService
+      .getUserById(this.selectedData.producer)
+      .subscribe((data) => {
+        console.log('sex: ', data.producer);
+        this.producer = new User(
+          data.producer.email,
+          data.producer.address,
+          data.producer.name,
+          data.producer.role
+        );
+        console.log(this.producer);
+      });
   }
 
   onEditClick() {

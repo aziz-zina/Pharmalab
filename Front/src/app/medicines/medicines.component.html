@@ -1,4 +1,4 @@
-<p-toast position="top-center" key="msg5"></p-toast>
+<!-- <p-toast position="top-center" key="msg5"></p-toast> -->
 <div class="list-med">
   <h2>Medicines</h2>
   <hr />
@@ -26,18 +26,14 @@
         <th pSortableColumn="expDate" style="width: 15%">
           Expiry Date<p-sortIcon field="expDate"></p-sortIcon>
         </th>
-        <th pSortableColumn="state" style="width: 10%">
-          State<p-sortIcon field="state"></p-sortIcon>
-        </th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-med>
-      <tr>
+      <tr (click)="show(med)">
         <td>{{ med.name }}</td>
         <td>{{ med.price | number : "0.3-3" }} TND</td>
         <td>{{ med.quantity }}</td>
         <td>{{ med.expiry_date | date : "shortDate" }}</td>
-        <td>{{ med.state }}</td>
       </tr>
     </ng-template>
     <ng-template pTemplate="emptymessage">

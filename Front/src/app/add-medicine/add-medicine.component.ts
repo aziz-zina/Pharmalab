@@ -94,7 +94,7 @@ export class AddMedicineComponent {
         expDate,
         price,
         quantity,
-        this.currentUser
+        this.currentUser._id
       );
       console.log(m);
       this.showWarn('Please fill the form before.', 'msg');
@@ -110,7 +110,7 @@ export class AddMedicineComponent {
         expDate,
         price,
         quantity,
-        this.currentUser
+        this.currentUser._id
       );
       this.medicineService.addMedicine(m).subscribe(
         (data) => {

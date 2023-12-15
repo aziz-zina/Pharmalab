@@ -1,6 +1,29 @@
 <!-- app-users-profil.component.html -->
 <p-toast position="top-center" key="msg-data"></p-toast>
 <div class="user-profile">
+  <h3>Laboratory: {{ producer.name }}</h3>
+  <br />
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input id="name" [(ngModel)]="producer.name" disabled />
+  </div>
+
+  <div class="form-group">
+    <label for="address">Email:</label>
+    <input id="address" [(ngModel)]="producer.email" disabled />
+  </div>
+
+  <div class="form-group">
+    <label for="address">Address:</label>
+    <input id="address" [(ngModel)]="producer.address" disabled />
+  </div>
+</div>
+
+<hr />
+
+<div class="user-profile">
+  <h3>Medicine: {{ selectedData.name }}</h3>
+  <br />
   <div class="form-group">
     <label for="name">Name:</label>
     <input
@@ -140,7 +163,7 @@
   </div>
 
   <div class="table-container">
-    <label for="buyers">Side Effects:</label>
+    <label for="buyers">List of Buyers:</label>
     <p-table
       styleClass="p-datatable-gridlines"
       styleClass="p-datatable-gridlines"
@@ -185,45 +208,57 @@
   </div>
 </div>
 
-<button
-  *ngIf="!editMode"
-  pButton
-  type="button"
-  class="p-button"
-  [disabled]="disabled_state"
-  (click)="onEditClick()"
->
-  Edit <i class="pi pi-pencil"></i>
-</button>
+<div class="button-container" *ngIf="edit">
+  <button
+    *ngIf="!editMode"
+    pButton
+    type="button"
+    class="p-button"
+    [disabled]="disabled_state"
+    (click)="onEditClick()"
+  >
+    Edit <i class="pi pi-pencil"></i>
+  </button>
 
-<button
-  *ngIf="!editMode"
-  pButton
-  type="button"
-  class="p-button-danger"
-  [disabled]="disabled_state"
-  (click)="deleteMedicine()"
->
-  Delete <i class="pi pi-trash"></i>
-</button>
+  <button
+    *ngIf="!editMode"
+    pButton
+    type="button"
+    class="p-button-danger"
+    [disabled]="disabled_state"
+    (click)="deleteMedicine()"
+  >
+    Delete <i class="pi pi-trash"></i>
+  </button>
 
-<button
-  *ngIf="editMode"
-  pButton
-  type="button"
-  class="p-button-success"
-  [disabled]="disabled_state"
-  (click)="updateMedicine()"
->
-  Save <i class="pi pi-check"></i>
-</button>
-<button
-  *ngIf="editMode"
-  pButton
-  type="button"
-  class="p-button-danger"
-  [disabled]="disabled_state"
-  (click)="onCancelClick()"
->
-  Cancel <i class="pi pi-times"></i>
-</button>
+  <button
+    *ngIf="editMode"
+    pButton
+    type="button"
+    class="p-button-success"
+    [disabled]="disabled_state"
+    (click)="updateMedicine()"
+  >
+    Save <i class="pi pi-check"></i>
+  </button>
+  <button
+    *ngIf="editMode"
+    pButton
+    type="button"
+    class="p-button-danger"
+    [disabled]="disabled_state"
+    (click)="onCancelClick()"
+  >
+    Cancel <i class="pi pi-times"></i>
+  </button>
+  <button
+    *ngIf="!editMode && admin"
+    pButton
+    type="button"
+    class="p-button-success"
+    [disabled]="disabled_state"
+    (click)="onCancelClick()"
+  >
+    Valid <i class="pi pi-check"></i>
+  </button>
+</div>

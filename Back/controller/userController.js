@@ -7,7 +7,7 @@ import validor from "validator";
 
 export const createUser = async (request, response) => {
   const salt = await bcrypt.genSalt(10);
-  console.log(request.body);
+
   const hashedPassword = await bcrypt.hash(request.body.password, salt);
   const user = new User({
     email: request.body.email,
@@ -58,7 +58,6 @@ export const createUser = async (request, response) => {
 };
 
 export const login = async (request, response) => {
-  console.log(request.body);
   if (
     !validor.isEmail(request.body.email, { domain_specific_validation: true })
   ) {
@@ -67,7 +66,6 @@ export const login = async (request, response) => {
   }
 
   const user = await User.findOne({ email: request.body.email });
-  console.log(user);
 
   if (!user) {
     return response.status(404).json({ message: "User not found" });
@@ -99,7 +97,6 @@ export const getUser = async (request, response) => {
     }
 
     const user = await User.findOne({ _id: claims._id });
-    console.log(user);
 
     const { password, ...data } = await user.toJSON();
 
@@ -157,7 +154,6 @@ export const deleteUser = async (request, response) => {
 };
 
 export const updateUser = async (request, response) => {
-  console.log(request.body);
   try {
     //const userEmail = await User.findOne({ email: request.body.email });
     const result = await User.findOneAndUpdate(
@@ -165,7 +161,6 @@ export const updateUser = async (request, response) => {
       { $set: request.body },
       { new: true }
     );
-    console.log(result);
     if (result) {
       response.status(200).json({ message: "User updated successfully" });
     } else {
@@ -175,5 +170,23 @@ export const updateUser = async (request, response) => {
   } catch (error) {
     console.error(error);
     response.status(500).json({ message: "Internal Server Error" });
+  }
+};
+
+export const getUserById = async (request, response) => {
+  try {
+    const producerId = request.query.producerId;
+
+    // Assuming User is your Mongoose model for producers
+    const producer = await User.findOne({ _id: producerId });
+
+    if (!producer) {
+      return response.status(404).json({ error: "Producer not found" });
+    }
+
+    return response.status(200).json({ producer });
+  } catch (error) {
+    console.error("Error in getUserById:", error);
+    return response.status(500).json({ error: "Internal server error" });
   }
 };

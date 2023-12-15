@@ -3,20 +3,20 @@ import { UserServiceService } from '../services/user-service.service';
 import { Router } from '@angular/router';
 import { NavbarService } from '../services/navbar.service';
 import { MedicineServiceService } from '../services/medicine-service.service';
-import { Emitters } from '../emitters/emitters';
+import { DialogService } from 'primeng/dynamicdialog';
+import { MessageService } from 'primeng/api';
 import { Medicine } from '../model/medicine';
 import { User } from '../model/user';
-import { DialogService } from 'primeng/dynamicdialog';
 import { MedicineDetailsComponent } from '../medicine-details/medicine-details.component';
-import { MessageService } from 'primeng/api';
+import { Emitters } from '../emitters/emitters';
 
 @Component({
-  selector: 'app-list-medicines',
-  templateUrl: './list-medicines.component.html',
-  styleUrls: ['./list-medicines.component.css'],
+  selector: 'app-list-meds-admin',
+  templateUrl: './list-meds-admin.component.html',
+  styleUrls: ['./list-meds-admin.component.css'],
   providers: [DialogService],
 })
-export class ListMedicinesComponent {
+export class ListMedsAdminComponent {
   constructor(
     private userService: UserServiceService,
     private router: Router,
@@ -36,15 +36,14 @@ export class ListMedicinesComponent {
   }
 
   medicines: Medicine[] = [];
-  currentUser: User;
   originalData: Medicine;
   editMode: boolean = false;
   checkIntention: boolean = false;
   lab_name: string;
   edit: boolean = true;
 
-  listPersonalMedicines(user: User) {
-    this.medicineService.getMedicines(user).subscribe((data) => {
+  listAllMedicines() {
+    this.medicineService.getAllMedicines().subscribe((data) => {
       this.medicines = data;
     });
   }
@@ -75,7 +74,7 @@ export class ListMedicinesComponent {
 
     ref.onClose.subscribe((user: User) => {
       if (!this.checkIntention) {
-        this.listPersonalMedicines(this.currentUser);
+        this.listAllMedicines();
       }
     });
   }
@@ -85,18 +84,15 @@ export class ListMedicinesComponent {
     this.userService.getUser().subscribe(
       (data) => {
         Emitters.authEmitter.emit(true);
-        if (data.role == 'pharmacy' || data.state == 'Non valid') {
+        if (
+          data.role == 'pharmacy' ||
+          data.role == 'laboratory' ||
+          data.state == 'Non valid'
+        ) {
           this.router.navigate(['./']);
           this.showWarn("You don't have access to this page", 'msg3');
-        } else if (data.role == 'laboratory') {
-          this.currentUser = new User(
-            data.email,
-            data.address,
-            data.name,
-            data.role
-          );
-          this.lab_name = data.name;
-          this.listPersonalMedicines(data);
+        } else if (data.role == 'admin') {
+          this.listAllMedicines();
         }
       },
       (error) => {

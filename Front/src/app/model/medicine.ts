@@ -11,7 +11,7 @@ export class Medicine {
   public expiry_date: Date;
   public price: number;
   public quantity: number;
-  public producer: User;
+  public producer: string;
   public buyers?: User[];
   public state?: string;
 
@@ -25,7 +25,7 @@ export class Medicine {
     expiration_date: Date,
     price: number,
     quantity: number,
-    producer: User,
+    producer: string,
     state?: string,
     buyers?: User[]
   ) {
