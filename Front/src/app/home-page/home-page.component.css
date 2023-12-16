@@ -23,3 +23,11 @@
   margin-left: 20px; /* Adjust the margin between image and description as needed */
   text-align: justify; /* Adjust the text alignment as needed */
 }
+
+.footer {
+  background-color: #f8f8f8;
+  padding: 20px 0;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+}

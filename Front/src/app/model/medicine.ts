@@ -46,4 +46,8 @@ export class Medicine {
   setId(id: string) {
     this._id = id;
   }
+
+  setState(state: string) {
+    this.state = state;
+  }
 }

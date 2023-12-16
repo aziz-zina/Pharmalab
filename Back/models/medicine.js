@@ -5,7 +5,8 @@ import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 
 //Create a schema
-const userSchema = new Schema({
+const userSchema = new Schema(
+  {
     name: { type: String, required: true, minlength: 4 },
     description: { type: String, required: true },
     chemical_composition: { type: String, required: true },
@@ -15,12 +16,19 @@ const userSchema = new Schema({
     expiry_date: { type: Date, required: false },
     price: { type: Number, required: false },
     quantity: { type: Number, required: true },
-    producer: { type: Schema.Types.ObjectId, ref: 'User', required: true },
-    buyers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+    producer: { type: Schema.Types.ObjectId, ref: "User", required: true },
+    buyers: [
+      {
+        buyer: { type: Schema.Types.ObjectId, ref: "User" },
+        quantity: Number,
+        state: String,
+      },
+    ],
     state: { type: String },
-},
-    //! KOL MARRA EL USER YET7AT FEL DATABASE, YGENERATI EL MONGOOSE 2 ENTITITIES: createdAt W updatedAt
-    { timestamps: true });
+  },
+  //! KOL MARRA EL USER YET7AT FEL DATABASE, YGENERATI EL MONGOOSE 2 ENTITITIES: createdAt W updatedAt
+  { timestamps: true }
+);
 
 //Create a model
-export const Medicine = model('Medicine', userSchema);
+export const Medicine = model("Medicine", userSchema);

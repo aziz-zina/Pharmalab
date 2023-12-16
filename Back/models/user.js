@@ -17,6 +17,7 @@ const userSchema = new Schema(
       {
         medicine: { type: Schema.Types.ObjectId, ref: "medicine" },
         quantity: Number,
+        state: String,
       },
     ],
     /*medicines_produced: [{ type: Schema.Types.ObjectId, ref: 'Medicine' }],*/

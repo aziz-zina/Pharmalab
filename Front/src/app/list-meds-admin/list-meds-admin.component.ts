@@ -58,6 +58,20 @@ export class ListMedsAdminComponent {
   }
 
   show(selectedData: Medicine) {
+    this.originalData = new Medicine(
+      selectedData.name,
+      selectedData.description,
+      selectedData.chemical_composition,
+      selectedData.side_effects,
+      selectedData.dosage_form,
+      selectedData.manufacture_date,
+      selectedData.expiry_date,
+      selectedData.price,
+      selectedData.quantity,
+      selectedData.producer
+    );
+    this.originalData.setId(selectedData._id);
+    //this.originalData.setState(selectedData.state);
     const ref = this.dialogService.open(MedicineDetailsComponent, {
       header: selectedData.name,
       width: '60%',

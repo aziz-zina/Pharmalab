@@ -62,9 +62,9 @@ export class MedicineDetailsComponent {
     });
   }
 
-  showDeleteSuccess(msg: string) {
+  showDeleteSuccess(msg: string, key: string) {
     this.messageService.add({
-      key: 'msg5',
+      key: key,
       severity: 'success',
       summary: 'Success',
       detail: msg,
@@ -89,14 +89,12 @@ export class MedicineDetailsComponent {
     this.userService
       .getUserById(this.selectedData.producer)
       .subscribe((data) => {
-        console.log('sex: ', data.producer);
         this.producer = new User(
           data.producer.email,
           data.producer.address,
           data.producer.name,
           data.producer.role
         );
-        console.log(this.producer);
       });
   }
 
@@ -125,7 +123,33 @@ export class MedicineDetailsComponent {
   deleteMedicine() {
     this.disabled_state = true;
     this.medicineService.deleteMedicine(this.selectedData).subscribe((data) => {
-      this.showDeleteSuccess('User deleted successfully.');
+      this.showDeleteSuccess('User deleted successfully.', 'msg2');
+      this.checkIntention = true;
+      this.ref.close(data);
+    });
+  }
+
+  validateMedicine() {
+    this.disabled_state = true;
+    console.log(this.originalData);
+    this.selectedData = new Medicine(
+      this.originalData.name,
+      this.originalData.description,
+      this.originalData.chemical_composition,
+      this.originalData.side_effects,
+      this.originalData.dosage_form,
+      this.originalData.manufacture_date,
+      this.originalData.expiry_date,
+      this.originalData.price,
+      this.originalData.quantity,
+      this.originalData.producer
+    );
+    this.selectedData.setState('Valid');
+    this.selectedData.setId(this.original_id);
+    console.log(this.selectedData);
+
+    this.medicineService.updateMedicine(this.selectedData).subscribe((data) => {
+      this.showDeleteSuccess(this.selectedData.name + ' is now Valid.', 'msg2');
       this.checkIntention = true;
       this.ref.close(data);
     });
@@ -165,7 +189,7 @@ export class MedicineDetailsComponent {
       console.log(this.selectedData);
       this.medicineService.updateMedicine(this.selectedData).subscribe(
         (data) => {
-          this.showDeleteSuccess('User Updated successfully.');
+          this.showDeleteSuccess('User Updated successfully.', 'msg2');
           this.checkIntention = true;
           this.ref.close(data);
         },

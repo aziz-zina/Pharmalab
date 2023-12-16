@@ -1,6 +1,6 @@
 <!-- app-users-profil.component.html -->
 <p-toast position="top-center" key="msg-data"></p-toast>
-<div class="user-profile">
+<div class="user-profile" *ngIf="producer">
   <h3>Laboratory: {{ producer.name }}</h3>
   <br />
   <div class="form-group">
@@ -257,7 +257,7 @@
     type="button"
     class="p-button-success"
     [disabled]="disabled_state"
-    (click)="onCancelClick()"
+    (click)="validateMedicine()"
   >
     Valid <i class="pi pi-check"></i>
   </button>
