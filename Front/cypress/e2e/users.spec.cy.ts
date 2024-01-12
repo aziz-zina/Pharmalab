@@ -191,8 +191,7 @@ describe('users', () => {
     cy.get('#name').clear().type('test 3333');
     cy.get('#address').clear().type('New Address');
 
-    cy.get('p-dropdown').click(); // Click to open the dropdown
-    //cy.get('p-dropdown-item').should('exist');
+    cy.get('p-dropdown').click();
     cy.get('[role="option"]').contains('pharmacy').click();
 
     // Click the "Save" button

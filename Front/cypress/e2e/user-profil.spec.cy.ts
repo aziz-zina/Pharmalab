@@ -4,6 +4,7 @@ describe('profile', () => {
 
     cy.url().should('eq', 'http://localhost:4200/');
   });
+  
   it('should not be able to access this page if not validated', () => {
     cy.visit('/Login');
 

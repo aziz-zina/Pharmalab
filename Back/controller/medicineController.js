@@ -129,3 +129,12 @@ export const meds = async (request, response) => {
     response.status(500).json({ message: "Internal Server Error." });
   }
 };
+
+export const purchaseMedicament = async (request, response) => {
+  try{
+    
+  }catch (error){
+    console.error(error);
+    response.status(500).json({ message: "Internal Server Error." });
+  }
+}
