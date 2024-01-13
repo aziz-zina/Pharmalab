@@ -42,6 +42,7 @@ export class ListMedicinesComponent {
   checkIntention: boolean = false;
   lab_name: string;
   edit: boolean = true;
+  diaplay: boolean = true;
 
   listPersonalMedicines(user: User) {
     this.medicineService.getMedicines(user).subscribe((data) => {
@@ -65,6 +66,7 @@ export class ListMedicinesComponent {
       contentStyle: { 'max-height': '550px', overflow: 'auto' },
       baseZIndex: 10000,
       data: {
+        display: this.diaplay,
         edit: this.edit,
         selectedData: selectedData,
         editMode: this.editMode,

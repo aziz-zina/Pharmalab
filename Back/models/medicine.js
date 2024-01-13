@@ -21,7 +21,7 @@ const userSchema = new Schema(
       {
         buyer: { type: Schema.Types.ObjectId, ref: "User" },
         quantity: Number,
-        state: String,
+        dateOfPurchase: Date,
       },
     ],
     state: { type: String },

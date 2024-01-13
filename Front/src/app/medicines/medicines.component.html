@@ -11,8 +11,15 @@
     [showCurrentPageReport]="true"
     [tableStyle]="{ 'min-width': '50rem' }"
     [resizableColumns]="true"
-    
   >
+    <ng-template pTemplate="caption">
+      <div class="flex">
+        <span class="p-input-icon-left ml-auto">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" placeholder="Search keyword" />
+        </span>
+      </div>
+    </ng-template>
     <ng-template pTemplate="header">
       <tr>
         <th pSortableColumn="name" style="width: 15%">

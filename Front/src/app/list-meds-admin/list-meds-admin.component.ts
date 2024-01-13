@@ -41,6 +41,7 @@ export class ListMedsAdminComponent {
   checkIntention: boolean = false;
   lab_name: string;
   edit: boolean = true;
+  display: boolean = true;
 
   listAllMedicines() {
     this.medicineService.getAllMedicines().subscribe((data) => {

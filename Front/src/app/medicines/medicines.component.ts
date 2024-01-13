@@ -19,6 +19,7 @@ export class MedicinesComponent {
   medicines: Medicine[] = [];
   editMode: boolean = false;
   edit: boolean = false;
+  display: boolean = false;
 
   constructor(
     private medicineService: MedicineServiceService,
@@ -42,6 +43,7 @@ export class MedicinesComponent {
       contentStyle: { 'max-height': '550px', overflow: 'auto' },
       baseZIndex: 10000,
       data: {
+        display: this.display,
         selectedData: selectedData,
         editMode: this.editMode,
         edit: this.edit,

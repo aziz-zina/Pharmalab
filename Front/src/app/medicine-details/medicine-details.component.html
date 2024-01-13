@@ -162,7 +162,7 @@
     <input id="name" [(ngModel)]="selectedData.state" disabled />
   </div>
 
-  <div class="table-container">
+  <div class="table-container" *ngIf="display">
     <label for="buyers">List of Buyers:</label>
     <p-table
       styleClass="p-datatable-gridlines"
@@ -208,9 +208,9 @@
   </div>
 </div>
 
-<div class="button-container" *ngIf="edit">
+<div class="button-container">
   <button
-    *ngIf="!editMode"
+    *ngIf="!editMode && edit"
     pButton
     type="button"
     class="p-button"
@@ -221,7 +221,7 @@
   </button>
 
   <button
-    *ngIf="!editMode"
+    *ngIf="!editMode && edit"
     pButton
     type="button"
     class="p-button-danger"
@@ -232,7 +232,7 @@
   </button>
 
   <button
-    *ngIf="editMode"
+    *ngIf="editMode && edit"
     pButton
     type="button"
     class="p-button-success"
@@ -242,7 +242,7 @@
     Save <i class="pi pi-check"></i>
   </button>
   <button
-    *ngIf="editMode"
+    *ngIf="editMode && edit"
     pButton
     type="button"
     class="p-button-danger"
@@ -252,7 +252,7 @@
     Cancel <i class="pi pi-times"></i>
   </button>
   <button
-    *ngIf="!editMode && admin"
+    *ngIf="!editMode && admin && edit"
     pButton
     type="button"
     class="p-button-success"
@@ -260,5 +260,15 @@
     (click)="validateMedicine()"
   >
     Valid <i class="pi pi-check"></i>
+  </button>
+  <button
+    *ngIf="displayPharmacy"
+    pButton
+    type="button"
+    class="p-button-success"
+    [disabled]="disabled_state"
+    (click)="validateMedicine()"
+  >
+    Purchase <i class="pi pi-check"></i>
   </button>
 </div>

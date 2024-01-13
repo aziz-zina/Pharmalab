@@ -31,6 +31,9 @@ export class MedicineDetailsComponent {
   admin: boolean = false;
   producer: User;
   edit: boolean;
+  display: boolean;
+  role: string;
+  displayPharmacy: boolean = false;
 
   Roles: string[] = [
     'Tablet',
@@ -73,14 +76,20 @@ export class MedicineDetailsComponent {
 
   ngOnInit(): void {
     this.userService.getUser().subscribe((data) => {
+      this.role = data.role;
       if (data.role == 'admin') {
         this.admin = true;
+      } else if (data.role == 'pharmacy') {
+        this.displayPharmacy = true;
       }
+      console.log(this.display);
     });
     this.selectedData = this.config.data['selectedData'];
     this.original_id = this.selectedData._id;
     this.edit = this.config.data['edit'];
+    this.display = this.config.data['display'];
     console.log(this.edit);
+    console.log(this.display);
     //console.log(this.original_id);
     this.editMode = this.config.data['editMode'];
     this.originalData = this.config.data['originalData'];
