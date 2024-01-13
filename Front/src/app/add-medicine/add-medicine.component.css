@@ -58,3 +58,24 @@ textarea {
   width: 100%;
   padding: 20px;
 }
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  width: 50%;
+}
+
+.smaller-image {
+  width: 80%;  /* Adjust as needed */
+  height: auto; /* Keeps the aspect ratio */
+}
