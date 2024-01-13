@@ -20,6 +20,7 @@ export class MedicinesComponent {
   editMode: boolean = false;
   edit: boolean = false;
   display: boolean = false;
+  inventoryStatus: string;
 
   constructor(
     private medicineService: MedicineServiceService,
@@ -51,6 +52,19 @@ export class MedicinesComponent {
     });
 
     ref.onClose.subscribe();
+  }
+
+  getSeverity(medQuantity: number): string {
+    if (medQuantity < 10) {
+      this.inventoryStatus = 'Limited Stock';
+      return 'warning';
+    } else if (medQuantity == 0) {
+      this.inventoryStatus = 'Out Of Stock';
+      return 'danger';
+    } else {
+      this.inventoryStatus = 'In Stock';
+      return 'success';
+    }
   }
 
   ngOnInit(): void {

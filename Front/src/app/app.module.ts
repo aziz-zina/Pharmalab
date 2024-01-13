@@ -26,6 +26,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { TreeTableModule } from 'primeng/treetable';
 import { CardModule } from 'primeng/card';
+import { TagModule } from 'primeng/tag';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -66,6 +67,7 @@ import { PurchaseHistoryComponent } from './purchase-history/purchase-history.co
     TieredMenuModule,
     RadioButtonModule,
     HttpClientModule,
+    TagModule,
     TabViewModule,
     BrowserAnimationsModule,
     TreeTableModule,
