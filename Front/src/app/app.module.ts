@@ -44,6 +44,7 @@ import { MedicinesComponent } from './medicines/medicines.component';
 import { LaboratoriesComponent } from './laboratories/laboratories.component';
 import { ListMedsAdminComponent } from './list-meds-admin/list-meds-admin.component';
 import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
+import { PurchaseMedicineComponent } from './purchase-medicine/purchase-medicine.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { PurchaseHistoryComponent } from './purchase-history/purchase-history.co
     LaboratoriesComponent,
     ListMedsAdminComponent,
     PurchaseHistoryComponent,
+    PurchaseMedicineComponent,
   ],
   imports: [
     TieredMenuModule,

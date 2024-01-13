@@ -56,4 +56,7 @@ input {
   margin-bottom: 10px;
 }
 
-/* Add more styles as needed */
+.buttons{
+  display: flex;
+  justify-content: center;
+}

@@ -10,6 +10,8 @@ import { ListMedicinesComponent } from './list-medicines/list-medicines.componen
 import { MedicinesComponent } from './medicines/medicines.component';
 import { LaboratoriesComponent } from './laboratories/laboratories.component';
 import { ListMedsAdminComponent } from './list-meds-admin/list-meds-admin.component';
+import { PurchaseMedicineComponent } from './purchase-medicine/purchase-medicine.component';
+import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'Medicines', component: MedicinesComponent },
   { path: 'Laboratories', component: LaboratoriesComponent },
   { path: 'AllMedicines', component: ListMedsAdminComponent },
+  { path: 'sex', component: PurchaseMedicineComponent },
+  { path: 'sex2', component: PurchaseHistoryComponent },
 ];
 
 @NgModule({

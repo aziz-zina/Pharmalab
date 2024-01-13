@@ -46,53 +46,55 @@
   <!-- Add other properties as needed -->
 </div>
 
-<button
-  *ngIf="!editMode"
-  pButton
-  type="button"
-  class="p-button-success"
-  (click)="validateUser()"
-  [disabled]="disabled_state"
->
-  Validate <i class="pi pi-check"></i>
-</button>
-<button
-  *ngIf="!editMode"
-  pButton
-  type="button"
-  class="p-button-danger"
-  (click)="deleteUser()"
-  [disabled]="disabled_state"
->
-  Delete <i class="pi pi-trash"></i>
-</button>
-<button
-  *ngIf="!editMode"
-  pButton
-  type="button"
-  class="p-button"
-  (click)="onEditClick()"
-  [disabled]="disabled_state"
->
-  Edit <i class="pi pi-pencil"></i>
-</button>
-<button
-  *ngIf="editMode"
-  pButton
-  type="button"
-  class="p-button-success"
-  (click)="updateUser()"
-  [disabled]="disabled_state"
->
-  Save <i class="pi pi-check"></i>
-</button>
-<button
-  *ngIf="editMode"
-  pButton
-  type="button"
-  class="p-button-danger"
-  (click)="onCancelClick()"
-  [disabled]="disabled_state"
->
-  Cancel <i class="pi pi-times"></i>
-</button>
+<div class="buttons">
+  <button
+    *ngIf="!editMode"
+    pButton
+    type="button"
+    class="p-button-success"
+    (click)="validateUser()"
+    [disabled]="disabled_state"
+  >
+    Validate <i class="pi pi-check"></i>
+  </button>
+  <button
+    *ngIf="!editMode"
+    pButton
+    type="button"
+    class="p-button-danger"
+    (click)="deleteUser()"
+    [disabled]="disabled_state"
+  >
+    Delete <i class="pi pi-trash"></i>
+  </button>
+  <button
+    *ngIf="!editMode"
+    pButton
+    type="button"
+    class="p-button"
+    (click)="onEditClick()"
+    [disabled]="disabled_state"
+  >
+    Edit <i class="pi pi-pencil"></i>
+  </button>
+  <button
+    *ngIf="editMode"
+    pButton
+    type="button"
+    class="p-button-success"
+    (click)="updateUser()"
+    [disabled]="disabled_state"
+  >
+    Save <i class="pi pi-check"></i>
+  </button>
+  <button
+    *ngIf="editMode"
+    pButton
+    type="button"
+    class="p-button-danger"
+    (click)="onCancelClick()"
+    [disabled]="disabled_state"
+  >
+    Cancel <i class="pi pi-times"></i>
+  </button>
+</div>
