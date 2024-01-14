@@ -57,4 +57,11 @@ export class MedicineServiceService {
       withCredentials: true,
     });
   }
+
+  public buyMedicine(body: any): Observable<any> {
+    console.log(body);
+    return this.httpClient.post(this.apiUrl + '/purchaseMedicine', body, {
+      withCredentials: true,
+    });
+  }
 }

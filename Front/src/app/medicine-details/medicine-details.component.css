@@ -73,10 +73,14 @@ h3{
   justify-content: center;
 }
 
-.form-container-2
-{
+.form-container-2 {
   margin-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px; /* Adjust as needed */
+}
+
+.p-float-label button {
+  margin-left: 20px; /* Adjust as needed */
 }

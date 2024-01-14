@@ -24,8 +24,7 @@ const routes: Routes = [
   { path: 'Medicines', component: MedicinesComponent },
   { path: 'Laboratories', component: LaboratoriesComponent },
   { path: 'AllMedicines', component: ListMedsAdminComponent },
-  { path: 'sex', component: PurchaseMedicineComponent },
-  { path: 'sex2', component: PurchaseHistoryComponent },
+  { path: 'purchaseHistory', component: PurchaseHistoryComponent },
 ];
 
 @NgModule({

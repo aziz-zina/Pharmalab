@@ -243,4 +243,22 @@ export class MedicineDetailsComponent {
   }
 
   value: number;
+  purchaseMedicine() {
+    const body = {
+      medicine: this.selectedData,
+      quantity: this.value,
+    };
+    console.log(body);
+    this.medicineService.buyMedicine(body).subscribe(
+      (data) => {
+        this.showDeleteSuccess('Medicine purchased.', 'msg2');
+        this.checkIntention = true;
+        this.ref.close(data);
+      },
+      (error) => {
+        this.disabled_state = false;
+        this.showRoleWarn('Something went wrong.');
+      }
+    );
+  }
 }

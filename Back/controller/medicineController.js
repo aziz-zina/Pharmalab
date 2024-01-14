@@ -131,6 +131,7 @@ export const meds = async (request, response) => {
 };
 
 export const purchaseMedicine = async (request, response) => {
+  console.log(request.body);
   try {
     const cookie = request.cookies["jwt"];
 
@@ -141,20 +142,41 @@ export const purchaseMedicine = async (request, response) => {
     }
 
     const user = await User.findOne({ _id: claims._id });
+    console.log(user);
+    const newQuantity = request.body.medicine.quantity - request.body.quantity;
 
-    request.body.medicine.buyers.push({
-      buyer: user._id,
-      quantity: request.body.quantity,
-      dateOfPurchase: Date.now(),
-    });
+    const response_medicine = await Medicine.findOneAndUpdate(
+      { _id: request.body.medicine._id },
+      {
+        $push: {
+          buyers: {
+            medicine: user._id,
+            quantity: request.body.quantity,
+            dateOfPurchase: Date.now(),
+          },
+        },
+        $set: {
+          quantity: newQuantity,
+        },
+      },
+      { new: true }
+    );
 
-    user.medicines_bought.push({
-      medicine: request.body.medicine._id,
-      quantity: request.body.quantity,
-      dateOfPurchase: Date.now(),
-    });
+    const response_user = await User.findOneAndUpdate(
+      { _id: user._id },
+      {
+        $push: {
+          medicines_bought: {
+            medicine: request.body.medicine._id,
+            quantity: request.body.quantity,
+            dateOfPurchase: Date.now(),
+          },
+        },
+      },
+      { new: true }
+    );
 
-    request.body.medicine.quantity -= request.body.quantity;
+    response.status(200).json({ message: "Medicine purchased successfully" });
   } catch (error) {
     console.error(error);
     response.status(500).json({ message: "Internal Server Error." });

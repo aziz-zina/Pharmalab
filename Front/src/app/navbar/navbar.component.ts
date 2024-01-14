@@ -75,6 +75,7 @@ export class NavbarComponent implements OnDestroy {
                   {
                     label: 'Purchase history',
                     icon: 'pi pi-fw pi-history',
+                    routerLink: './purchaseHistory',
                   },
                   {
                     label: 'Logout',
