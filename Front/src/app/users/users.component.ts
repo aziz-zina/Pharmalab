@@ -122,6 +122,17 @@ export class UsersComponent {
     });
   }
 
+  icon: string;
+  getSeverity(userStatus: string): string {
+    if (userStatus === 'Non valid') {
+      this.icon = 'pi pi-times';
+      return 'danger';
+    } else {
+      this.icon = 'pi pi-check';
+      return 'success';
+    }
+  }
+
   ngOnInit(): void {
     this.userService.getUser().subscribe(
       (data) => {

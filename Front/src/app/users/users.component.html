@@ -30,7 +30,14 @@
             <td data-pha1="pha1">{{ pha.email }}</td>
             <td data-pha2="pha2">{{ pha.name }}</td>
             <td data-pha3="pha3">{{ pha.address }}</td>
-            <td data-pha4="pha4">{{ pha.state }}</td>
+            <td>
+              <p-tag
+                [value]="pha.state"
+                [severity]="getSeverity(pha.state)"
+                [rounded]="true"
+                [icon]="icon"
+              ></p-tag>
+            </td>
           </tr>
         </ng-template>
         <ng-template pTemplate="emptymessage">
@@ -71,7 +78,14 @@
             <td data-lab1="lab1">{{ lab.email }}</td>
             <td data-lab2="lab2">{{ lab.name }}</td>
             <td data-lab3="lab3">{{ lab.address }}</td>
-            <td data-lab4="lab4">{{ lab.state }}</td>
+            <td>
+              <p-tag
+                [value]="lab.state"
+                [severity]="getSeverity(lab.state)"
+                [rounded]="true"
+                [icon]="icon"
+              ></p-tag>
+            </td>
           </tr>
         </ng-template>
         <ng-template pTemplate="emptymessage">

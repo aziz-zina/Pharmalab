@@ -37,7 +37,13 @@
         <td data-pha2="pha2">{{ med.price | number : "0.3-3" }} TND</td>
         <td data-pha3="pha3">{{ med.quantity }}</td>
         <td>{{ med.expiry_date | date : "shortDate" }}</td>
-        <td data-pha4="pha4">{{ med.state }}</td>
+        <td>
+          <p-tag
+            [value]="med.state"
+            [severity]="getSeverity(med.state)"
+            [rounded]="true"
+          ></p-tag>
+        </td>
       </tr>
     </ng-template>
     <ng-template pTemplate="emptymessage">

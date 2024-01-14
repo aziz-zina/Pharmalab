@@ -58,6 +58,14 @@ export class ListMedsAdminComponent {
     });
   }
 
+  getSeverity(medStatus: string): string {
+    if (medStatus === 'Non valid') {
+      return 'danger';
+    } else {
+      return 'success';
+    }
+  }
+
   show(selectedData: Medicine) {
     this.originalData = new Medicine(
       selectedData.name,

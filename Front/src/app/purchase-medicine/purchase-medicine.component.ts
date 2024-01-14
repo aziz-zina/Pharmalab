@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./purchase-medicine.component.css'],
 })
 export class PurchaseMedicineComponent {
-  constructor(private router: Router, ) {}
+  constructor(private router: Router) {}
   sex() {
     this.router.navigate(['/sex2', { state: JSON.stringify('msg') }]);
   }

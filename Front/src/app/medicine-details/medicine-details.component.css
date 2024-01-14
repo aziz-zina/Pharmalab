@@ -67,3 +67,8 @@ h3{
   color: #473bf0;
   font-weight: bold;
 }
+
+.button-container{
+  display: flex;
+  justify-content: center;
+}

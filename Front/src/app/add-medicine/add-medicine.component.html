@@ -2420,18 +2420,33 @@
     <form class="medicine-form" #f="ngForm" (ngSubmit)="addMedicine(f)">
       <H2>Add a medicine</H2>
 
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input
-          type="text"
-          pInputText
-          name="name"
-          ngModel
-          required
-          [disabled]="disable"
-        />
+      <!-- Name and Chemical Composition -->
+      <div class="form-group row">
+        <div class="col">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            pInputText
+            name="name"
+            ngModel
+            required
+            [disabled]="disable"
+          />
+        </div>
+        <div class="col">
+          <label for="name">Chemical composition:</label>
+          <input
+            type="chemical_composition"
+            pInputText
+            name="chem"
+            ngModel
+            required
+            [disabled]="disable"
+          />
+        </div>
       </div>
 
+      <!-- Description -->
       <div class="form-group">
         <label for="description">Description:</label>
         <textarea
@@ -2445,18 +2460,7 @@
         ></textarea>
       </div>
 
-      <div class="form-group">
-        <label for="name">Chemical composition:</label>
-        <input
-          type="chemical_composition"
-          pInputText
-          name="chem"
-          ngModel
-          required
-          [disabled]="disable"
-        />
-      </div>
-
+      <!-- Side Effects -->
       <div class="form-group">
         <label for="description">Side Effects:</label>
         <textarea
@@ -2470,79 +2474,82 @@
         ></textarea>
       </div>
 
-      <div class="form-group">
-        <label for="name">Dosage :</label>
-        <p-dropdown
-          [(ngModel)]="selectedDosageForm"
-          [options]="dosageFormOptions"
-          placeholder="Select Dosage Form"
-          [ngModelOptions]="{ standalone: true }"
-          [disabled]="disable"
-          (onChange)="check()"
-          data-idDrop="idd"
-        ></p-dropdown>
+      <!-- Manufacture Date and Expiration Date -->
+      <div class="form-group row">
+        <div class="col">
+          <label for="name">Manufacture date:</label>
+          <p-calendar
+            [showButtonBar]="true"
+            [maxDate]="minDate"
+            [readonlyInput]="true"
+            [showIcon]="true"
+            [style]="{ width: '70%' }"
+            [inputStyle]="{ width: '70%' }"
+            appendTo="body"
+            name="manDate"
+            ngModel
+            [disabled]="disable"
+          ></p-calendar>
+        </div>
+        <div class="col">
+          <label for="name">Expiration date:</label>
+          <p-calendar
+            [showButtonBar]="true"
+            [minDate]="minDate"
+            [readonlyInput]="true"
+            [showIcon]="true"
+            [style]="{ width: '70%' }"
+            [inputStyle]="{ width: '70%' }"
+            appendTo="body"
+            name="expDate"
+            ngModel
+            [disabled]="disable"
+          ></p-calendar>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="name">Manufacture date:</label>
-        <p-calendar
-          [showButtonBar]="true"
-          [maxDate]="minDate"
-          [readonlyInput]="true"
-          [showIcon]="true"
-          [style]="{ width: '70%' }"
-          [inputStyle]="{ width: '70%' }"
-          appendTo="body"
-          name="manDate"
-          ngModel
-          [disabled]="disable"
-        ></p-calendar>
-      </div>
-
-      <div class="form-group">
-        <label for="name">Expiration date:</label>
-        <p-calendar
-          [showButtonBar]="true"
-          [minDate]="minDate"
-          [readonlyInput]="true"
-          [showIcon]="true"
-          [style]="{ width: '70%' }"
-          [inputStyle]="{ width: '70%' }"
-          appendTo="body"
-          name="expDate"
-          ngModel
-          [disabled]="disable"
-        ></p-calendar>
-      </div>
-
-      <div class="form-group">
-        <label for="name">Price:</label>
-        <p-inputNumber
-          inputId="currency-tunisia"
-          mode="currency"
-          currency="TND"
-          locale="ar-TN"
-          currencyDisplay="code"
-          [style]="{ width: '70%' }"
-          [inputStyle]="{ width: '70%' }"
-          name="price"
-          ngModel
-          [disabled]="disable"
-        >
-        </p-inputNumber>
-      </div>
-
-      <div class="form-group">
-        <label for="name">Quantity:</label>
-        <p-inputNumber
-          inputId="integeronly"
-          [style]="{ width: '70%' }"
-          [inputStyle]="{ width: '70%' }"
-          name="quantity"
-          ngModel
-          [disabled]="disable"
-        >
-        </p-inputNumber>
+      <!-- Price, Dosage, and Quantity -->
+      <div class="form-group row">
+        <div class="col">
+          <label for="name">Price:</label>
+          <p-inputNumber
+            inputId="currency-tunisia"
+            mode="currency"
+            currency="TND"
+            locale="ar-TN"
+            currencyDisplay="code"
+            [style]="{ width: '70%' }"
+            [inputStyle]="{ width: '70%' }"
+            name="price"
+            ngModel
+            [disabled]="disable"
+          >
+          </p-inputNumber>
+        </div>
+        <div class="col">
+          <label for="name">Dosage :</label>
+          <p-dropdown
+            [(ngModel)]="selectedDosageForm"
+            [options]="dosageFormOptions"
+            placeholder="Select Dosage Form"
+            [ngModelOptions]="{ standalone: true }"
+            [disabled]="disable"
+            (onChange)="check()"
+            data-idDrop="idd"
+          ></p-dropdown>
+        </div>
+        <div class="col">
+          <label for="name">Quantity:</label>
+          <p-inputNumber
+            inputId="integeronly"
+            [style]="{ width: '70%' }"
+            [inputStyle]="{ width: '70%' }"
+            name="quantity"
+            ngModel
+            [disabled]="disable"
+          >
+          </p-inputNumber>
+        </div>
       </div>
 
       <!-- Add other fields similarly -->

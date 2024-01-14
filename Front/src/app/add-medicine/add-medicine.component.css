@@ -1,31 +1,28 @@
 .medicine-form {
-  max-width: 800px; /* Adjust the maximum width as needed */
-  border: 1px solid #ddd; /* Add border to the form */
-  padding: 20px; /* Add padding for better spacing */
-  margin: 10px auto; /* Add margin to create space around the form */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  max-width: auto;
+  padding: 20px;
+  margin: 20px; /* Add space around the form */
   background-color: #FFFFFF;
 }
 
 .medicine-form h2 {
   text-align: center;
   color: #84e296;
-  font-size: xx-large;
-  font-weight: bolder;
+  font-size: x-large;
 }
 
 .form-group {
   display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group.row {
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 15px; /* Adjust the margin as needed */
 }
 
 label {
-  flex: 1;
-  margin-right: 10px; /* Adjust the margin as needed */
+  margin-bottom: 5px;
 }
 
 input,
@@ -33,35 +30,37 @@ textarea,
 p-dropdown,
 p-calendar,
 p-inputNumber {
-  flex: 2;
-  /* Adjust the width as needed or use a different flex value */
+  width: 100%;
 }
 
 button {
-  margin-top: 15px; /* Adjust the margin as needed */
+  margin-top: 15px;
+  width: 100%;
 }
 
-/* Optional: Style for better readability */
-label {
-  font-weight: bold;
-  color: #473bf0;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.button-div{
+.button-div {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  padding: 20px;
 }
 
 .container {
   display: flex;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
   justify-content: space-between;
+}
+
+.col {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.col:last-child {
+  margin-right: 0;
 }
 
 .image-container {
@@ -76,6 +75,6 @@ textarea {
 }
 
 .smaller-image {
-  width: 80%;  /* Adjust as needed */
-  height: auto; /* Keeps the aspect ratio */
+  width: 80%;
+  height: auto;
 }
