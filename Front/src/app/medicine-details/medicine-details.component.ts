@@ -74,6 +74,33 @@ export class MedicineDetailsComponent {
     });
   }
 
+  confirm(event: Event) {
+    this.confirmationService.confirm({
+      message: 'Are you sure that you want to delete this medicine?',
+      header: 'Confirmation',
+      icon: 'pi pi-exclamation-triangle',
+      acceptIcon: 'none',
+      rejectIcon: 'none',
+      rejectButtonStyleClass: 'p-button-text',
+      accept: () => {
+        this.deleteMedicine();
+        this.messageService.add({
+          severity: 'info',
+          summary: 'Confirmed',
+          detail: 'You have accepted',
+        });
+      },
+      reject: () => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Rejected',
+          detail: 'You have rejected',
+          life: 3000,
+        });
+      },
+    });
+  }
+
   ngOnInit(): void {
     this.userService.getUser().subscribe((data) => {
       this.role = data.role;
@@ -132,7 +159,7 @@ export class MedicineDetailsComponent {
   deleteMedicine() {
     this.disabled_state = true;
     this.medicineService.deleteMedicine(this.selectedData).subscribe((data) => {
-      this.showDeleteSuccess('User deleted successfully.', 'msg2');
+      this.showDeleteSuccess('Medicine deleted successfully.', 'msg2');
       this.checkIntention = true;
       this.ref.close(data);
     });
@@ -198,7 +225,7 @@ export class MedicineDetailsComponent {
       console.log(this.selectedData);
       this.medicineService.updateMedicine(this.selectedData).subscribe(
         (data) => {
-          this.showDeleteSuccess('User Updated successfully.', 'msg2');
+          this.showDeleteSuccess('Medicine Updated successfully.', 'msg2');
           this.checkIntention = true;
           this.ref.close(data);
         },
@@ -209,4 +236,11 @@ export class MedicineDetailsComponent {
       );
     }
   }
+
+  purchase: boolean = false;
+  openPurchaseOption() {
+    this.purchase = true;
+  }
+
+  value: number;
 }

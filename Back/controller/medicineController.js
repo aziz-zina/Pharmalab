@@ -130,11 +130,33 @@ export const meds = async (request, response) => {
   }
 };
 
-export const purchaseMedicament = async (request, response) => {
-  try{
-    
-  }catch (error){
+export const purchaseMedicine = async (request, response) => {
+  try {
+    const cookie = request.cookies["jwt"];
+
+    const claims = jwt.verify(cookie, "secret");
+
+    if (!claims) {
+      return response.status(401).send("unauthenticated");
+    }
+
+    const user = await User.findOne({ _id: claims._id });
+
+    request.body.medicine.buyers.push({
+      buyer: user._id,
+      quantity: request.body.quantity,
+      dateOfPurchase: Date.now(),
+    });
+
+    user.medicines_bought.push({
+      medicine: request.body.medicine._id,
+      quantity: request.body.quantity,
+      dateOfPurchase: Date.now(),
+    });
+
+    request.body.medicine.quantity -= request.body.quantity;
+  } catch (error) {
     console.error(error);
     response.status(500).json({ message: "Internal Server Error." });
   }
-}
+};

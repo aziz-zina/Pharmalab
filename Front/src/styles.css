@@ -6,4 +6,6 @@
 body{
   /* background-color: #ADACB5; */
   background-color: #CDCDCD;
+  /* background: rgb(0,255,188);
+background: linear-gradient(90deg, rgba(0,255,188,1) 0%, rgba(0,100,236,1) 45%, rgba(0,212,255,1) 100%); */
 }

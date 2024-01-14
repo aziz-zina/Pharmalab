@@ -11,6 +11,7 @@ import { logout } from "../controller/userController.js";
 import { laboratories } from "../controller/userController.js";
 import { deleteUser } from "../controller/userController.js";
 import { updateUser } from "../controller/userController.js";
+import { getUserById } from "../controller/userController.js";
 
 import { createMedicine } from "../controller/medicineController.js";
 import { getMedicine } from "../controller/medicineController.js";
@@ -19,7 +20,7 @@ import { updateMedicine } from "../controller/medicineController.js";
 import { medicines } from "../controller/medicineController.js";
 import { labs } from "../controller/medicineController.js";
 import { meds } from "../controller/medicineController.js";
-import { getUserById } from "../controller/userController.js";
+import { purchaseMedicine } from "../controller/medicineController.js";
 
 //Create an instance of express
 const router = express.Router();
@@ -59,6 +60,8 @@ router.patch("/updateMedicine", updateMedicine);
 router.delete("/deleteMedicine", deleteMedicine);
 
 router.get("/medicines", meds);
+
+router.post("/purchaseMedicine", purchaseMedicine);
 
 //Exporting the router
 export default router;

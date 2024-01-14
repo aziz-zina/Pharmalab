@@ -226,7 +226,7 @@
     type="button"
     class="p-button-danger"
     [disabled]="disabled_state"
-    (click)="deleteMedicine()"
+    (click)="confirm($event)"
   >
     Delete <i class="pi pi-trash"></i>
   </button>
@@ -261,14 +261,34 @@
   >
     Valid <i class="pi pi-check"></i>
   </button>
+  <p-confirmDialog></p-confirmDialog>
   <button
-    *ngIf="displayPharmacy"
+    *ngIf="displayPharmacy && !purchase"
     pButton
     type="button"
     class="p-button-success"
     [disabled]="disabled_state"
-    (click)="validateMedicine()"
+    (click)="openPurchaseOption()"
   >
-    Purchase <i class="pi pi-check"></i>
+    Purchase <i class="pi pi-cart-plus"></i>
   </button>
+</div>
+<br />
+<div class="form-container" *ngIf="purchase">
+  <hr />
+  <div class="form-container-2">
+    <span class="p-float-label">
+      <p-inputNumber inputId="integeronly" [(ngModel)]="value"> </p-inputNumber>
+      <label for="number-input">Quantity</label>
+      <button
+        *ngIf="purchase"
+        pButton
+        type="button"
+        class="p-button-success"
+        [disabled]="disabled_state"
+      >
+        Purchase <i class="pi pi-cart-plus"></i>
+      </button>
+    </span>
+  </div>
 </div>
