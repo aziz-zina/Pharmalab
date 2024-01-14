@@ -6,7 +6,15 @@
     <div class="info">
       <div class="user-info" *ngIf="authenticated">
         <!-- Display user name and logout icon when userName is not empty -->
-        <button #btn type="button" pButton icon="pi pi-bars" label="{{userName}}" (click)="menu.toggle($event)" styleClass="menucus"></button>
+        <button
+          #btn
+          type="button"
+          pButton
+          icon="pi pi-bars"
+          label="{{ userName }}"
+          (click)="menu.toggle($event)"
+          styleClass="menucus"
+        ></button>
         <p-tieredMenu #menu [model]="userItems" [popup]="true"></p-tieredMenu>
         <!-- <button pButton pRipple type="button" class="p-button-rounded p-button-danger p-button-text" (click)="logout()">
           <div class="button-content">
@@ -17,7 +25,13 @@
       </div>
       <div class="logout" *ngIf="!authenticated">
         <!-- Login button with icon and description below -->
-        <button pButton pRipple type="button" class="p-button-rounded p-button-success p-button-text" routerLink="/Login">
+        <button
+          pButton
+          pRipple
+          type="button"
+          class="p-button-rounded p-button-success p-button-text"
+          routerLink="/Login"
+        >
           <div class="button-content">
             <i class="pi pi-key"></i>
             <span>Login</span>
@@ -25,7 +39,13 @@
         </button>
 
         <!-- Register button with icon and description below -->
-        <button pButton pRipple type="button" class="p-button-rounded p-button-info p-button-text" routerLink="/Register">
+        <button
+          pButton
+          pRipple
+          type="button"
+          class="p-button-rounded p-button-info p-button-text"
+          routerLink="/Register"
+        >
           <div class="button-content">
             <i class="pi pi-user-plus"></i>
             <span>Register</span>

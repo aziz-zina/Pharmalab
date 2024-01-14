@@ -6,6 +6,13 @@ export class User {
   public address: string;
   public role: string;
   public state: string;
+  public medicines_bought?: any = [
+    {
+      quantity: Number,
+      medicine: String,
+      purchaseDate: Date,
+    },
+  ];
 
   constructor(
     email: string,

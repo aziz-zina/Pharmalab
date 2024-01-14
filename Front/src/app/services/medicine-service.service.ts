@@ -64,4 +64,13 @@ export class MedicineServiceService {
       withCredentials: true,
     });
   }
+
+  public getMedicineById(medicineId: string): Observable<any> {
+    console.log(medicineId);
+    const options = {
+      params: { medicineId },
+      withCredentials: true,
+    };
+    return this.httpClient.get<any>(this.apiUrl + '/getMedicineById', options);
+  }
 }

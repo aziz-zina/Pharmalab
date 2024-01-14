@@ -130,6 +130,26 @@ export const meds = async (request, response) => {
   }
 };
 
+export const getMedicineById = async (request, response) => {
+  try {
+    const medicineId = request.query.medicineId;
+
+    // Assuming User is your Mongoose model for producers
+    const medicine = await Medicine.findOne({ _id: medicineId });
+
+    console.log(medicine);
+
+    if (!medicine) {
+      return response.status(404).json({ error: "Medicine not found" });
+    }
+
+    return response.status(200).json({ medicine });
+  } catch (error) {
+    console.error("Error in getUserById:", error);
+    return response.status(500).json({ error: "Internal server error" });
+  }
+};
+
 export const purchaseMedicine = async (request, response) => {
   console.log(request.body);
   try {

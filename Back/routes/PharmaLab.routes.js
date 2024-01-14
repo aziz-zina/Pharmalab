@@ -21,6 +21,7 @@ import { medicines } from "../controller/medicineController.js";
 import { labs } from "../controller/medicineController.js";
 import { meds } from "../controller/medicineController.js";
 import { purchaseMedicine } from "../controller/medicineController.js";
+import { getMedicineById } from "../controller/medicineController.js";
 
 //Create an instance of express
 const router = express.Router();
@@ -62,6 +63,8 @@ router.delete("/deleteMedicine", deleteMedicine);
 router.get("/medicines", meds);
 
 router.post("/purchaseMedicine", purchaseMedicine);
+
+router.get("/getMedicineById", getMedicineById);
 
 //Exporting the router
 export default router;

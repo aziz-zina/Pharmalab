@@ -56,14 +56,21 @@ export class MedicinesComponent {
 
   getSeverity(medQuantity: number): string {
     if (medQuantity < 10) {
-      this.inventoryStatus = 'Limited Stock';
       return 'warning';
     } else if (medQuantity == 0) {
-      this.inventoryStatus = 'Out Of Stock';
       return 'danger';
     } else {
-      this.inventoryStatus = 'In Stock';
       return 'success';
+    }
+  }
+
+  getValue(med: Medicine): string {
+    if (med.quantity == 0) {
+      return 'Limited Stock';
+    } else if (med.quantity <= 0) {
+      return 'Out Of Stock';
+    } else {
+      return 'In Stock';
     }
   }
 

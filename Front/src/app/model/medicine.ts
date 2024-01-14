@@ -12,7 +12,7 @@ export class Medicine {
   public price: number;
   public quantity: number;
   public producer: string;
-  public buyers?: User[];
+  public buyers?: any[];
   public state?: string;
 
   constructor(
@@ -27,7 +27,7 @@ export class Medicine {
     quantity: number,
     producer: string,
     state?: string,
-    buyers?: User[]
+    buyers?: any[]
   ) {
     this.name = name;
     this.description = description;

@@ -1,0 +1,47 @@
+.list-med{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,.2);
+  transition: box-shadow .3s ease-in-out;
+}
+
+h2{
+  color: #473bf0;
+}
+
+tr{
+cursor: pointer;
+}
+
+tr:hover{
+background-color: #f2f2f2;
+}
+
+.container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.image-container {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab-container {
+  margin-top: 5%;
+  width: 70%;
+}
+
+.smaller-image {
+  width: 80%;  /* Adjust as needed */
+  height: auto; /* Keeps the aspect ratio */
+}
