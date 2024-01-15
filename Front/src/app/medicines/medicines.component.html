@@ -4482,7 +4482,7 @@
         styleClass="p-datatable-gridlines"
         [resizableColumns]="true"
         [paginator]="true"
-        [rows]="10"
+        [rows]="5"
         [showCurrentPageReport]="true"
         [tableStyle]="{ 'min-width': '50rem' }"
         [resizableColumns]="true"
@@ -4504,19 +4504,19 @@
         </ng-template>
         <ng-template pTemplate="header">
           <tr>
-            <th pSortableColumn="name" style="width: 15%">
+            <th pSortableColumn="name">
               Name<p-sortIcon field="name"></p-sortIcon>
             </th>
-            <th pSortableColumn="price" style="width: 20%">
+            <th pSortableColumn="price">
               Price<p-sortIcon field="price"></p-sortIcon>
             </th>
-            <th pSortableColumn="quantity" style="width: 15%">
+            <th pSortableColumn="quantity">
               Quantity<p-sortIcon field="quantity"></p-sortIcon>
             </th>
-            <th pSortableColumn="expDate" style="width: 15%">
+            <th pSortableColumn="expDate">
               Expiry Date<p-sortIcon field="expDate"></p-sortIcon>
             </th>
-            <th pSortableColumn="inventoryStatus" style="width: 15%">
+            <th pSortableColumn="inventoryStatus">
               Status<p-sortIcon field="inventoryStatus"></p-sortIcon>
             </th>
           </tr>

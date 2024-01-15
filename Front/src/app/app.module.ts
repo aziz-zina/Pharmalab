@@ -46,6 +46,7 @@ import { LaboratoriesComponent } from './laboratories/laboratories.component';
 import { ListMedsAdminComponent } from './list-meds-admin/list-meds-admin.component';
 import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
 import { MessagesModule } from 'primeng/messages';
+import { BadgeModule } from 'primeng/badge';
 
 @NgModule({
   declarations: [
@@ -94,6 +95,7 @@ import { MessagesModule } from 'primeng/messages';
     InputTextareaModule,
     DividerModule,
     MessageModule,
+    BadgeModule,
     CardModule,
   ],
   providers: [MessageService],

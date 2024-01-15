@@ -2527,18 +2527,6 @@
           </p-inputNumber>
         </div>
         <div class="col">
-          <label for="name">Dosage :</label>
-          <p-dropdown
-            [(ngModel)]="selectedDosageForm"
-            [options]="dosageFormOptions"
-            placeholder="Select Dosage Form"
-            [ngModelOptions]="{ standalone: true }"
-            [disabled]="disable"
-            (onChange)="check()"
-            data-idDrop="idd"
-          ></p-dropdown>
-        </div>
-        <div class="col">
           <label for="name">Quantity:</label>
           <p-inputNumber
             inputId="integeronly"
@@ -2549,6 +2537,19 @@
             [disabled]="disable"
           >
           </p-inputNumber>
+        </div>
+        <div class="col custom-dropdown">
+          <label for="name" class="cd">Dosage :</label>
+          <p-dropdown
+            class="cd"
+            [(ngModel)]="selectedDosageForm"
+            [options]="dosageFormOptions"
+            placeholder="Select Dosage Form"
+            [ngModelOptions]="{ standalone: true }"
+            [disabled]="disable"
+            (onChange)="check()"
+            data-idDrop="idd"
+          ></p-dropdown>
         </div>
       </div>
 

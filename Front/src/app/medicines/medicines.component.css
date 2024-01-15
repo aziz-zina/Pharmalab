@@ -1,5 +1,5 @@
 .list-med{
-  margin-top: 20px;
+  margin-top: 0px;
   margin-bottom: 20px;
   margin-left: 20px;
   margin-right: 20px;
@@ -24,7 +24,7 @@ background-color: #f2f2f2;
 }
 
 .container {
-  margin-top: 50px;
+  margin-top: 25px;
   display: flex;
   justify-content: space-between;
 }
@@ -37,7 +37,7 @@ background-color: #f2f2f2;
 }
 
 .tab-container {
-  margin-top: 5%;
+  margin-top: 3%;
   width: 70%;
 }
 

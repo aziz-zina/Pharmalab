@@ -5,13 +5,11 @@
       <h2>Laboratories</h2>
       <hr />
       <p-table
-        #dt1
         [value]="laboratories"
         dataKey="id"
-        [rows]="10"
-        [showCurrentPageReport]="true"
-        [rowsPerPageOptions]="[10, 25, 50]"
         [paginator]="true"
+        [rows]="5"
+        [showCurrentPageReport]="true"
         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
       >
         <ng-template pTemplate="caption">
@@ -30,14 +28,14 @@
         </ng-template>
         <ng-template pTemplate="header">
           <tr>
-            <th pSortableColumn="name" style="width: 15%">
-              Email<p-sortIcon field="name"></p-sortIcon>
+            <th pSortableColumn="email" style="width: 15%">
+              Email<p-sortIcon field="email"></p-sortIcon>
             </th>
-            <th pSortableColumn="price" style="width: 20%">
+            <th pSortableColumn="name" style="width: 15%">
               Name<p-sortIcon field="price"></p-sortIcon>
             </th>
-            <th pSortableColumn="quantity" style="width: 15%">
-              Address<p-sortIcon field="quantity"></p-sortIcon>
+            <th pSortableColumn="address" style="width: 15%">
+              Address<p-sortIcon field="address"></p-sortIcon>
             </th>
           </tr>
         </ng-template>

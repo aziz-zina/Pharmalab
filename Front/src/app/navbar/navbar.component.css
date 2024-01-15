@@ -8,6 +8,7 @@
 .user-info {
   display: flex;
   align-items: center; /* Optional: Align items vertically in the center */
+  gap: 10px; /* Add space between the children of the user-info class */
 }
 
 .user-info p {
@@ -16,4 +17,9 @@
 
 .user-info button {
   margin-left: auto; /* Push the button to the right, taking up all available space */
+}
+
+.notification {
+  margin-top: 10px;
+  margin-right: 10px;
 }

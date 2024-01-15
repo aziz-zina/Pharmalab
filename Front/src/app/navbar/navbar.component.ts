@@ -45,6 +45,7 @@ export class NavbarComponent implements OnDestroy {
   items: MenuItem[] = [];
   userItems: MenuItem[] = [];
   activeItem: MenuItem;
+  notification: boolean = false;
 
   login() {
     this.router.navigate(['./Login']);
@@ -86,6 +87,7 @@ export class NavbarComponent implements OnDestroy {
                   },
                 ];
               } else if (data.role == 'admin') {
+                this.notification = true;
                 this.userItems = [
                   {
                     label: 'Profile',
@@ -116,6 +118,7 @@ export class NavbarComponent implements OnDestroy {
                   },
                 ];
               } else if (data.role == 'laboratory') {
+                this.notification = true;
                 this.userItems = [
                   {
                     label: 'Profile',

@@ -1,8 +1,12 @@
 .medicine-form {
   max-width: auto;
-  padding: 20px;
+  padding: 30px;
   margin: 20px; /* Add space around the form */
   background-color: #FFFFFF;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,.2);
+  transition: box-shadow .3s ease-in-out;
 }
 
 .medicine-form h2 {
@@ -39,6 +43,7 @@ button {
 }
 
 .button-div {
+  margin-top: 2%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,3 +83,15 @@ button {
   width: 80%;
   height: auto;
 }
+
+.custom-dropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.cd{
+  margin-top: -2px;
+}
+
+
