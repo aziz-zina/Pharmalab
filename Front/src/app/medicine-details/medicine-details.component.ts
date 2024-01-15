@@ -9,9 +9,7 @@ import {
   Message,
   MessageService,
 } from 'primeng/api';
-import { DatePipe } from '@angular/common';
 import { UserServiceService } from '../services/user-service.service';
-import { data } from 'cypress/types/jquery';
 import { User } from '../model/user';
 
 @Component({
@@ -133,6 +131,31 @@ export class MedicineDetailsComponent {
           data.producer.role
         );
       });
+    this.getBuyers();
+  }
+
+  buyers: any[] = [];
+  getBuyers() {
+    let array: any[] = [];
+    if (this.selectedData.buyers) {
+      array = this.selectedData.buyers;
+      console.log(array);
+      for (let i = 0; i < array.length; i++) {
+        console.log(array[i]._id);
+        this.userService.getUserByBuyerId(array[i].buyer).subscribe((data) => {
+          const obj = {
+            buyer: data.buyer,
+            medicine: this.selectedData,
+            quantity: array[i].quantity,
+            totalPrice: array[i].quantity * this.selectedData.price,
+            date: array[i].dateOfPurchase,
+          };
+          //console.log(obj.totalPrice);
+          console.log(obj);
+          this.buyers.push(obj);
+        });
+      }
+    }
   }
 
   onEditClick() {
@@ -245,6 +268,7 @@ export class MedicineDetailsComponent {
     console.log(this.getMessage());
   }
 
+  medicineState: boolean = true;
   getMessage(): string {
     let msg = '';
     console.log(this.compareDates(this.selectedData.expiry_date, new Date()));
@@ -252,6 +276,7 @@ export class MedicineDetailsComponent {
       this.compareDates(this.selectedData.expiry_date, new Date()) == 'Expired'
     ) {
       msg = 'Expired';
+      this.medicineState = false;
     } else {
       if (
         this.compareDates(this.selectedData.expiry_date, new Date()) ==
@@ -259,6 +284,9 @@ export class MedicineDetailsComponent {
       ) {
         msg = 'Expiring soon';
       }
+    }
+    if (this.selectedData.quantity == 0) {
+      this.medicineState = false;
     }
     return msg;
   }
@@ -294,23 +322,22 @@ export class MedicineDetailsComponent {
 
   compareDates(date1: Date, date2: Date): string {
     let statement = '';
-    console.log(date1);
-    console.log(date2);
-    if (date1 instanceof Date && date2 instanceof Date) {
-      console.log('here');
-      let differenceInTime = date1.getTime() - date2.getTime();
-      console.log(differenceInTime);
-      let differenceInDays = differenceInTime / (1000 * 3600 * 24);
-      if (differenceInDays <= 0) {
-        statement = 'Expired';
-      } else if (differenceInDays < 30) {
-        statement = 'Expiring soon';
-      } else {
-        statement = 'Valid';
-      }
+    let date1Obj = new Date(date1);
+    console.log(date1Obj);
+    let date2Obj = new Date(date2);
+    console.log(date2Obj);
+    let differenceInTime = date1Obj.getTime() - date2Obj.getTime();
+    console.log(differenceInTime);
+    let differenceInDays = differenceInTime / (1000 * 3600 * 24);
+    console.log(differenceInDays);
+    if (differenceInDays <= 0) {
+      statement = 'Expired';
+    } else if (differenceInDays < 30) {
+      statement = 'Expiring soon';
     } else {
-      statement = 'Invalid dates';
+      statement = 'Valid';
     }
+    console.log(statement);
     return statement;
   }
 }

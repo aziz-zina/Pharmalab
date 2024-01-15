@@ -190,3 +190,22 @@ export const getUserById = async (request, response) => {
     return response.status(500).json({ error: "Internal server error" });
   }
 };
+
+export const getUserByBuyerId = async (request, response) => {
+  console.log(request.query.buyerId);
+  try {
+    const buyerId = request.query.buyerId;
+
+    const buyer = await User.findOne({ _id: buyerId });
+    console.log("sex: ", buyer);
+
+    if (!buyer) {
+      return response.status(404).json({ error: "User not found" });
+    }
+
+    return response.status(200).json({ buyer });
+  } catch (error) {
+    console.error("Error in getUserByBuyerId:", error);
+    return response.status(500).json({ error: "Internal server error" });
+  }
+};

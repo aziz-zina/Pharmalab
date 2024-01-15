@@ -128,7 +128,7 @@
       [inputStyle]="{ width: '70%' }"
       appendTo="body"
       name="manDate"
-      ngModel
+      [(ngModel)]="selectedData.expiry_date"
       [disabled]="disabled_state"
     ></p-calendar>
   </div>
@@ -165,6 +165,7 @@
   <div class="table-container" *ngIf="display">
     <label for="buyers">List of Buyers:</label>
     <p-table
+      [value]="buyers"
       styleClass="p-datatable-gridlines"
       styleClass="p-datatable-gridlines"
       [resizableColumns]="true"
@@ -177,29 +178,39 @@
     >
       <ng-template pTemplate="header">
         <tr>
-          <th pSortableColumn="name" style="width: 15%">
+          <th pSortableColumn="name">
             Email<p-sortIcon field="name"></p-sortIcon>
           </th>
           <th pSortableColumn="price" style="width: 20%">
             Name<p-sortIcon field="price"></p-sortIcon>
           </th>
-          <th pSortableColumn="quantity" style="width: 15%">
+          <th pSortableColumn="quantity">
             Address<p-sortIcon field="quantity"></p-sortIcon>
+          </th>
+          <th pSortableColumn="quantity">
+            Quantity<p-sortIcon field="quantity"></p-sortIcon>
+          </th>
+          <th pSortableColumn="quantity">
+            Total price<p-sortIcon field="quantity"></p-sortIcon>
+          </th>
+          <th pSortableColumn="quantity">
+            Purchase Date<p-sortIcon field="quantity"></p-sortIcon>
           </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-med>
-        <!-- <tr (click)="show(med)">
-          <td>{{ med.name }}</td>
-          <td>{{ med.price | number : "0.3-3" }} TND</td>
+        <tr>
+          <td>{{ med.buyer.email }}</td>
+          <td>{{ med.buyer.name }}</td>
+          <td>{{ med.buyer.address }}</td>
           <td>{{ med.quantity }}</td>
-          <td>{{ med.expiry_date | date : "shortDate" }}</td>
-          <td>{{ med.state }}</td>
-        </tr> -->
+          <td>{{ med.totalPrice | number : "0.3-3" }} TND</td>
+          <td>{{ med.date | date : "shortDate" }}</td>
+        </tr>
       </ng-template>
       <ng-template pTemplate="emptymessage">
         <tr>
-          <td colspan="3" style="text-align: center">
+          <td colspan="6" style="text-align: center">
             Nothing to display yet.
           </td>
         </tr>
@@ -285,17 +296,26 @@
         pButton
         type="button"
         class="p-button-success"
-        [disabled]="disabled_state"
+        [disabled]="!medicineState"
         (click)="purchaseMedicine()"
       >
         Purchase <i class="pi pi-cart-plus"></i>
       </button>
     </span>
   </div>
-  <div class="msg" *ngIf="getMessage() === 'Medicine is expired!'">
-    <p-message severity="warn" text="Message Content"></p-message>
+  <div class="msg" *ngIf="getMessage() === 'Expired'">
+    <p-message severity="error" text="Medicine is expired"></p-message>
   </div>
-  <div class="msg" *ngIf="getMessage() === 'Medicine is expiring soon!'">
-    <p-message severity="warn" text="Message Content"></p-message>
+  <div class="msg" *ngIf="getMessage() === 'Expiring soon'">
+    <p-message severity="warn" text="Medicine is expiring soon!"></p-message>
+  </div>
+  <div class="msg" *ngIf="selectedData.quantity == 0">
+    <p-message severity="error" text="Medicine is not in stock"></p-message>
+  </div>
+  <div
+    class="msg"
+    *ngIf="selectedData.quantity <= 10 && selectedData.quantity > 0"
+  >
+    <p-message severity="warn" text="Medicine is in low stock"></p-message>
   </div>
 </div>

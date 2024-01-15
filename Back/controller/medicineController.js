@@ -70,8 +70,8 @@ export const deleteMedicine = async (request, response) => {
 };
 
 export const updateMedicine = async (request, response) => {
-  //console.log(request.body);
-  console.log(request.body._id);
+  console.log("update medicine");
+  console.log(request.body.manufacture_date);
   try {
     //const userEmail = await User.findOne({ email: request.body.email });
     const result = await Medicine.findOneAndUpdate(
@@ -162,7 +162,7 @@ export const purchaseMedicine = async (request, response) => {
     }
 
     const user = await User.findOne({ _id: claims._id });
-    console.log(user);
+    console.log("id lotfi: ", user._id);
     const newQuantity = request.body.medicine.quantity - request.body.quantity;
 
     const response_medicine = await Medicine.findOneAndUpdate(
@@ -170,7 +170,7 @@ export const purchaseMedicine = async (request, response) => {
       {
         $push: {
           buyers: {
-            medicine: user._id,
+            buyer: user._id,
             quantity: request.body.quantity,
             dateOfPurchase: Date.now(),
           },

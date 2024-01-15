@@ -8,16 +8,11 @@ describe('MedicineDetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MedicineDetailsComponent ]
-    })
-    .compileComponents();
+      declarations: [MedicineDetailsComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MedicineDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });

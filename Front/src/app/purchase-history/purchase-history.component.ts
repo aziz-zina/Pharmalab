@@ -85,10 +85,11 @@ export class PurchaseHistoryComponent implements OnInit {
           const obj = {
             medicine: data.medicine,
             quantity: this.history[i].quantity,
-            totalPrice: this.history[i].quantity * this.history[i].price,
+            totalPrice: this.history[i].quantity * data.medicine.price,
             date: this.history[i].dateOfPurchase,
           };
-          console.log(obj);
+          console.log(obj.totalPrice);
+          //console.log(obj);
           this.history2.push(obj);
         });
     }

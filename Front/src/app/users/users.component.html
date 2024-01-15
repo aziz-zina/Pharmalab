@@ -31,12 +31,20 @@
             <td data-pha2="pha2">{{ pha.name }}</td>
             <td data-pha3="pha3">{{ pha.address }}</td>
             <td>
-              <p-tag
-                [value]="pha.state"
-                [severity]="getSeverity(pha.state)"
-                [rounded]="true"
-                [icon]="icon"
-              ></p-tag>
+              <ng-container *ngIf="pha.state === 'Non valid'">
+                <p-tag
+                  value="Non Valid"
+                  severity="danger"
+                  [rounded]="true"
+                ></p-tag>
+              </ng-container>
+              <ng-container *ngIf="pha.state === 'Valid'">
+                <p-tag
+                  value="Valid"
+                  severity="success"
+                  [rounded]="true"
+                ></p-tag>
+              </ng-container>
             </td>
           </tr>
         </ng-template>
@@ -79,12 +87,20 @@
             <td data-lab2="lab2">{{ lab.name }}</td>
             <td data-lab3="lab3">{{ lab.address }}</td>
             <td>
-              <p-tag
-                [value]="lab.state"
-                [severity]="getSeverity(lab.state)"
-                [rounded]="true"
-                [icon]="icon"
-              ></p-tag>
+              <ng-container *ngIf="lab.state === 'Non valid'">
+                <p-tag
+                  value="Non Valid"
+                  severity="danger"
+                  [rounded]="true"
+                ></p-tag>
+              </ng-container>
+              <ng-container *ngIf="lab.state === 'Valid'">
+                <p-tag
+                  value="Valid"
+                  severity="success"
+                  [rounded]="true"
+                ></p-tag>
+              </ng-container>
             </td>
           </tr>
         </ng-template>

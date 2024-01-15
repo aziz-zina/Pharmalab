@@ -4525,7 +4525,7 @@
               <ng-container *ngIf="med.quantity == 0; else elseBlock1">
                 <p-tag
                   value="Out of stock"
-                  [severity]="getSeverity(med.quantity)"
+                  severity="danger"
                   [rounded]="true"
                 ></p-tag>
               </ng-container>
@@ -4533,14 +4533,14 @@
                 <ng-container *ngIf="med.quantity <= 10; else elseBlock2">
                   <p-tag
                     value="Low on stock"
-                    [severity]="getSeverity(med.quantity)"
+                    severity="warning"
                     [rounded]="true"
                   ></p-tag>
                 </ng-container>
                 <ng-template #elseBlock2>
                   <p-tag
                     value="In stock"
-                    [severity]="getSeverity(med.quantity)"
+                    severity="success"
                     [rounded]="true"
                   ></p-tag>
                 </ng-template>

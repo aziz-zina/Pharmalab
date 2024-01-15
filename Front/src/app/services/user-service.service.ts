@@ -74,4 +74,13 @@ export class UserServiceService {
 
     return this.httpClient.get<any>(this.apiUrl + '/userById', options);
   }
+
+  public getUserByBuyerId(buyerId: string): Observable<any> {
+    console.log(buyerId);
+    const options = {
+      params: { buyerId },
+      withCredentials: true,
+    };
+    return this.httpClient.get<any>(this.apiUrl + '/getUserByBuyerId', options);
+  }
 }

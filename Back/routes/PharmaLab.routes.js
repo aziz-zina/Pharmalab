@@ -12,6 +12,7 @@ import { laboratories } from "../controller/userController.js";
 import { deleteUser } from "../controller/userController.js";
 import { updateUser } from "../controller/userController.js";
 import { getUserById } from "../controller/userController.js";
+import { getUserByBuyerId } from "../controller/userController.js";
 
 import { createMedicine } from "../controller/medicineController.js";
 import { getMedicine } from "../controller/medicineController.js";
@@ -46,6 +47,8 @@ router.delete("/deleteUser", deleteUser);
 router.patch("/updateUser", updateUser);
 
 router.get("/userById", getUserById);
+
+router.get("/getUserByBuyerId", getUserByBuyerId);
 
 //! THE MEDICINE APIs
 router.post("/addMedicine", createMedicine);
