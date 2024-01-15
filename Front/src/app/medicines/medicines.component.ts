@@ -16,7 +16,7 @@ import { MedicineDetailsComponent } from '../medicine-details/medicine-details.c
   providers: [DialogService],
 })
 export class MedicinesComponent {
-  medicines: Medicine[] = [];
+  medicines: any[] = [];
   editMode: boolean = false;
   edit: boolean = false;
   display: boolean = false;
@@ -30,6 +30,28 @@ export class MedicinesComponent {
     private userService: UserServiceService,
     private dialogService: DialogService
   ) {}
+
+  searchTerm: string; // This will hold the search term
+
+  filterTable() {
+    // if (this.searchTerm == '') {
+    //   this.listMedicines();
+    // } else {
+    //   this.medicines = this.medicines.filter((medicine) =>
+    //     medicine.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    //   );
+    // }
+    this.medicineService.filterMedicineByName(this.searchTerm).subscribe(
+      (data) => {
+        //console.log(data.medicines);
+        this.medicines = data.medicines;
+      },
+      (error) => {
+        console.log(error);
+        console.log('jawou mouch behy');
+      }
+    );
+  }
 
   listMedicines() {
     this.medicineService.getAllValidMedicines().subscribe((data) => {
@@ -52,26 +74,6 @@ export class MedicinesComponent {
     });
 
     ref.onClose.subscribe();
-  }
-
-  getSeverity(medQuantity: number): string {
-    if (medQuantity < 10) {
-      return 'warning';
-    } else if (medQuantity == 0) {
-      return 'danger';
-    } else {
-      return 'success';
-    }
-  }
-
-  getValue(med: Medicine): string {
-    if (med.quantity == 0) {
-      return 'Limited Stock';
-    } else if (med.quantity <= 0) {
-      return 'Out Of Stock';
-    } else {
-      return 'In Stock';
-    }
   }
 
   ngOnInit(): void {

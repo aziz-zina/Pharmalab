@@ -13,6 +13,7 @@ import { deleteUser } from "../controller/userController.js";
 import { updateUser } from "../controller/userController.js";
 import { getUserById } from "../controller/userController.js";
 import { getUserByBuyerId } from "../controller/userController.js";
+import { filterLaboratoryByName } from "../controller/userController.js";
 
 import { createMedicine } from "../controller/medicineController.js";
 import { getMedicine } from "../controller/medicineController.js";
@@ -23,6 +24,7 @@ import { labs } from "../controller/medicineController.js";
 import { meds } from "../controller/medicineController.js";
 import { purchaseMedicine } from "../controller/medicineController.js";
 import { getMedicineById } from "../controller/medicineController.js";
+import { filterMedicineByName } from "../controller/medicineController.js";
 
 //Create an instance of express
 const router = express.Router();
@@ -50,6 +52,8 @@ router.get("/userById", getUserById);
 
 router.get("/getUserByBuyerId", getUserByBuyerId);
 
+router.get("/filterLaboratoryByName", filterLaboratoryByName);
+
 //! THE MEDICINE APIs
 router.post("/addMedicine", createMedicine);
 
@@ -68,6 +72,8 @@ router.get("/medicines", meds);
 router.post("/purchaseMedicine", purchaseMedicine);
 
 router.get("/getMedicineById", getMedicineById);
+
+router.get("/filterMedicineByName", filterMedicineByName);
 
 //Exporting the router
 export default router;

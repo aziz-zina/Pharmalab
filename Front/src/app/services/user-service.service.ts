@@ -83,4 +83,16 @@ export class UserServiceService {
     };
     return this.httpClient.get<any>(this.apiUrl + '/getUserByBuyerId', options);
   }
+
+  public filterLaboratoryByName(text: string): Observable<any> {
+    const options = {
+      params: { text },
+      withCredentials: true,
+    };
+    console.log(options);
+    return this.httpClient.get<any>(
+      this.apiUrl + '/filterLaboratoryByName',
+      options
+    );
+  }
 }

@@ -29,6 +29,28 @@ export class LaboratoriesComponent {
     });
   }
 
+  searchTerm: string; // This will hold the search term
+
+  filterTable() {
+    // if (this.searchTerm == '') {
+    //   this.listMedicines();
+    // } else {
+    //   this.medicines = this.medicines.filter((medicine) =>
+    //     medicine.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    //   );
+    // }
+    this.userService.filterLaboratoryByName(this.searchTerm).subscribe(
+      (data) => {
+        console.log(data.lab);
+        this.laboratories = data.lab;
+      },
+      (error) => {
+        console.log(error);
+        console.log('jawou mouch behy');
+      }
+    );
+  }
+
   ngOnInit(): void {
     this.navbarService.display();
     this.listLaboratories();

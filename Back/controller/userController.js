@@ -209,3 +209,22 @@ export const getUserByBuyerId = async (request, response) => {
     return response.status(500).json({ error: "Internal server error" });
   }
 };
+
+export const filterLaboratoryByName = async (request, response) => {
+  try {
+    const textName = request.query.text;
+
+    const lab = await User.find({
+      name: { $regex: textName },
+      role: "laboratory",
+      state: "Valid",
+    });
+    console.log("lab");
+    console.log(lab);
+
+    response.status(200).json({ lab });
+  } catch (error) {
+    console.error(error);
+    response.status(500).json({ message: "Internal Server Error." });
+  }
+};

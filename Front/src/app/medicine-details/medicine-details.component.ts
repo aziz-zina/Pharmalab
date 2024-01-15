@@ -216,18 +216,15 @@ export class MedicineDetailsComponent {
   }
 
   updateMedicine() {
-    console.log(this.selectedData.price);
-    console.log(this.selectedData.quantity);
-    //console.log(this.selectedData);
+    console.log(this.selectedData);
     if (
-      this.selectedRole == undefined ||
       this.selectedData.name == '' ||
       this.selectedData.description == '' ||
       this.selectedData.chemical_composition == '' ||
       this.selectedData.side_effects == '' ||
       this.selectedData.dosage_form == '' ||
       this.selectedData.price <= 0 ||
-      this.selectedData.quantity <= 0
+      this.selectedData.quantity < 0
     ) {
       this.showRoleWarn("Don't leave empty fields.");
     } else {

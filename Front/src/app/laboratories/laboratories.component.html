@@ -18,7 +18,13 @@
           <div class="flex">
             <span class="p-input-icon-left ml-auto">
               <i class="pi pi-search"></i>
-              <input pInputText type="text" placeholder="Search keyword" />
+              <input
+                pInputText
+                type="text"
+                placeholder="Search keyword"
+                [(ngModel)]="searchTerm"
+                (input)="filterTable()"
+              />
             </span>
           </div>
         </ng-template>

@@ -202,3 +202,23 @@ export const purchaseMedicine = async (request, response) => {
     response.status(500).json({ message: "Internal Server Error." });
   }
 };
+
+export const filterMedicineByName = async (request, response) => {
+  try {
+    const textName = request.query.text;
+    console.log("zeb");
+    console.log(textName);
+
+    const medicines = await Medicine.find({
+      name: { $regex: textName },
+      state: "Valid",
+    });
+    console.log("medicines");
+    console.log(medicines);
+
+    response.status(200).json({ medicines });
+  } catch (error) {
+    console.error(error);
+    response.status(500).json({ message: "Internal Server Error." });
+  }
+};

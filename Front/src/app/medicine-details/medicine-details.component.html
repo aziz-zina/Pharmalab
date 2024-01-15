@@ -75,7 +75,7 @@
     <p-dropdown
       *ngIf="editMode"
       [options]="Roles"
-      [(ngModel)]="selectedRole"
+      [(ngModel)]="selectedData.dosage_form"
       [showClear]="false"
       placeholder="Select a Role"
       [ngModelOptions]="{ standalone: true }"
@@ -106,7 +106,7 @@
       [inputStyle]="{ width: '70%' }"
       appendTo="body"
       name="manDate"
-      ngModel
+      [(ngModel)]="selectedData.manufacture_date"
       [disabled]="disabled_state"
     ></p-calendar>
   </div>

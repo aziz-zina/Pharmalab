@@ -73,4 +73,16 @@ export class MedicineServiceService {
     };
     return this.httpClient.get<any>(this.apiUrl + '/getMedicineById', options);
   }
+
+  public filterMedicineByName(text: string): Observable<any> {
+    const options = {
+      params: { text },
+      withCredentials: true,
+    };
+    console.log(options);
+    return this.httpClient.get<any>(
+      this.apiUrl + '/filterMedicineByName',
+      options
+    );
+  }
 }
