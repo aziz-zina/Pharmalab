@@ -292,4 +292,10 @@
       </button>
     </span>
   </div>
+  <div class="msg" *ngIf="getMessage() === 'Medicine is expired!'">
+    <p-message severity="warn" text="Message Content"></p-message>
+  </div>
+  <div class="msg" *ngIf="getMessage() === 'Medicine is expiring soon!'">
+    <p-message severity="warn" text="Message Content"></p-message>
+  </div>
 </div>

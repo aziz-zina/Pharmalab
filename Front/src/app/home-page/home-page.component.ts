@@ -18,6 +18,8 @@ export class HomePageComponent {
     private messageService: MessageService
   ) {}
 
+  currentYear: number = new Date().getFullYear();
+
   showMessage(msg: string) {
     this.messageService.add({
       key: 'msg',

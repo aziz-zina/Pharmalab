@@ -6,6 +6,7 @@ import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import {
   ConfirmEventType,
   ConfirmationService,
+  Message,
   MessageService,
 } from 'primeng/api';
 import { DatePipe } from '@angular/common';
@@ -238,27 +239,78 @@ export class MedicineDetailsComponent {
   }
 
   purchase: boolean = false;
+  messages: Message[];
   openPurchaseOption() {
     this.purchase = true;
+    console.log(this.getMessage());
+  }
+
+  getMessage(): string {
+    let msg = '';
+    console.log(this.compareDates(this.selectedData.expiry_date, new Date()));
+    if (
+      this.compareDates(this.selectedData.expiry_date, new Date()) == 'Expired'
+    ) {
+      msg = 'Expired';
+    } else {
+      if (
+        this.compareDates(this.selectedData.expiry_date, new Date()) ==
+        'Expiring soon'
+      ) {
+        msg = 'Expiring soon';
+      }
+    }
+    return msg;
   }
 
   value: number;
   purchaseMedicine() {
-    const body = {
-      medicine: this.selectedData,
-      quantity: this.value,
-    };
-    console.log(body);
-    this.medicineService.buyMedicine(body).subscribe(
-      (data) => {
-        this.showDeleteSuccess('Medicine purchased.', 'msg2');
-        this.checkIntention = true;
-        this.ref.close(data);
-      },
-      (error) => {
-        this.disabled_state = false;
-        this.showRoleWarn('Something went wrong.');
+    if (this.value == undefined || this.value <= 0) {
+      this.showRoleWarn('Please enter a valid quantity.');
+      return;
+    } else {
+      if (this.value > this.selectedData.quantity) {
+        this.showRoleWarn('Not enough medicine in stock.');
+      } else {
+        const body = {
+          medicine: this.selectedData,
+          quantity: this.value,
+        };
+        console.log(body);
+        this.medicineService.buyMedicine(body).subscribe(
+          (data) => {
+            this.showDeleteSuccess('Medicine purchased.', 'msg2');
+            this.checkIntention = true;
+            this.ref.close(data);
+          },
+          (error) => {
+            this.disabled_state = false;
+            this.showRoleWarn('Something went wrong.');
+          }
+        );
       }
-    );
+    }
+  }
+
+  compareDates(date1: Date, date2: Date): string {
+    let statement = '';
+    console.log(date1);
+    console.log(date2);
+    if (date1 instanceof Date && date2 instanceof Date) {
+      console.log('here');
+      let differenceInTime = date1.getTime() - date2.getTime();
+      console.log(differenceInTime);
+      let differenceInDays = differenceInTime / (1000 * 3600 * 24);
+      if (differenceInDays <= 0) {
+        statement = 'Expired';
+      } else if (differenceInDays < 30) {
+        statement = 'Expiring soon';
+      } else {
+        statement = 'Valid';
+      }
+    } else {
+      statement = 'Invalid dates';
+    }
+    return statement;
   }
 }

@@ -27,6 +27,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { TreeTableModule } from 'primeng/treetable';
 import { CardModule } from 'primeng/card';
 import { TagModule } from 'primeng/tag';
+import { MessageModule } from 'primeng/message';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -44,6 +45,7 @@ import { MedicinesComponent } from './medicines/medicines.component';
 import { LaboratoriesComponent } from './laboratories/laboratories.component';
 import { ListMedsAdminComponent } from './list-meds-admin/list-meds-admin.component';
 import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
+import { MessagesModule } from 'primeng/messages';
 
 @NgModule({
   declarations: [
@@ -84,12 +86,14 @@ import { PurchaseHistoryComponent } from './purchase-history/purchase-history.co
     PasswordModule,
     InputTextModule,
     DialogModule,
+    MessagesModule,
     DynamicDialogModule,
     DropdownModule,
     InputNumberModule,
     CalendarModule,
     InputTextareaModule,
     DividerModule,
+    MessageModule,
     CardModule,
   ],
   providers: [MessageService],
