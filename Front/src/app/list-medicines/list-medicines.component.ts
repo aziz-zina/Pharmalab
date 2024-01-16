@@ -82,6 +82,14 @@ export class ListMedicinesComponent {
     });
   }
 
+  quantity(medQuantity: number): boolean {
+    return medQuantity == 0;
+  }
+
+  exDate(medExDate: Date): boolean {
+    return new Date(medExDate) <= new Date();
+  }
+
   ngOnInit(): void {
     this.navbarService.display();
     this.userService.getUser().subscribe(

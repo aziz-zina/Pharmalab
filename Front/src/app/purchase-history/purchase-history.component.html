@@ -1765,13 +1765,9 @@
       <hr />
       <p-table
         [value]="history2"
-        styleClass="p-datatable-gridlines"
-        [resizableColumns]="true"
-        [paginator]="true"
-        [rows]="10"
+        dataKey="id"
         [showCurrentPageReport]="true"
-        [tableStyle]="{ 'min-width': '50rem' }"
-        [resizableColumns]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
       >
         <ng-template pTemplate="header">
           <tr>

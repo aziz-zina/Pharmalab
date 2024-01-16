@@ -1,6 +1,15 @@
 <p-toast position="top-center" key="msg5"></p-toast>
 <div class="list-med">
-  <h2>List of medicines: {{ lab_name }}</h2>
+  <div class="table-header-container">
+    <h2>List of medicines: {{ lab_name }}</h2>
+    <div class="info">
+      <i
+        class="pi pi-info-circle"
+        style="font-size: 1.5rem"
+        pTooltip="If a cell is red, it means that the medicine is expired or the quantity is equal to 0."
+      ></i>
+    </div>
+  </div>
   <hr />
   <p-table
     [value]="medicines"
@@ -12,6 +21,13 @@
     [tableStyle]="{ 'min-width': '50rem' }"
     [resizableColumns]="true"
   >
+    <div class="info">
+      <i
+        class="pi pi-info-circle"
+        style="font-size: 1.5rem"
+        pTooltip="Enter your username"
+      ></i>
+    </div>
     <ng-template pTemplate="header">
       <tr>
         <th pSortableColumn="name" style="width: 15%">
@@ -35,8 +51,15 @@
       <tr (click)="show(med)" data-testid="med-row">
         <td data-pha1="pha1">{{ med.name }}</td>
         <td data-pha2="pha2">{{ med.price | number : "0.3-3" }} TND</td>
-        <td data-pha3="pha3">{{ med.quantity }}</td>
-        <td>{{ med.expiry_date | date : "shortDate" }}</td>
+        <td
+          data-pha3="pha3"
+          [ngClass]="{ 'row-accessories': quantity(med.quantity) }"
+        >
+          {{ med.quantity }}
+        </td>
+        <td [ngClass]="{ 'row-accessories': exDate(med.expiry_date) }">
+          {{ med.expiry_date | date : "shortDate" }}
+        </td>
         <td>
           <ng-container *ngIf="med.state === 'Non valid'">
             <p-tag value="Non Valid" severity="danger" [rounded]="true"></p-tag>

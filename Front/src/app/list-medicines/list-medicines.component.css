@@ -22,3 +22,18 @@ tr{
 tr:hover{
   background-color: #f2f2f2;
 }
+
+:host ::ng-deep .row-accessories {
+  background-color: rgba(240, 30, 30, 0.404) !important;
+}
+
+.info{
+  margin-top: 10px;
+  margin-right: -10px;
+}
+
+.table-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
