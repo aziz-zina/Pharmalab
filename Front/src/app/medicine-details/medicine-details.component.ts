@@ -33,6 +33,7 @@ export class MedicineDetailsComponent {
   display: boolean;
   role: string;
   displayPharmacy: boolean = false;
+  purchased: boolean;
 
   Roles: string[] = [
     'Tablet',
@@ -114,6 +115,7 @@ export class MedicineDetailsComponent {
     this.original_id = this.selectedData._id;
     this.edit = this.config.data['edit'];
     this.display = this.config.data['display'];
+    this.purchased = this.config.data['purchased'];
     console.log(this.edit);
     console.log(this.display);
     //console.log(this.original_id);

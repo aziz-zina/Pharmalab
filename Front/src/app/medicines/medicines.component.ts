@@ -58,6 +58,7 @@ export class MedicinesComponent {
       this.medicines = data;
     });
   }
+  purchased: boolean = false;
 
   show(selectedData: Medicine) {
     const ref = this.dialogService.open(MedicineDetailsComponent, {
@@ -67,13 +68,17 @@ export class MedicinesComponent {
       baseZIndex: 10000,
       data: {
         display: this.display,
+        purchased: this.purchased,
         selectedData: selectedData,
         editMode: this.editMode,
         edit: this.edit,
       },
     });
 
-    ref.onClose.subscribe();
+    ref.onClose.subscribe((data) => {
+      console.log(this.purchased);
+      this.listMedicines();
+    });
   }
 
   ngOnInit(): void {
