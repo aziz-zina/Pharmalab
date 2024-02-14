@@ -1,5 +1,4 @@
 ## Project Name: PharmaLab
----
 ###Overview:
 ####1. Introduction: <br>
 The culmination of a year dedicated to creating PharmaLab, an innovative web application addressing fragmented processes in pharmaceutical management.<br>
