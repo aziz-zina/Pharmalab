@@ -202,7 +202,7 @@ If you find any issues or have feature requests, please open an issue on the Pha
 
 ## License 📄 :
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE.md).
 
 🚀 **Feel free to use, modify, and distribute the codebase. Contributions are welcome!**
 
@@ -210,9 +210,21 @@ This project is licensed under the [MIT License](LICENSE).
 
 <br>
 
-Acknowledgments:
-Express gratitude for any external tools, libraries, or resources used in the project.
+## Acknowledgments 🙏 :
 
+I extend my sincere appreciation to the following tools, libraries, and resources that have been instrumental in shaping and enhancing this project:
+
+- <a href="https://nodejs.org/en">Node.js</a>: The JavaScript runtime that powers the server-side of our application.
+- <a href="https://expressjs.com/">Express.js: The fast, unopinionated, minimalist web framework for Node.js.
+- <a href="https://angular.io/">Angular: The framework empowering the development of our dynamic frontend.
+- <a href="https://www.mongodb.com/">MongoDB: The flexible and scalable NoSQL database that stores our data.
+- <a href="https://github.com/">GitHub: The platform that facilitates collaborative coding and version control.
+- <a href="https://www.cypress.io/">Cypress: The end-to-end testing framework ensuring the reliability of our application.
+- <a href="https://primeng.org/">PrimeNG: The UI component library for Angular that enhances the aesthetics and functionality of our user interface.
+
+These tools and resources have played a crucial role in bringing our vision to fruition. We express our gratitude to the dedicated individuals behind these projects and the broader open-source community. 🙌
+
+<br>
 
 ## Contact 📧:
 For any questions, issues, or collaboration inquiries related to PharmaLab, feel free to reach out to us:
@@ -222,6 +234,3 @@ For any questions, issues, or collaboration inquiries related to PharmaLab, feel
 
 
 > Connect with us and be a part of enhancing PharmaLab! We appreciate your feedback and contributions.
-
-Note:
-Keep the README concise, and use formatting such as headings, bullet points, and code blocks for better readability. Update the README as the project evolves and include any additional information that may be relevant to users and contributors.
