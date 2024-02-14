@@ -25,24 +25,20 @@ Fragmented processes and direct communication hinder efficiency in pharmaceutica
 
 ### Project Features 🚀:
 
-#### Authentication and Authorization: <br>
-[X] Secure user registration and login. <br>
-[X] Defined roles and permissions for pharmacies, laboratories, and administrators. <br>
-<br>
+#### Authentication and Authorization:
+- [x] Secure user registration and login.
+- [X] Defined roles and permissions for pharmacies, laboratories, and administrators.
 
-#### Profile Management: <br>
-[X] User profile creation and management (contact information, address, etc.). <br>
-[X] Laboratories can submit information, including products and pricing. <br>
-<br>
+#### Profile Management:
+- [X] User profile creation and management (contact information, address, etc.).
+- [X] Laboratories can submit information, including products and pricing.
 
-#### Product Catalog: <br>
-[X] Comprehensive display of pharmaceutical products. <br>
-[X] Detailed product information (name, description, ingredients, price, etc.). <br>
-<br>
+#### Product Catalog:
+- [X] Comprehensive display of pharmaceutical products.
+- [X] Detailed product information (name, description, ingredients, price, etc.).
 
-#### Order Management: <br>
-[X] Online ordering for pharmacies. <br>
-<br>
+#### Order Management:
+- [X] Online ordering for pharmacies.
 
 #### Non-Functional Requirements:
 
