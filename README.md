@@ -1,6 +1,6 @@
 ## Project Name: PharmaLab
 
-<a id="top-page"></a>
+<br>
 [![Owner](https://img.shields.io/badge/owner-aziz--zina-blue)](https://github.com/aziz-zina)
 [![Admin](https://img.shields.io/badge/admin-aziz--zina-red)](https://github.com/aziz-zina)
 [![Open issues](https://img.shields.io/github/issues/aziz-zina/Pharmalab)](https://github.com/aziz-zina/Pharmalab/issues)
@@ -9,7 +9,8 @@
 
 ##
 
-### Overview:
+### Project 🌐 Overview:
+
 #### 1. Introduction: <br>
 The culmination of a year dedicated to creating PharmaLab, an innovative web application addressing fragmented processes in pharmaceutical management. <br>
 
@@ -17,10 +18,43 @@ The culmination of a year dedicated to creating PharmaLab, an innovative web app
 Fragmented processes and direct communication hinder efficiency in pharmaceutical product management. <br>
 
 #### 3. Solution: <br>
-PharmaLab: A web application automating product management to centralize operations, improve efficiency, and enhance security. <br>
+<b>PharmaLab</b>: A web application automating product management to centralize operations, improve efficiency, and enhance security. <br>
 
-Features:
-List key features and functionalities of PharmaLab. Include bullet points for clarity.
+##
+
+### Project Features 🚀:
+
+#### Authentication and Authorization: <br>
+[X] Secure user registration and login.
+[X] Defined roles and permissions for pharmacies, laboratories, and administrators.
+<br>
+
+#### Profile Management: <br>
+[X] User profile creation and management (contact information, address, etc.).
+[X] Laboratories can submit information, including products and pricing.
+<br>
+
+#### Product Catalog: <br>
+[X] Comprehensive display of pharmaceutical products.
+[X] Detailed product information (name, description, ingredients, price, etc.).
+<br>
+
+#### Order Management: <br>
+[X] Online ordering for pharmacies.
+<br>
+
+#### Non-Functional Requirements:
+
+- Security:
+
+Ensuring confidentiality and data security.
+- Ease of Use:
+
+Intuitive interface and user assistance.
+- Performance:
+
+Meeting criteria for response time, throughput, and efficiency for optimal system performance.
+These features are designed to enhance efficiency, security, and user experience in pharmaceutical product management within PharmaLab.
 
 Technologies Used:
 Mention the modern technologies leveraged in the development of PharmaLab.
