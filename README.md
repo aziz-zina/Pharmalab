@@ -1,13 +1,13 @@
 Project Name: PharmaLab
 ---
 Overview:
-1. Introduction: \n
+1. Introduction: <br>
 The culmination of a year dedicated to creating PharmaLab, an innovative web application addressing fragmented processes in pharmaceutical management.
 
-2. Problem Statement: \n
+2. Problem Statement: <br>
 Fragmented processes and direct communication hinder efficiency in pharmaceutical product management.
 
-3. Solution: \n
+3. Solution: <br>
 PharmaLab: A web application automating product management to centralize operations, improve efficiency, and enhance security.
 
 Features:
