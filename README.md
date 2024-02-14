@@ -71,7 +71,7 @@
 | Font Awesome              | 4.7.0    | Icon toolkit                            | <img height="27" src="https://img.shields.io/badge/fontawesome-%23004A5F.svg?style=for-the-badge&logo=font-awesome&logoColor=white" alt="FontAwesome" title="FontAwesome"> |
 | Cypress                   | 7.3.0    | End-to-end testing framework            | <img height="27" src="https://img.shields.io/badge/cypress-%23E44D27.svg?style=for-the-badge&logo=cypress&logoColor=white" alt="Cypress" title="Cypress"> |
 
-#### Additional Libraries:
+#### Additional Libraries 📚:
 - **Cypress Slow Down**: 1.3.1 - Middleware to slow down responses during testing.
 - **PrimeFlex**: 3.3.0 - A lightweight flexbox CSS utility library.
 - **PrimeIcons**: 6.0.1 - Icon library for PrimeNG.
@@ -113,6 +113,33 @@ npm start
 <br>
 
 > The Express backend should be running at http://localhost:your-backend-port.
+
+#### Install and Set Up the Frontend:
+
+1. Navigate to the Frontend Directory:
+```
+cd PharmaLab/front
+```
+
+2. Install Frontend Dependencies:
+```
+npm install
+```
+
+3. Configure Angular Environment::
+- Update configuration files (environment.ts and environment.prod.ts) with backend API URL, etc.
+
+  
+4. Run the Angular Frontend:
+```
+ng serve --open
+```
+
+<br>
+
+> The Angular frontend should be running at http://localhost:4200.
+
+> Now, the PharmaLab project is cloned, and both the Express backend and Angular frontend are set up locally. Adjust the instructions based on your project structure and requirements.
 
 Usage:
 Offer guidelines on how to use the web application. Include screenshots or examples if applicable.
