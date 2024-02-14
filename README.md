@@ -55,7 +55,7 @@
 #### Backend:
 | Tool           | Version  | Description                          |
 | -------------- | -------- | ------------------------------------ |
-| Node.js (back) | 1.0.0    | Server-side JavaScript runtime       |
+| <img height="27" src="https://img.shields.io/badge/node.js-%23339933.svg?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" title="Node.js"> | 1.0.0    | Server-side JavaScript runtime       |
 | Express        | 4.18.2   | Web application framework for Node.js |
 | MongoDB        | 8.0.0    | NoSQL database                       |
 | JWT            | 9.0.2    | JSON Web Token for authentication    |
