@@ -10,13 +10,13 @@
 ## Project 🌐 Overview:
 
 #### 1. Introduction: <br>
-The culmination of a year dedicated to creating PharmaLab, an innovative web application addressing fragmented processes in pharmaceutical management. <br>
+- The culmination of a year dedicated to creating PharmaLab, an innovative web application addressing fragmented processes in pharmaceutical management. <br>
 
 #### 2. Problem Statement: <br>
-Fragmented processes and direct communication hinder efficiency in pharmaceutical product management. <br>
+- Fragmented processes and direct communication hinder efficiency in pharmaceutical product management. <br>
 
 #### 3. Solution: <br>
-<b>PharmaLab</b>: A web application automating product management to centralize operations, improve efficiency, and enhance security. <br>
+- <b>PharmaLab</b>: A web application automating product management to centralize operations, improve efficiency, and enhance security. <br>
 
 <br>
 
@@ -39,16 +39,12 @@ Fragmented processes and direct communication hinder efficiency in pharmaceutica
 
 #### Non-Functional Requirements:
 
-- Security:
+- Security: Ensuring confidentiality and data security.
+- Ease of Use: Intuitive interface and user assistance.
+- Performance: Meeting criteria for response time, throughput, and efficiency for optimal system performance.
 
-Ensuring confidentiality and data security.
-- Ease of Use:
 
-Intuitive interface and user assistance.
-- Performance:
-
-Meeting criteria for response time, throughput, and efficiency for optimal system performance.
-These features are designed to enhance efficiency, security, and user experience in pharmaceutical product management within PharmaLab.
+> These features are designed to enhance efficiency, security, and user experience in pharmaceutical product management within PharmaLab.
 
 <br>
 
