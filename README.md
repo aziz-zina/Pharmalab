@@ -53,22 +53,22 @@
 ## Technologies Used ⚙️:
 
 #### Backend:
-| Tool           | Version  | Description                          |
-| -------------- | -------- | ------------------------------------ |
-| <img height="27" src="https://img.shields.io/badge/node.js-%23339933.svg?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" title="Node.js"> | 1.0.0    | Server-side JavaScript runtime       |
-| Express        | 4.18.2   | Web application framework for Node.js |
-| MongoDB        | 8.0.0    | NoSQL database                       |
-| JWT            | 9.0.2    | JSON Web Token for authentication    |
-| Cypress        | 13.6.1   | End-to-end testing framework         |
-| Bcrypt.js      | 2.4.3    | Password hashing library             |
+| Tool           | Version  | Description                          | Logo |
+| -------------- | -------- | ------------------------------------ | ---- |
+| Node.js (back) | 1.0.0    | Server-side JavaScript runtime       | <img height="27" src="https://img.shields.io/badge/node.js-%23339933.svg?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" title="Node.js"> |
+| Express        | 4.18.2   | Web application framework for Node.js | <img height="27" src="https://img.shields.io/badge/express-%23404d59.svg?style=for-the-badge&logo=express&logoColor=white" alt="Express" title="Express"> |
+| MongoDB        | 8.0.0    | NoSQL database                       | <img height="27" src="https://img.shields.io/badge/mongodb-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" title="MongoDB"> |
+| JWT            | 9.0.2    | JSON Web Token for authentication    | -    |
+| Cypress        | 13.6.1   | End-to-end testing framework         | <img height="27" src="https://img.shields.io/badge/cypress-%23E44D27.svg?style=for-the-badge&logo=cypress&logoColor=white" alt="Cypress" title="Cypress"> |
+| Bcrypt.js      | 2.4.3    | Password hashing library             | -    |
 
 #### Frontend:
-| Tool                      | Version  | Description                             |
-| ------------------------- | -------- | --------------------------------------- |
-| Angular (front)           | 15.1.0   | TypeScript-based web application framework |
-| PrimeNG                   | 15.1.1   | Angular UI component library            |
-| Font Awesome              | 4.7.0    | Icon toolkit                            |
-| Cypress                   | 7.3.0    | End-to-end testing framework            |
+| Tool                      | Version  | Description                             | Logo |
+| ------------------------- | -------- | --------------------------------------- | ---- |
+| Angular (front)           | 15.1.0   | TypeScript-based web application framework | <img height="27" src="https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" title="Angular"> |
+| PrimeNG                   | 15.1.1   | Angular UI component library            | <img height="27" src="https://img.shields.io/badge/primeNG-%23323330.svg?style=for-the-badge&logo=angular&logoColor=white" alt="PrimeNG" title="PrimeNG"> |
+| Font Awesome              | 4.7.0    | Icon toolkit                            | <img height="27" src="https://img.shields.io/badge/fontawesome-%23004A5F.svg?style=for-the-badge&logo=font-awesome&logoColor=white" alt="FontAwesome" title="FontAwesome"> |
+| Cypress                   | 7.3.0    | End-to-end testing framework            | <img height="27" src="https://img.shields.io/badge/cypress-%23E44D27.svg?style=for-the-badge&logo=cypress&logoColor=white" alt="Cypress" title="Cypress"> |
 
 #### Additional Libraries:
 - **Cypress Slow Down**: 1.3.1 - Middleware to slow down responses during testing.
