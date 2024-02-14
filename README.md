@@ -12,38 +12,38 @@
 ## Project 🌐 Overview:
 
 #### 1. Introduction: <br>
-- The culmination of a year dedicated to creating PharmaLab, an innovative web application addressing fragmented processes in pharmaceutical management. <br>
+  - The culmination of a year dedicated to creating PharmaLab, an innovative web application addressing fragmented processes in pharmaceutical management. <br>
 
 #### 2. Problem Statement: <br>
-- Fragmented processes and direct communication hinder efficiency in pharmaceutical product management. <br>
+  - Fragmented processes and direct communication hinder efficiency in pharmaceutical product management. <br>
 
 #### 3. Solution: <br>
-- <b>PharmaLab</b>: A web application automating product management to centralize operations, improve efficiency, and enhance security. <br>
+  - <b>PharmaLab</b>: A web application automating product management to centralize operations, improve efficiency, and enhance security. <br>
 
 <br>
 
 ## Project Features 🚀:
 
 #### Authentication and Authorization:
-- [x] Secure user registration and login.
-- [X] Defined roles and permissions for pharmacies, laboratories, and administrators.
+  - [x] Secure user registration and login.
+  - [X] Defined roles and permissions for pharmacies, laboratories, and administrators.
 
 #### Profile Management:
-- [X] User profile creation and management (contact information, address, etc.).
-- [X] Laboratories can submit information, including products and pricing.
+  - [X] User profile creation and management (contact information, address, etc.).
+  - [X] Laboratories can submit information, including products and pricing.
 
 #### Product Catalog:
-- [X] Comprehensive display of pharmaceutical products.
-- [X] Detailed product information (name, description, ingredients, price, etc.).
+  - [X] Comprehensive display of pharmaceutical products.
+  - [X] Detailed product information (name, description, ingredients, price, etc.).
 
 #### Order Management:
 - [X] Online ordering for pharmacies.
 
 #### Non-Functional Requirements:
 
-- Security: Ensuring confidentiality and data security.
-- Ease of Use: Intuitive interface and user assistance.
-- Performance: Meeting criteria for response time, throughput, and efficiency for optimal system performance.
+  - Security: Ensuring confidentiality and data security.
+  - Ease of Use: Intuitive interface and user assistance.
+  - Performance: Meeting criteria for response time, throughput, and efficiency for optimal system performance.
 
 <br>
 
@@ -72,9 +72,9 @@
 | Cypress                   | 7.3.0    | End-to-end testing framework            | <img height="27" src="https://img.shields.io/badge/cypress-%23E44D27.svg?style=for-the-badge&logo=cypress&logoColor=white" alt="Cypress" title="Cypress"> |
 
 #### Additional Libraries 📚:
-- **Cypress Slow Down**: 1.3.1 - Middleware to slow down responses during testing.
-- **PrimeFlex**: 3.3.0 - A lightweight flexbox CSS utility library.
-- **PrimeIcons**: 6.0.1 - Icon library for PrimeNG.
+  - **Cypress Slow Down**: 1.3.1 - Middleware to slow down responses during testing.
+  - **PrimeFlex**: 3.3.0 - A lightweight flexbox CSS utility library.
+  - **PrimeIcons**: 6.0.1 - Icon library for PrimeNG.
 
 
 <br>
@@ -101,8 +101,8 @@ npm install
 ```
 
 3. Configure Environment Variables:
-- Create a .env file in the back directory.
-- Set up necessary variables such as database connection details, JWT secret, etc.
+  - Create a .env file in the back directory.
+  - Set up necessary variables such as database connection details, JWT secret, etc.
 
   
 4. Run the Express Backend:
@@ -127,7 +127,7 @@ npm install
 ```
 
 3. Configure Angular Environment::
-- Update configuration files (environment.ts and environment.prod.ts) with backend API URL, etc.
+  - Update configuration files (environment.ts and environment.prod.ts) with backend API URL, etc.
 
   
 4. Run the Angular Frontend:
@@ -144,8 +144,43 @@ ng serve --open
 Usage:
 Offer guidelines on how to use the web application. Include screenshots or examples if applicable.
 
-Contributing:
-Specify how others can contribute to the project. Include information about the development environment, coding standards, and the process for submitting pull requests.
+## Contributing 🤝:
+
+We welcome contributions to PharmaLab! Follow these guidelines to get started:
+
+### Coding Standards:
+Follow the coding standards and conventions outlined in the <a href="https://github.com/aziz-zina/Pharmalab/blob/main/CONTRIBUTING.md"> CONTRIBUTING.md </a> file. <br>
+Maintain code readability and consistency.
+
+### Submitting Pull Requests:
+
+1. Create a New Branch:
+```
+git checkout -b feature/your-feature-name
+```
+   
+2. Make Changes and Commit:
+  - Implement your changes and commit them.
+```
+git commit -m "Add feature: your-feature-name"
+```
+   
+3. Push Changes to Your Fork:
+```
+git push origin feature/your-feature-name
+```
+   
+4. Submit a Pull Request:
+  - Open a pull request against the **`main`** branch on the <a href="https://github.com/aziz-zina/Pharmalab">PharmaLab GitHub repository</a>.
+   
+5. Review and Merge:
+   - The maintainers will review your pull request, provide feedback, and merge it once approved.
+
+
+### GitHub Issues:
+If you find any issues or have feature requests, please open an issue on the PharmaLab GitHub Issues page.
+<br>
+Thank you for contributing to PharmaLab! Your efforts help make this project better.
 
 License:
 Clearly state the project's license to inform users about how they can use and contribute to the codebase.
@@ -153,8 +188,14 @@ Clearly state the project's license to inform users about how they can use and c
 Acknowledgments:
 Express gratitude for any external tools, libraries, or resources used in the project.
 
-Contact:
-Provide contact information or links for users to reach out for questions, issues, or collaboration.
+
+## Contact 📧:
+For any questions, issues, or collaboration inquiries related to PharmaLab, feel free to reach out to us:
+
+Email: aziz.zina2001@gmail.com
+GitHub Issues: <a href="https://github.com/aziz-zina/Pharmalab/issues"> PharmaLab GitHub Issues </a>
+Collaboration: We welcome contributions! Check out our Contribution Guidelines for details.
+Connect with us and be a part of enhancing PharmaLab! We appreciate your feedback and contributions.
 
 Note:
 Keep the README concise, and use formatting such as headings, bullet points, and code blocks for better readability. Update the README as the project evolves and include any additional information that may be relevant to users and contributors.
