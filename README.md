@@ -215,14 +215,14 @@ This project is licensed under the [MIT License](LICENSE.md).
 I extend my sincere appreciation to the following tools, libraries, and resources that have been instrumental in shaping and enhancing this project:
 
 - <a href="https://nodejs.org/en">Node.js</a>: The JavaScript runtime that powers the server-side of our application.
-- <a href="https://expressjs.com/">Express.js: The fast, unopinionated, minimalist web framework for Node.js.
-- <a href="https://angular.io/">Angular: The framework empowering the development of our dynamic frontend.
-- <a href="https://www.mongodb.com/">MongoDB: The flexible and scalable NoSQL database that stores our data.
-- <a href="https://github.com/">GitHub: The platform that facilitates collaborative coding and version control.
-- <a href="https://www.cypress.io/">Cypress: The end-to-end testing framework ensuring the reliability of our application.
-- <a href="https://primeng.org/">PrimeNG: The UI component library for Angular that enhances the aesthetics and functionality of our user interface.
+- <a href="https://expressjs.com/">Express.js</a>: The fast, unopinionated, minimalist web framework for Node.js.
+- <a href="https://angular.io/">Angular</a>: The framework empowering the development of our dynamic frontend.
+- <a href="https://www.mongodb.com/">MongoDB</a>: The flexible and scalable NoSQL database that stores our data.
+- <a href="https://github.com/">GitHub</a>: The platform that facilitates collaborative coding and version control.
+- <a href="https://www.cypress.io/">Cypress</a>: The end-to-end testing framework ensuring the reliability of our application.
+- <a href="https://primeng.org/">PrimeNG</a>: The UI component library for Angular that enhances the aesthetics and functionality of our user interface.
 
-These tools and resources have played a crucial role in bringing our vision to fruition. We express our gratitude to the dedicated individuals behind these projects and the broader open-source community. 🙌
+> These tools and resources have played a crucial role in bringing our vision to fruition. We express our gratitude to the dedicated individuals behind these projects and the broader open-source community. 🙌
 
 <br>
 
