@@ -141,8 +141,21 @@ ng serve --open
 
 > Now, the PharmaLab project is cloned, and both the Express backend and Angular frontend are set up locally. Adjust the instructions based on your project structure and requirements.
 
-Usage:
-Offer guidelines on how to use the web application. Include screenshots or examples if applicable.
+<br>
+
+## Usage Guide 📋 :
+
+Follow these steps to make the most of **PharmaLab**:
+
+- **Login**: 🚪 Access your account securely.
+- **Dashboard Overview**: 📊 Explore the key information on the dashboard.
+- **Profile Management**: 👤 Update your contact information and address.
+- **Product Catalog**: 📦 Browse through the comprehensive list of pharmaceutical products.
+- **Order Management**: 🛒 Place online orders for products.
+- **Admin Features**: 🛠️ Explore additional features if you have administrative privileges.
+- **Security**: 🔒 Ensure data security and confidentiality.
+- **Performance Metrics**: ⚙️ Check system performance metrics.
+
 
 <br>
 
@@ -178,7 +191,6 @@ git push origin feature/your-feature-name
    
 5. Review and Merge:
    - The maintainers will review your pull request, provide feedback, and merge it once approved.
-<br>
 
 ### GitHub Issues:
 If you find any issues or have feature requests, please open an issue on the PharmaLab GitHub Issues page.
@@ -186,8 +198,17 @@ If you find any issues or have feature requests, please open an issue on the Pha
 
 > Thank you for contributing to PharmaLab! Your efforts help make this project better.
 
-License:
-Clearly state the project's license to inform users about how they can use and contribute to the codebase.
+<br>
+
+## License 📄 :
+
+This project is licensed under the [MIT License](LICENSE).
+
+🚀 **Feel free to use, modify, and distribute the codebase. Contributions are welcome!**
+
+[MIT License](https://opensource.org/licenses/MIT)
+
+<br>
 
 Acknowledgments:
 Express gratitude for any external tools, libraries, or resources used in the project.
