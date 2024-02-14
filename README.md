@@ -154,6 +154,8 @@ We welcome contributions to PharmaLab! Follow these guidelines to get started:
 Follow the coding standards and conventions outlined in the <a href="https://github.com/aziz-zina/Pharmalab/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a> file. <br>
 Maintain code readability and consistency.
 
+<br>
+
 ### Submitting Pull Requests:
 
 1. Create a New Branch:
@@ -178,13 +180,14 @@ git push origin feature/your-feature-name
 5. Review and Merge:
    - The maintainers will review your pull request, provide feedback, and merge it once approved.
 
+<br>
 
 ### GitHub Issues:
 If you find any issues or have feature requests, please open an issue on the PharmaLab GitHub Issues page.
 
 <br>
 
-Thank you for contributing to PharmaLab! Your efforts help make this project better.
+> Thank you for contributing to PharmaLab! Your efforts help make this project better.
 
 License:
 Clearly state the project's license to inform users about how they can use and contribute to the codebase.
@@ -195,11 +198,12 @@ Express gratitude for any external tools, libraries, or resources used in the pr
 
 ## Contact 📧:
 For any questions, issues, or collaboration inquiries related to PharmaLab, feel free to reach out to us:
+  - Email: aziz.zina2001@gmail.com
+  - GitHub Issues: <a href="https://github.com/aziz-zina/Pharmalab/issues"> PharmaLab GitHub Issues </a>
+  - Collaboration: We welcome contributions! Check out our Contribution Guidelines for details.
 
-Email: aziz.zina2001@gmail.com
-GitHub Issues: <a href="https://github.com/aziz-zina/Pharmalab/issues"> PharmaLab GitHub Issues </a>
-Collaboration: We welcome contributions! Check out our Contribution Guidelines for details.
-Connect with us and be a part of enhancing PharmaLab! We appreciate your feedback and contributions.
+
+> Connect with us and be a part of enhancing PharmaLab! We appreciate your feedback and contributions.
 
 Note:
 Keep the README concise, and use formatting such as headings, bullet points, and code blocks for better readability. Update the README as the project evolves and include any additional information that may be relevant to users and contributors.
