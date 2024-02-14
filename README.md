@@ -18,6 +18,7 @@ Fragmented processes and direct communication hinder efficiency in pharmaceutica
 #### 3. Solution: <br>
 <b>PharmaLab</b>: A web application automating product management to centralize operations, improve efficiency, and enhance security. <br>
 
+<br>
 
 ## Project Features 🚀:
 
@@ -48,6 +49,8 @@ Intuitive interface and user assistance.
 
 Meeting criteria for response time, throughput, and efficiency for optimal system performance.
 These features are designed to enhance efficiency, security, and user experience in pharmaceutical product management within PharmaLab.
+
+<br>
 
 ## Technologies Used ⚙️:
 Mention the modern technologies leveraged in the development of PharmaLab.
