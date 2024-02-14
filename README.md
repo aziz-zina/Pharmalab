@@ -45,6 +45,7 @@
 - Ease of Use: Intuitive interface and user assistance.
 - Performance: Meeting criteria for response time, throughput, and efficiency for optimal system performance.
 
+<br>
 
 > These features are designed to enhance efficiency, security, and user experience in pharmaceutical product management within PharmaLab.
 
@@ -58,7 +59,7 @@
 | Node.js (back) | 1.0.0    | Server-side JavaScript runtime       | <img height="27" src="https://img.shields.io/badge/node.js-%23339933.svg?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" title="Node.js"> |
 | Express        | 4.18.2   | Web application framework for Node.js | <img height="27" src="https://img.shields.io/badge/express-%23404d59.svg?style=for-the-badge&logo=express&logoColor=white" alt="Express" title="Express"> |
 | MongoDB        | 8.0.0    | NoSQL database                       | <img height="27" src="https://img.shields.io/badge/mongodb-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" title="MongoDB"> |
-| JWT            | 9.0.2    | JSON Web Token for authentication    | -    |
+| JWT            | 9.0.2    | JSON Web Token for authentication    | <img height="27" src="https://img.shields.io/badge/jwt-%232C3E50.svg?style=for-the-badge&logo=json-web-tokens&logoColor=white" alt="JWT" title="JWT">  |
 | Cypress        | 13.6.1   | End-to-end testing framework         | <img height="27" src="https://img.shields.io/badge/cypress-%23E44D27.svg?style=for-the-badge&logo=cypress&logoColor=white" alt="Cypress" title="Cypress"> |
 | Bcrypt.js      | 2.4.3    | Password hashing library             | -    |
 
