@@ -1,17 +1,14 @@
 ## Project Name: PharmaLab
 
 <a id="top-page"></a>
-[![Owner](https://img.shields.io/badge/owner-ebazhanov-blue)](https://github.com/Ebazhanov)
-[![Admin](https://img.shields.io/badge/admin-monkrus-red)](https://github.com/monkrus)
-[![Playground](https://img.shields.io/badge/resources-playground-orange)](https://github.com/linkedin-faq)
-[![Open issues](https://img.shields.io/github/issues/ebazhanov/linkedin-skill-assessments-quizzes)](https://github.com/Ebazhanov/linkedin-skill-assessments-quizzes/issues)
+[![Owner](https://img.shields.io/badge/owner-ebazhanov-blue)](https://github.com/aziz-zina)
+[![Admin](https://img.shields.io/badge/admin-monkrus-red)](https://github.com/aziz-zina)
+[![Open issues](https://img.shields.io/github/issues/ebazhanov/linkedin-skill-assessments-quizzes)](https://github.com/aziz-zina/Pharmalab/issues)
+[![Analytics](https://img.shields.io/badge/analytics-ossinsight-red)](https://ossinsight.io/analyze/aziz-zina/aziz-zina)
+[![Views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Faziz-zina%2Faziz-zina&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1586-orange.svg?style=flat-square)](#contributors-)
 
-[![Analytics](https://img.shields.io/badge/analytics-ossinsight-red)](https://ossinsight.io/analyze/Ebazhanov/linkedin-skill-assessments-quizzes)
-[![Views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FEbazhanov%2Flinkedin-skill-assessments-quizzes&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
-[![Telegram](https://badgen.net/badge/icon/telegram?icon=telegram&label)](https://t.me/+lCPxL7Kd7gVjMGM6)
-[![Discord](https://img.shields.io/badge/Discord-Join-blue?logo=discord&logoColor=white&color=blue)](https://discord.gg/NKCyjjw3MW)
-
---
+---
 
 ### Overview:
 #### 1. Introduction: <br>
