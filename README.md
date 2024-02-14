@@ -1,13 +1,14 @@
 ## Project Name: PharmaLab
-###Overview:
-####1. Introduction: <br>
-The culmination of a year dedicated to creating PharmaLab, an innovative web application addressing fragmented processes in pharmaceutical management.<br>
 
-####2. Problem Statement: <br>
-Fragmented processes and direct communication hinder efficiency in pharmaceutical product management.<br>
+### Overview:
+#### 1. Introduction: <br>
+The culmination of a year dedicated to creating PharmaLab, an innovative web application addressing fragmented processes in pharmaceutical management. <br>
 
-####3. Solution: <br>
-PharmaLab: A web application automating product management to centralize operations, improve efficiency, and enhance security.<br>
+#### 2. Problem Statement: <br>
+Fragmented processes and direct communication hinder efficiency in pharmaceutical product management. <br>
+
+#### 3. Solution: <br>
+PharmaLab: A web application automating product management to centralize operations, improve efficiency, and enhance security. <br>
 
 Features:
 List key features and functionalities of PharmaLab. Include bullet points for clarity.
