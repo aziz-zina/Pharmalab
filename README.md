@@ -144,6 +144,8 @@ ng serve --open
 Usage:
 Offer guidelines on how to use the web application. Include screenshots or examples if applicable.
 
+<br>
+
 ## Contributing 🤝:
 
 We welcome contributions to PharmaLab! Follow these guidelines to get started:
