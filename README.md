@@ -6,6 +6,8 @@
 [![Analytics](https://img.shields.io/badge/analytics-ossinsight-red)](https://ossinsight.io/analyze/aziz-zina/aziz-zina)
 [![Views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Faziz-zina%2Faziz-zina&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
+<br>
+
 
 ## Project 🌐 Overview:
 
@@ -49,7 +51,34 @@
 <br>
 
 ## Technologies Used ⚙️:
-Mention the modern technologies leveraged in the development of PharmaLab.
+
+#### Backend:
+| Tool           | Version  | Description                          |
+| -------------- | -------- | ------------------------------------ |
+| Node.js (back) | 1.0.0    | Server-side JavaScript runtime       |
+| Express        | 4.18.2   | Web application framework for Node.js |
+| MongoDB        | 8.0.0    | NoSQL database                       |
+| JWT            | 9.0.2    | JSON Web Token for authentication    |
+| Cypress        | 13.6.1   | End-to-end testing framework         |
+| Bcrypt.js      | 2.4.3    | Password hashing library             |
+
+#### Frontend:
+| Tool                      | Version  | Description                             |
+| ------------------------- | -------- | --------------------------------------- |
+| Angular (front)           | 15.1.0   | TypeScript-based web application framework |
+| PrimeNG                   | 15.1.1   | Angular UI component library            |
+| Font Awesome              | 4.7.0    | Icon toolkit                            |
+| Cypress                   | 7.3.0    | End-to-end testing framework            |
+
+#### Additional Libraries:
+- **Cypress Slow Down**: 1.3.1 - Middleware to slow down responses during testing.
+- **PrimeFlex**: 3.3.0 - A lightweight flexbox CSS utility library.
+- **PrimeIcons**: 6.0.1 - Icon library for PrimeNG.
+
+#### Images:
+Include logos or relevant images for Node.js, Express, MongoDB, Angular, Cypress, etc.
+
+<br>
 
 Installation:
 Provide step-by-step instructions for setting up and running the project locally. Include any dependencies or prerequisites.
