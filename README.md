@@ -153,7 +153,6 @@ We welcome contributions to PharmaLab! Follow these guidelines to get started:
 ### Coding Standards:
 Follow the coding standards and conventions outlined in the <a href="https://github.com/aziz-zina/Pharmalab/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a> file. <br>
 Maintain code readability and consistency.
-
 <br>
 
 ### Submitting Pull Requests:
@@ -179,14 +178,12 @@ git push origin feature/your-feature-name
    
 5. Review and Merge:
    - The maintainers will review your pull request, provide feedback, and merge it once approved.
-
 <br>
 
 ### GitHub Issues:
 If you find any issues or have feature requests, please open an issue on the PharmaLab GitHub Issues page.
 
 <br>
-
 > Thank you for contributing to PharmaLab! Your efforts help make this project better.
 
 License:
