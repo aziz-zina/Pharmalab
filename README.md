@@ -51,7 +51,7 @@
 
 <br>
 
-## Technologies Used ⚙️:
+## Technologies Used 🛠️:
 
 #### Backend:
 | Tool           | Version  | Description                          | Logo |
@@ -76,13 +76,43 @@
 - **PrimeFlex**: 3.3.0 - A lightweight flexbox CSS utility library.
 - **PrimeIcons**: 6.0.1 - Icon library for PrimeNG.
 
-#### Images:
-Include logos or relevant images for Node.js, Express, MongoDB, Angular, Cypress, etc.
 
 <br>
 
-Installation:
-Provide step-by-step instructions for setting up and running the project locally. Include any dependencies or prerequisites.
+## Installation 📥 :
+
+Follow these steps to set up and run the PharmaLab project locally: <br>
+
+#### Clone the Repository:
+```
+git clone https://github.com/your-username/PharmaLab.git
+```
+
+#### Install and Set Up the Backend:
+
+1. Navigate to the Backend Directory:
+```
+cd PharmaLab/back
+```
+
+2. Install Backend Dependencies:
+```
+npm install
+```
+
+3. Configure Environment Variables:
+- Create a .env file in the back directory.
+- Set up necessary variables such as database connection details, JWT secret, etc.
+
+  
+4. Run the Express Backend:
+```
+npm start
+```
+
+<br>
+
+> The Express backend should be running at http://localhost:your-backend-port.
 
 Usage:
 Offer guidelines on how to use the web application. Include screenshots or examples if applicable.
