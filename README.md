@@ -200,7 +200,7 @@ Express gratitude for any external tools, libraries, or resources used in the pr
 For any questions, issues, or collaboration inquiries related to PharmaLab, feel free to reach out to us:
   - Email: aziz.zina2001@gmail.com
   - GitHub Issues: <a href="https://github.com/aziz-zina/Pharmalab/issues"> PharmaLab GitHub Issues </a>
-  - Collaboration: We welcome contributions! Check out our Contribution Guidelines for details.
+  - Collaboration: We welcome contributions! Check out our <a href="https://github.com/aziz-zina/Pharmalab/blob/main/CONTRIBUTING.md">Contribution Guidelines</a> for details.
 
 
 > Connect with us and be a part of enhancing PharmaLab! We appreciate your feedback and contributions.
