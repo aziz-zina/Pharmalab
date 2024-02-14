@@ -182,8 +182,8 @@ git push origin feature/your-feature-name
 
 ### GitHub Issues:
 If you find any issues or have feature requests, please open an issue on the PharmaLab GitHub Issues page.
-
 <br>
+
 > Thank you for contributing to PharmaLab! Your efforts help make this project better.
 
 License:
