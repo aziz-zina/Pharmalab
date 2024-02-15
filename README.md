@@ -84,7 +84,7 @@ Follow these steps to set up and run the PharmaLab project locally: <br>
 
 #### Clone the Repository:
 ```
-git clone https://github.com/your-username/PharmaLab.git
+git clone https://github.com/aziz-zina/PharmaLab.git
 ```
 
 #### Install and Set Up the Backend:
