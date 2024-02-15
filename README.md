@@ -69,7 +69,6 @@
 | Angular (front)           | 15.1.0   | TypeScript-based web application framework | <img height="27" src="https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" title="Angular"> |
 | PrimeNG                   | 15.1.1   | Angular UI component library            | <img height="27" src="https://img.shields.io/badge/primeNG-%23323330.svg?style=for-the-badge&logo=angular&logoColor=white" alt="PrimeNG" title="PrimeNG"> |
 | Font Awesome              | 4.7.0    | Icon toolkit                            | <img height="27" src="https://img.shields.io/badge/fontawesome-%23004A5F.svg?style=for-the-badge&logo=font-awesome&logoColor=white" alt="FontAwesome" title="FontAwesome"> |
-| Cypress                   | 7.3.0    | End-to-end testing framework            | <img height="27" src="https://img.shields.io/badge/cypress-%23E44D27.svg?style=for-the-badge&logo=cypress&logoColor=white" alt="Cypress" title="Cypress"> |
 
 #### Additional Libraries 📚:
   - **Cypress Slow Down**: 1.3.1 - Middleware to slow down responses during testing.
