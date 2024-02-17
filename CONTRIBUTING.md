@@ -8,7 +8,7 @@ Please review our [Code of Conduct](CODE_OF_CONDUCT.md). It ensures a positive a
 
 ## 💡 Asking Questions
 
-For general inquiries, consult our [Support Guide](SUPPORT_GUIDE.md). If you have specific questions or need assistance, GitHub issues are not the place. Please use the appropriate channels outlined in the guide.
+For general inquiries, consult our [Support Guide](SUPPORT.md). If you have specific questions or need assistance, GitHub issues are not the place. Please use the appropriate channels outlined in the guide.
 
 ## 📥 Opening an Issue
 
