@@ -1,19 +1,84 @@
-### 🚀 Initiating a Pull Request - Your Contribution Matters!
+# Contributing Guidelines
 
-> Whether you've spotted areas for improvement or uncovered new questions, your assistance is highly valued. We invite you to actively create Pull Requests, and our guidelines are designed to make the process seamless.
+Welcome to PharmaLab! Your contributions are highly valued. Whether you're fixing a bug, proposing a new feature, or suggesting improvements, your involvement makes PharmaLab better. 🚀
 
-### 🤔 Identifying Anomalies or Inaccuracies - Follow Protocol
+## Code of Conduct
 
-> If you come across irregularities or discrepancies, create a Pull Request tailored to your discerning preferences. This ensures the swift integration of your enhancements into our repository.
+Please review our [Code of Conduct](CODE_OF_CONDUCT.md). It ensures a positive and inclusive environment for everyone. Kindly adhere to it at all times.
 
-### 🤝 Contributor Status - An Elevation of Distinction
+## Asking Questions
 
-> Once your Pull Request is integrated, you'll be officially recognized as a contributor. Your esteemed status will prominently appear in our 'README.md,' a testament to your invaluable contributions.
+For general inquiries, consult our [Support Guide](SUPPORT_GUIDE.md). If you have specific questions or need assistance, GitHub issues are not the place. Please use the appropriate channels outlined in the guide.
 
-### 📚 Elucidate and Reference - Enhance Your Responses
+## Opening an Issue
 
-> Enhance your contributions with comprehensive explanations and reference links. This practice supports the understanding of individuals who seek enlightenment on less familiar subjects.
+Before creating an issue, ensure you are using the latest project version. If not, update and check if the issue persists.
 
-### ❓ Submitting Queries - Gateway to Knowledge
+### Reporting Security Issues
 
-> Queries are exclusively accepted from this sanctioned source, serving as the gateway to our reservoir of knowledge. Your questions are held in the highest regard, contributing to the collective wisdom of our community. 🏰💡
+For security vulnerabilities, refer to our [Security Policy](SECURITY.md). Do not disclose security issues publicly; follow the guidelines in the policy.
+
+### Bug Reports and Other Issues
+
+Submitting well-documented bug reports is appreciated. Follow these guidelines:
+
+- Avoid duplicates; search existing issues first.
+- Complete the provided issue template thoroughly.
+- Use GitHub-flavored Markdown for readability.
+- Include relevant details such as steps to reproduce, stack traces, and screenshots.
+
+## Feature Requests
+
+Feature requests are welcome! Please follow these guidelines:
+
+- Avoid duplicates; search for existing requests.
+- Provide a clear outcome and relate it to existing features.
+- Include implementation details if possible. 🛠️
+
+## Triaging Issues
+
+Help triage issues by reproducing bugs or requesting additional information. Your assistance is valuable in resolving issues promptly.
+
+## Submitting Pull Requests
+
+We love pull requests! Follow these guidelines:
+
+- Open an issue before non-trivial changes.
+- For smaller changes, one pull request per fix or feature.
+- Coordinate larger changes with maintainers.
+- Prioritize understanding over cleverness.
+- Follow coding style and conventions.
+- Include test coverage.
+- Update documentation and the CHANGELOG.
+- Branch from and submit pull requests to the default branch.
+- Resolve merge conflicts promptly. 🤝
+
+## Writing Commit Messages
+
+Please write clear and concise commit messages:
+
+- Separate subject from body with a blank line.
+- Limit the subject line to 50 characters.
+- Capitalize the subject line and use imperative mood.
+- Wrap the body at about 72 characters.
+- Explain the problem and solution in the body.
+- Use tags like "[Docs]" for specific components.
+- Reference related GitHub issues.
+
+## Coding Style
+
+Consistency is crucial. Follow existing style, formatting, and naming conventions. Failure to do so will extend the review process.
+
+## Certificate of Origin
+
+Before contributing, certify that your contribution adheres to the Developer's Certificate of Origin 1.1. Ensure you have the right to submit the work under the project's open-source license.
+
+## No Brown M&M's
+
+If you've read this far, you're amazing! To confirm, include 🖤 :black_heart: at the top of your issue or pull request.
+
+## Credits
+
+This guide is personalized for PharmaLab based on work from various open-source communities. Special thanks to @jessesquires for the original template.
+
+Feel free to adopt, fork, or remix this guide for your projects.
