@@ -10,7 +10,7 @@ body:
     id: terms
     attributes:
       label: Guidelines
-      description: By submitting this issue, you agree to follow our [Contributing Guidelines](link-to-contributing).
+      description: By submitting this issue, you agree to follow our [Contributing Guidelines](https://github.com/aziz-zina/Pharmalab/blob/main/CONTRIBUTING.md).
       options:
         - label: I agree to follow PharmaLab's Contributing Guidelines.
           required: true
