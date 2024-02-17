@@ -23,14 +23,6 @@ body:
     validations:
       required: true
   - type: input
-    id: devices
-    attributes:
-      label: Affected Devices
-      description: Does this only occur on specific devices?
-      placeholder: "All, Desktop, Laptop, Mobile"
-    validations:
-      required: true
-  - type: input
     id: existing-issues
     attributes:
       label: Existing Issues
