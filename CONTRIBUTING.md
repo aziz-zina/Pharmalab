@@ -87,6 +87,6 @@ If you've read this far, you're amazing! To confirm, include 🖤 :black_heart: 
 
 ## 🙏 Credits
 
-This guide is personalized for PharmaLab based on work from various open-source communities. Special thanks to @jessesquires for the original template.
+This guide is personalized for PharmaLab based on work from various open-source communities. Special thanks to <a href="https://github.com/jessesquires">@jessesquires</a> for the original template.
 
 > Feel free to adopt, fork, or remix this guide for your projects.
