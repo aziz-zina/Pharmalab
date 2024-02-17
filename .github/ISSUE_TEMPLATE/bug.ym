@@ -1,0 +1,91 @@
+name: Bug report
+description: Report a problem you encountered with PharmaLab
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to complete this bug report for PharmaLab!
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Guidelines
+      description: By submitting this issue, you agree to follow our [Contributing Guidelines](link-to-contributing).
+      options:
+        - label: I agree to follow PharmaLab's Contributing Guidelines.
+          required: true
+  - type: input
+    id: project
+    attributes:
+      label: PharmaLab Version
+      description: Which version(s) of PharmaLab are affected?
+      placeholder: "1.0.0, 2.1.2, 3.5.1"
+    validations:
+      required: true
+  - type: input
+    id: devices
+    attributes:
+      label: Affected Devices
+      description: Does this only occur on specific devices?
+      placeholder: "All, Desktop, Laptop, Mobile"
+    validations:
+      required: true
+  - type: input
+    id: existing-issues
+    attributes:
+      label: Existing Issues
+      description: Are there any similar existing issues in PharmaLab?
+      placeholder: "#42"
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Clearly and concisely describe the bug in PharmaLab.
+      placeholder: Tell us what happened.
+    validations:
+      required: true
+  - type: textarea
+    id: repro-steps
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1. 
+        2. 
+        3. 
+        ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: What should have happened in PharmaLab?
+      placeholder: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Attachments
+      description: Please include code snippets, stack traces, or compiler errors related to PharmaLab.
+      placeholder: Paste code snippets, stack traces, and compiler errors here
+    validations:
+      required: false
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or Videos
+      description: Add screenshots, gifs, or videos to help explain the problem in PharmaLab.
+      placeholder: Upload screenshots, gifs, and videos here
+    validations:
+      required: false
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Information
+      description: Add any other useful information about the problem in PharmaLab.
+      placeholder: Is there any additional helpful information you can share?
+    validations:
+      required: false
