@@ -69,9 +69,9 @@ Please write clear and concise commit messages:
 
 Review the code, not the author. Look for and suggest improvements without disparaging or insulting the author. Provide actionable feedback and explain your reasoning.
 
--You are not your code. When your code is critiqued, questioned, or constructively criticized, remember that you are not your code. Do not take code review personally.
--Always do your best. No one writes bugs on purpose. Do your best, and learn from your mistakes.
--Kindly note any violations to the guidelines specified in this document.
+- You are not your code. When your code is critiqued, questioned, or constructively criticized, remember that you are not your code. Do not take code review personally.
+- Always do your best. No one writes bugs on purpose. Do your best, and learn from your mistakes.
+- Kindly note any violations to the guidelines specified in this document.
 
 ## 💅 Coding Style
 
