@@ -25,6 +25,6 @@ If you discover a security vulnerability within PharmaLab, please follow these s
 3. **Response Time:** You can expect an initial response within 48 hours acknowledging your report.
 4. **Update Frequency:** We are committed to providing timely updates on the status and resolution of the reported vulnerability.
 
-**Note:** For critical or time-sensitive issues, you may contact our security team directly at security@pharmalab.com.
+**Note:** For critical or time-sensitive issues, you may contact our security team directly at aziz.zina2001@gmail.com
 
 Thank you for helping us keep PharmaLab version 2.0 secure! 🛡️
