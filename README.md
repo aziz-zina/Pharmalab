@@ -1,4 +1,4 @@
-# Project Name: PharmaLab
+# Project Name: *PharmaLab*
 
 [![Owner](https://img.shields.io/badge/owner-aziz--zina-blue)](https://github.com/aziz-zina)
 [![Admin](https://img.shields.io/badge/admin-aziz--zina-red)](https://github.com/aziz-zina)
