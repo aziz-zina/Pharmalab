@@ -9,6 +9,7 @@ export const createUser = async (request, response) => {
   const salt = await bcrypt.genSalt(10);
 
   const hashedPassword = await bcrypt.hash(request.body.password, salt);
+  //Test here
   const user = new User({
     email: request.body.email,
     password: hashedPassword,
